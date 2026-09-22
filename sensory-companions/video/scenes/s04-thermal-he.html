@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="he"><head><meta charset="utf-8"><title>S04 warm and cool</title>
+<link rel="stylesheet" href="common.css">
+<style>
+/* 8 s. Pocket B opens (0.8-1.3), insert slides in (1.3-2.5), cool phase 2.6-4.4 (teal), warm phase 4.6-7.6 (coral) */
+.tag{background:linear-gradient(90deg,var(--warm),var(--cool))}
+#fig{position:absolute;left:0;top:60px;width:500px;height:470px}
+#pocketB{stroke:var(--cool);fill:rgba(78,157,191,.12);stroke-width:4;stroke-dasharray:14 12;animation:fade .5s .8s both,toWarmStroke 1s 4.6s forwards}
+@keyframes toWarmStroke{to{stroke:var(--warm);fill:rgba(240,137,75,.14)}}
+#slit{fill:#2f5f78;transform-origin:330px 350px;animation:slitOpen .5s .9s both,slitClose .5s 2.6s forwards}
+@keyframes slitOpen{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes slitClose{from{transform:scaleY(1)}to{transform:scaleY(0)}}
+#insert{animation:slideIn 1.2s 1.3s cubic-bezier(.35,.9,.25,1) both}
+@keyframes slideIn{from{transform:translate(470px,-90px);opacity:0}15%{opacity:1}to{transform:translate(0,0);opacity:1}}
+#insertBody{fill:var(--cool);animation:toWarm 1s 4.6s both}
+@keyframes toWarm{to{fill:var(--warm)}}
+#insertGlow{fill:none;stroke-width:10;stroke:var(--cool);opacity:0;animation:glowCool 1.8s 2.6s ease-in-out both,glowWarm 1.6s 4.8s ease-in-out infinite}
+@keyframes glowCool{0%{opacity:0;stroke:var(--cool)}50%{opacity:.6}100%{opacity:0;stroke:var(--cool)}}
+@keyframes glowWarm{0%{opacity:0;stroke:var(--warm)}50%{opacity:.55;stroke:var(--warm)}100%{opacity:0;stroke:var(--warm)}}
+/* thermometer */
+#thermo{position:absolute;left:500px;top:40px;width:150px;height:460px}
+#tfill{fill:var(--cool);transform-origin:50% 100%;animation:tCool 1s 2.7s both,tWarm 1.2s 4.7s forwards}
+@keyframes tCool{from{transform:scaleY(.12);fill:var(--cool)}to{transform:scaleY(.38);fill:var(--cool)}}
+@keyframes tWarm{from{transform:scaleY(.38);fill:var(--cool)}to{transform:scaleY(.86);fill:var(--warm)}}
+#tbulb{fill:var(--cool);animation:bWarm 1.2s 4.7s both}
+@keyframes bWarm{to{fill:var(--warm)}}
+#snow{animation:fade .5s 2.7s backwards,unfade .5s 4.6s forwards}
+#sun{animation:fade .5s 4.9s backwards}
+/* icon rows */
+.opt{position:absolute;left:680px;display:flex;align-items:center;gap:20px;font-family:var(--display);font-weight:600;font-size:34px;color:var(--ink);white-space:nowrap}
+html[lang=he] .opt{font-family:'Heebo',sans-serif;font-weight:700;direction:rtl}
+.opt .ic{width:92px;height:92px;border-radius:26px;display:flex;align-items:center;justify-content:center;background:var(--paper);box-shadow:0 0 0 2px var(--line);flex:none}
+.opt .ic svg{width:54px;height:54px;fill:none;stroke:var(--ink-soft);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+#optCool .ic{animation:hiCool 1s 2.7s both,unhiCool 1s 4.6s forwards}
+@keyframes hiCool{to{background:var(--cool);box-shadow:0 0 0 2px var(--cool)}}
+@keyframes unhiCool{from{background:var(--cool);box-shadow:0 0 0 2px var(--cool)}to{background:var(--paper);box-shadow:0 0 0 2px var(--line)}}
+#optCool .ic svg{animation:whiteStroke 1s 2.7s both,greyStroke 1s 4.6s forwards}
+#optWarm .ic{animation:hiWarm 1s 4.7s both}
+@keyframes hiWarm{to{background:var(--warm);box-shadow:0 0 0 2px var(--warm)}}
+#optWarm .ic svg{animation:whiteStroke 1s 4.7s both}
+@keyframes whiteStroke{to{stroke:#fff}}
+@keyframes greyStroke{from{stroke:#fff}to{stroke:var(--ink-soft)}}
+#safe{position:absolute;left:680px;top:390px;white-space:normal;max-width:470px;line-height:1.2}
+</style></head>
+<body class="feat">
+<div class="photo-col f" style="--i:.1s;--o:7.6s"><img class="shadow" src="../../assets/sloth-small.png" alt=""></div>
+<div class="head">
+  <div class="tag a" style="--i:.2s;--o:7.6s"><span class="en">02 · Warm &amp; Cool</span><span class="he">02 · חם וקר</span></div>
+  <h2 class="h2 a" style="--i:.35s;--o:7.6s"><span class="en">Chill it. Warm it. Slide it in.</span><span class="he">מקררים. מחממים. מחליקים פנימה.</span></h2>
+</div>
+<div class="diag">
+  <svg id="fig" viewBox="0 0 640 600" class="f" style="--i:.4s;--o:7.6s">
+    <g fill="var(--taupe-light)" stroke="var(--taupe)" stroke-width="4">
+      <circle cx="245" cy="92" r="42"/><circle cx="415" cy="92" r="42"/>
+      <ellipse cx="150" cy="380" rx="58" ry="125" transform="rotate(22 150 380)"/><ellipse cx="510" cy="380" rx="58" ry="125" transform="rotate(-22 510 380)"/>
+      <ellipse cx="215" cy="560" rx="72" ry="42"/><ellipse cx="445" cy="560" rx="72" ry="42"/>
+      <ellipse cx="330" cy="400" rx="192" ry="178"/>
+      <circle cx="330" cy="150" r="102"/>
+    </g>
+    <g fill="none" stroke="var(--ink-soft)" stroke-width="5" stroke-linecap="round"><path d="M282 150q13 -12 26 0"/><path d="M352 150q13 -12 26 0"/></g>
+    <ellipse cx="330" cy="430" rx="128" ry="118" fill="var(--paper)" stroke="var(--line)" stroke-width="4"/>
+    <!-- pocket A (weight) already filled, muted -->
+    <rect x="222" y="455" width="216" height="82" rx="26" fill="rgba(143,127,196,.14)" stroke="var(--weight)" stroke-width="3" stroke-dasharray="12 10"/>
+    <rect x="232" y="465" width="196" height="62" rx="20" fill="var(--weight)" opacity=".75"/>
+    <text x="330" y="505" text-anchor="middle" fill="#fff" font-size="26">A</text>
+    <!-- pocket B (thermal) -->
+    <rect id="pocketB" x="222" y="350" width="216" height="76" rx="24"/>
+    <ellipse id="slit" cx="330" cy="350" rx="108" ry="9"/>
+    <g id="insert">
+      <rect id="insertGlow" x="226" y="354" width="208" height="68" rx="24"/>
+      <rect id="insertBody" x="232" y="360" width="196" height="56" rx="18"/>
+      <rect x="240" y="368" width="180" height="40" rx="12" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="3"/>
+      <text x="330" y="398" text-anchor="middle" fill="#fff" font-size="26">B</text>
+    </g>
+  </svg>
+  <svg id="thermo" viewBox="0 0 170 520" class="f" style="--i:2.4s;--o:7.6s">
+    <rect x="66" y="40" width="38" height="380" rx="19" fill="var(--paper)" stroke="var(--ink-soft)" stroke-width="4"/>
+    <rect id="tfill" x="73" y="47" width="24" height="366" rx="12"/>
+    <circle id="tbulb" cx="85" cy="450" r="44" stroke="var(--ink-soft)" stroke-width="4"/>
+    <g id="snow" fill="none" stroke="var(--cool)" stroke-width="4" stroke-linecap="round" transform="translate(24 16) scale(1.1)"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/></g>
+    <g id="sun" fill="none" stroke="var(--warm)" stroke-width="4" stroke-linecap="round" transform="translate(118 8) scale(1.15)"><circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3M4.2 4.2l2.2 2.2M17.6 17.6l2.2 2.2M4.2 19.8l2.2-2.2M17.6 6.4l2.2-2.2"/></g>
+  </svg>
+  <div id="optCool" class="opt a" style="top:70px;--i:2.5s;--o:7.6s"><div class="ic"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M5 10h14M8 6v1.5M8 13v3"/></svg></div><span class="en">Fridge → cool</span><span class="he">מקרר ← קר</span></div>
+  <div id="optWarm" class="opt a" style="top:200px;--i:2.8s;--o:7.6s"><div class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><rect x="5" y="8" width="10" height="8" rx="1"/><path d="M18 9v.5M18 12v.5M18 15v.5"/></svg></div><span class="en">Microwave → warm</span><span class="he">מיקרוגל ← חם</span></div>
+  <div id="safe" class="lbl a" style="--i:5.6s;--o:7.6s"><span class="dot" style="background:var(--warm)"></span><span class="en">Temperature-limited · no wires, no batteries</span><span class="he">הגבלת טמפרטורה · ללא חוטים, ללא סוללות</span></div>
+</div>
+<div class="cap a" style="--i:.6s;--o:4.3s"><span class="en">A second pocket, a separate insert: a reusable gel pack from the fridge, or a microwaveable temperature-limited&nbsp;insert.</span><span class="he">כיס שני, תוסף נפרד: ג׳ל רב-פעמי מהמקרר, או תוסף לחימום במיקרוגל עם הגבלת טמפרטורה.</span></div>
+<div class="cap a" style="--i:4.6s;--o:7.6s"><span class="en">Made for plush — <b>no wires, no batteries.</b> Thermal and weighted materials never share a&nbsp;pouch.</span><span class="he">מיועד לבובות — <b>ללא חוטים, ללא סוללות.</b> חומרי החום והמשקל לעולם לא באותו כיס.</span></div>
+</body></html>
