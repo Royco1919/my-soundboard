@@ -46,8 +46,8 @@ HUE_ZONES={         # neighbour-fur remnants to knock out: (rect, kind)
  'redpanda-pair': [((600,100,790,570),'notpanda')],    # strip of blue bag / grey counter between the mane and the TOP seam
  'redpanda-small': [((600,100,790,570),'notpanda')],
 }
-ERODE=3             # px of extra alpha erosion: the segmenter's matte kept a 2-3 px rim of counter/background inside the opaque area
-MIN_ISLAND=400
+ERODE=4             # px of extra alpha erosion: the segmenter's matte kept a 2-3 px rim of counter/background inside the opaque area
+MIN_ISLAND=1500   # anything detached and smaller than this is a fleck of counter or neighbour fur
 def rect_mask(rects):
     m=np.zeros((Ht,Wd),bool)
     for x0,y0,x1,y1 in rects: m[y0:y1,x0:x1]=True
@@ -78,7 +78,7 @@ def cut(name,poly):
     # 1) neighbour-fur remnants inside the silhouette
     for rect,kind in HUE_ZONES.get(name,[]):
         km=hue_mask(kind)&rect_mask([rect])
-        km=ndi.binary_dilation(ndi.binary_opening(km,iterations=1),iterations=2)
+        km=ndi.binary_dilation(ndi.binary_closing(km,iterations=1),iterations=3)
         a=a*(1-ndi.gaussian_filter(km.astype(np.float32),1.0))
     # 2) erode ERODE px (kills the grey background rim inside the matte), then smooth the ramp
     a=ndi.grey_erosion(a,size=(2*ERODE+1,2*ERODE+1))
@@ -92,8 +92,8 @@ def cut(name,poly):
     a=np.where(hk[hl]&holes,1.0,a)
     # 4) de-fringe: partial pixels take the colour of nearby opaque fur
     out=rgb.copy()
-    M=(a>=0.985).astype(np.float32)
-    num=np.stack([ndi.gaussian_filter(rgb[...,i]*M,3.0) for i in range(3)],2); den=ndi.gaussian_filter(M,3.0)[...,None]
+    M=ndi.binary_erosion(a>=0.985,iterations=2).astype(np.float32)   # colour source: fur at least 2 px inside the opaque area
+    num=np.stack([ndi.gaussian_filter(rgb[...,i]*M,4.0) for i in range(3)],2); den=ndi.gaussian_filter(M,4.0)[...,None]
     fill=num/np.maximum(den,1e-4)
     part=((a>0)&(a<0.985)&(den[...,0]>0.02))[...,None]
     out[...,:3]=np.where(part,fill,rgb[...,:3])
