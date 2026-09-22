@@ -2,27 +2,27 @@
 <html lang="en"><head><meta charset="utf-8"><title>S07 sloth signature</title>
 <link rel="stylesheet" href="common.css">
 <style>
-/* 6 s. Child silhouette + sloth; arms draw around the torso (1.0-2.6), tab appears (2.7), callouts */
+/* 5.5 s (out-fades end at 5.35). Child silhouette + sloth; arms draw around the torso (1.0-2.6), tab appears (2.7), callouts */
 .tag{background:var(--rust)}
 #hug{position:absolute;left:0;top:0;width:640px;height:600px}
-.arm{fill:none;stroke:var(--taupe);stroke-width:46;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.6s 1s cubic-bezier(.4,.1,.3,1) both}
-.armIn{fill:none;stroke:#C4B29A;stroke-width:30;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.6s 1s cubic-bezier(.4,.1,.3,1) both}
+.arm{fill:none;stroke:var(--taupe);stroke-width:46;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.4s .9s cubic-bezier(.4,.1,.3,1) both}
+.armIn{fill:none;stroke:#C4B29A;stroke-width:30;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.4s .9s cubic-bezier(.4,.1,.3,1) both}
 @keyframes draw{to{stroke-dashoffset:0}}
-#tab{transform-origin:330px 470px;animation:pop .5s 2.7s cubic-bezier(.3,1.4,.5,1) both}
+#tab{transform-origin:330px 470px;animation:pop .5s 2.35s cubic-bezier(.3,1.4,.5,1) both}
 @keyframes pop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
-#tabRing{fill:none;stroke:var(--rust);stroke-width:5;transform-origin:330px 470px;animation:ring 1.6s 3.2s ease-out infinite}
+#tabRing{fill:none;stroke:var(--rust);stroke-width:5;transform-origin:330px 470px;animation:ring 1.6s 2.8s ease-out infinite}
 @keyframes ring{0%{transform:scale(.6);opacity:.9}100%{transform:scale(1.6);opacity:0}}
-#leader{stroke:var(--rust);stroke-width:4;fill:none;stroke-dasharray:1;stroke-dashoffset:1;animation:draw .5s 3.2s both}
+#leader{stroke:var(--rust);stroke-width:4;fill:none;stroke-dasharray:1;stroke-dashoffset:1;animation:draw .5s 2.6s both}
 .lbl{left:690px;white-space:normal;max-width:430px;line-height:1.2}
 </style></head>
 <body class="feat">
-<div class="photo-col f" style="--i:.1s;--o:5.6s"><img class="shadow" src="../../assets/sloth-large.png" alt=""></div>
+<div class="photo-col f" style="--i:.1s;--o:4.95s"><img class="shadow" src="../../assets/clean/sloth-pair.png" alt=""></div>
 <div class="head">
-  <div class="tag a" style="--i:.2s;--o:5.6s"><span class="en">04 · Calm &amp; Fidget</span><span class="he">04 · רוגע ופידג׳ט</span></div>
-  <h2 class="h2 a" style="--i:.35s;--o:5.6s"><span class="en">Sloth: arms that hug back.</span><span class="he">עצלן: ידיים שמחבקות בחזרה.</span></h2>
+  <div class="tag a" style="--i:.2s;--o:4.95s">04 · Calm &amp; Fidget</div>
+  <h2 class="h2 a" style="--i:.35s;--o:4.95s">Sloth: arms that hug back.</h2>
 </div>
 <div class="diag">
-  <svg id="hug" viewBox="0 0 640 600" class="f" style="--i:.5s;--o:5.6s">
+  <svg id="hug" viewBox="0 0 640 600" class="f" style="--i:.5s;--o:4.95s">
     <!-- child silhouette (neutral) -->
     <g fill="#EBDFCD" stroke="var(--taupe-light)" stroke-width="4">
       <circle cx="330" cy="110" r="72"/>
@@ -45,9 +45,9 @@
     <g id="tab"><rect x="296" y="450" width="68" height="40" rx="10" fill="var(--rust)"/><g stroke="#fff" stroke-width="3" opacity=".8"><path d="M306 460h48M306 470h48M306 480h48"/></g></g>
     <path id="leader" pathLength="1" d="M364 470 C 520 470 520 430 640 430"/>
   </svg>
-  <div class="lbl a" style="top:150px;--i:1.4s;--o:5.6s"><span class="dot" style="background:var(--taupe)"></span><span class="en">Extra-long arms wrap around the&nbsp;child</span><span class="he">ידיים ארוכות במיוחד שעוטפות את הילד</span></div>
-  <div class="lbl a" style="top:252px;--i:2.2s;--o:5.6s"><span class="dot" style="background:var(--taupe)"></span><span class="en">Sherpa lining inside the arms</span><span class="he">בטנת שרפה בפנים הידיים</span></div>
-  <div class="lbl a" style="top:380px;--i:3.3s;--o:5.6s"><span class="dot" style="background:var(--rust)"></span><span class="en">Child-safe hook-and-loop · no magnets</span><span class="he">סקוץ׳ בטיחותי לילדים · ללא מגנטים</span></div>
+  <div class="lbl a" style="top:150px;--i:1.3s;--o:4.95s"><span class="dot" style="background:var(--taupe)"></span>Extra-long arms wrap around the&nbsp;child</div>
+  <div class="lbl a" style="top:252px;--i:2.0s;--o:4.95s"><span class="dot" style="background:var(--taupe)"></span>Sherpa lining inside the arms</div>
+  <div class="lbl a" style="top:380px;--i:2.4s;--o:4.95s"><span class="dot" style="background:var(--rust)"></span>Child-safe hook-and-loop · no magnets</div>
 </div>
-<div class="cap a" style="--i:.8s;--o:5.6s"><span class="en">Extra-long hugging arms wrap around the child and fasten with child-safe hook-and-loop — no&nbsp;magnets.</span><span class="he">ידיים ארוכות במיוחד מתחבקות סביב הילד ונסגרות בסקוץ׳ בטיחותי — ללא מגנטים.</span></div>
+<div class="cap a" style="--i:.8s;--o:4.95s">Extra-long hugging arms wrap around the child and fasten with child-safe hook-and-loop — no&nbsp;magnets.</div>
 </body></html>

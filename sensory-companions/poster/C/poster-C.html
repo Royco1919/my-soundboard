@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sowala Poster C</title>
+<link rel="stylesheet" href="../../assets/fonts/fonts.css">
+<style>
+:root{
+  --bg:#F7F1E8; --paper:#FFFDF9; --ink:#33251C; --ink-soft:#6B5A4C;
+  --rust:#C8552A; --rust-light:#E8865A; --taupe:#A28E74; --taupe-light:#D9CCB9;
+  --weight:#8F7FC4; --warm:#F0894B; --cool:#4E9DBF; --touch:#7FA86B; --line:#E7DDD0;
+  --display:'Fredoka',sans-serif; --body:'Nunito',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1350px;height:1800px;overflow:hidden;background:var(--bg);color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased}
+.poster{position:relative;width:1350px;height:1800px;background:var(--bg);overflow:hidden}
+
+/* header */
+.brand{position:absolute;left:60px;top:48px;display:flex;align-items:center;gap:16px}
+.brand .mark{width:54px;height:54px}
+.brand .word{font-family:var(--display);font-weight:700;font-size:64px;line-height:1;color:var(--rust);letter-spacing:-0.01em}
+.brand .desc{font-family:var(--body);font-weight:800;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);margin-top:5px}
+.tag-proto{position:absolute;right:60px;top:66px;font-weight:800;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);border:2px solid var(--line);border-radius:999px;padding:9px 18px;background:var(--paper)}
+
+/* headline */
+h1{position:absolute;left:56px;top:150px;font-family:var(--display);font-weight:700;font-size:122px;line-height:.98;letter-spacing:-0.025em;color:var(--ink);white-space:nowrap}
+h1 .r{color:var(--rust)}
+.promise{position:absolute;left:60px;top:404px;width:1230px;font-size:29px;line-height:1.3;font-weight:600;color:var(--ink-soft)}
+.promise b{color:var(--ink);font-weight:800}
+
+/* color fields */
+.fields{position:absolute;left:0;top:498px;width:1350px;height:660px;overflow:hidden;z-index:1}
+.field-l{position:absolute;inset:0;background:var(--taupe);clip-path:polygon(0 0,725px 0,635px 100%,0 100%)}
+.field-r{position:absolute;inset:0;background:var(--rust);clip-path:polygon(725px 0,100% 0,100% 100%,635px 100%)}
+.fields .name{position:absolute;font-family:var(--display);font-weight:700;font-size:86px;line-height:.92;letter-spacing:-0.02em;color:#fff}
+.chips{position:absolute;display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-weight:700;font-size:14px;line-height:1;padding:8px 11px;border-radius:999px;background:rgba(255,253,249,.92);color:var(--ink)}
+.animal{position:absolute;z-index:5}
+.animal img{display:block;height:100%;width:auto;filter:drop-shadow(0 18px 22px rgba(51,37,28,.28))}
+.bubble{position:absolute;background:var(--paper);border-radius:26px;padding:20px 22px 22px;font-size:17.5px;line-height:1.36;font-weight:600;color:var(--ink);box-shadow:0 10px 24px rgba(51,37,28,.18)}
+.bubble b{font-weight:800}
+.bubble .k{display:block;font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;color:var(--ink-soft)}
+.bubble::after{content:"";position:absolute;width:26px;height:26px;background:var(--paper);transform:rotate(45deg);border-radius:4px}
+.bubble.tail-r::after{right:-10px;top:58px}
+.bubble.tail-l::after{left:-10px;bottom:30px}
+.sloth-tag{position:absolute;left:60px;top:34px;display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;font-weight:800;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:9px 14px;border-radius:999px}
+.sloth-tag svg{width:16px;height:16px}
+
+/* function strip */
+.strip{position:absolute;left:60px;top:1132px;width:1230px;height:272px;background:var(--paper);border-radius:30px;box-shadow:0 18px 40px rgba(51,37,28,.16);z-index:3;overflow:hidden}
+.fns{display:grid;grid-template-columns:repeat(4,1fr);padding:34px 24px 0;gap:0 22px;height:224px}
+.fn .hd{display:flex;align-items:center;gap:12px;height:62px;margin-bottom:12px}
+.fn .ic{width:58px;height:58px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.fn .ic svg{width:36px;height:36px;fill:none;stroke:#fff;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
+.fn .n{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:3px}
+.fn h3{font-family:var(--display);font-weight:700;font-size:24px;line-height:1.02;letter-spacing:-0.01em}
+.fn p{font-size:15.5px;line-height:1.36;color:var(--ink-soft);font-weight:600}
+.fn p b{color:var(--ink);font-weight:800}
+.ic.w{background:var(--weight)} .ic.t{background:linear-gradient(90deg,var(--warm) 50%,var(--cool) 50%)} .ic.h{background:var(--touch)} .ic.c{background:var(--rust)}
+.band{position:absolute;left:0;right:0;bottom:0;height:48px;background:var(--bg);border-top:2px solid var(--line);display:flex;align-items:center;justify-content:center;gap:12px;font-size:19px;font-weight:800;color:var(--ink);letter-spacing:.005em}
+.band svg{width:24px;height:24px;fill:none;stroke:var(--rust);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.band span{color:var(--ink-soft);font-weight:700}
+.band .dot{color:var(--rust);font-weight:800;font-style:normal;margin:0 6px}
+
+/* bottom */
+.sizes{position:absolute;left:60px;top:1436px;width:760px}
+.sizes h4{font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:-0.01em;margin-bottom:12px}
+.sizes h4 span{color:var(--ink-soft);font-size:18px;font-family:var(--body);font-weight:700;letter-spacing:0;margin-left:10px}
+.srow{display:flex;gap:12px;margin-bottom:12px}
+.sz{flex:1;background:var(--paper);border:2px solid var(--line);border-radius:18px;padding:14px 18px;display:flex;align-items:center;gap:14px}
+.sz .lbl{font-family:var(--display);font-weight:700;font-size:22px;background:var(--ink);color:#fff;border-radius:10px;padding:6px 12px;line-height:1}
+.sz .v{font-size:17px;line-height:1.25;font-weight:600;color:var(--ink-soft)}
+.sz .v b{display:block;color:var(--ink);font-weight:800;font-size:19px}
+.wash{font-size:16px;font-weight:600;color:var(--ink-soft)}
+.wash b{color:var(--ink);font-weight:800}
+.age{position:absolute;left:60px;top:1596px;width:1230px;display:flex;align-items:center;justify-content:space-between;background:var(--ink);color:#fff;border-radius:999px;padding:14px 34px 14px 26px;font-weight:800;font-size:17px;letter-spacing:.01em}
+.age .i{display:flex;align-items:center;gap:12px}
+.age svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.age .sep{width:6px;height:6px;border-radius:50%;background:var(--rust-light)}
+.story{position:absolute;right:60px;top:1432px;width:470px;text-align:right}
+.story .tg{font-family:var(--display);font-weight:700;font-size:44px;line-height:1.02;letter-spacing:-0.02em;color:var(--rust)}
+.story .or{font-size:21px;font-weight:700;color:var(--ink);margin-top:12px}
+.story .aud{font-size:16px;font-weight:600;color:var(--ink-soft);margin-top:6px}
+.foot{position:absolute;left:60px;right:60px;top:1672px;border-top:2px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;align-items:flex-start;gap:40px}
+.disc{font-size:14px;line-height:1.4;font-style:italic;color:var(--ink-soft);max-width:820px;font-weight:600}
+.foot .brand2{text-align:right;flex-shrink:0}
+.foot .brand2 .w{font-family:var(--display);font-weight:700;font-size:30px;color:var(--rust);line-height:1}
+.foot .brand2 .d{font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px}
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <div class="brand">
+    <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M16 28.5S5.5 22 5.5 14.6A5.6 5.6 0 0 1 16 11.4a5.6 5.6 0 0 1 10.5 3.2C26.5 22 16 28.5 16 28.5z" fill="#C8552A"/>
+      <circle cx="8.2" cy="6.2" r="2.1" fill="#C8552A"/><circle cx="13.2" cy="3.9" r="2.1" fill="#C8552A"/><circle cx="18.8" cy="3.9" r="2.1" fill="#C8552A"/><circle cx="23.8" cy="6.2" r="2.1" fill="#C8552A"/>
+    </svg>
+    <div>
+      <div class="word">sowala</div>
+      <div class="desc">Weighted Sensory Companions</div>
+    </div>
+  </div>
+  <div class="tag-proto">Concept prototype</div>
+
+  <h1>Hug it. Warm it.<br>Feel it. <span class="r">Squeeze it.</span></h1>
+  <p class="promise">One weighted sensory companion, four kinds of comfort —<br><b>designed with children on the autism spectrum in mind.</b></p>
+
+  <div class="fields">
+    <div class="field-l"></div>
+    <div class="field-r"></div>
+
+    <!-- SLOTH (left, leads) -->
+    <div class="sloth-tag"><svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M9 26c-3-8-1-16 3-20M16 27c-3-8-1-17 3-21M23 26c-3-8-1-16 3-20"/></svg>Where Sowala began</div>
+    <div class="name" style="left:60px;top:84px">Sloth</div>
+    <div class="chips" style="left:60px;top:176px;width:230px">
+      <span class="chip">long-pile fur</span><span class="chip">smooth face</span><span class="chip">textured claws</span><span class="chip">raised-dot belly</span><span class="chip">sherpa arms</span>
+    </div>
+    <div class="bubble tail-r" style="left:60px;top:352px;width:238px">
+      <span class="k">Signature feel</span>
+      <b>Extra-long hugging arms</b> wrap right around you and fasten with child-safe hook-and-loop. No magnets.
+    </div>
+
+    <!-- RED PANDA (right) -->
+    <div class="name" style="left:1040px;top:44px">Red<br>Panda</div>
+    <div class="chips" style="left:1040px;top:214px;width:250px">
+      <span class="chip">curly mane</span><span class="chip">silky ears</span><span class="chip">ribbed paw pads</span><span class="chip">waffle-knit belly</span><span class="chip">crinkle tail</span>
+    </div>
+    <div class="bubble tail-l" style="left:1046px;top:472px;width:244px">
+      <span class="k">Signature feel</span>
+      <b>Ribbed paw pads</b> made for thumb-rubbing, plus a squeezable crinkle tail.
+    </div>
+  </div>
+
+  <!-- animals sit above the strip so their feet rest on the card -->
+  <div class="animal" style="left:296px;top:530px;height:628px"><img src="../../assets/poster-C/sloth-pair.png" alt="Sloth, large and small"></div>
+  <div class="animal" style="left:690px;top:542px;height:616px"><img src="../../assets/poster-C/panda-pair.png" alt="Red Panda, large and small"></div>
+
+  <div class="strip">
+    <div class="fns">
+    <div class="fn">
+      <div class="hd"><div class="ic w"><svg viewBox="0 0 32 32"><path d="M16 3v8M12.5 7.5 16 11l3.5-3.5"/><rect x="6" y="14" width="20" height="14" rx="5"/><circle cx="11.5" cy="21" r="1.4" fill="#fff" stroke="none"/><circle cx="16" cy="21" r="1.4" fill="#fff" stroke="none"/><circle cx="20.5" cy="21" r="1.4" fill="#fff" stroke="none"/></svg></div><div><div class="n">01 · Weight</div><h3>A hug that stays</h3></div></div>
+      <p><b>Removable weighted pouch</b> in the lower belly: deep, even pressure. Double-sealed, out of reach in normal use — slide it out to wash.</p>
+    </div>
+    <div class="fn">
+      <div class="hd"><div class="ic t"><svg viewBox="0 0 32 32"><rect x="12.5" y="3" width="7" height="17" rx="3.5"/><circle cx="16" cy="24.5" r="4.5"/><path d="M16 12v10"/></svg></div><div><div class="n">02 · Warm &amp; Cool</div><h3>Chill it or warm it</h3></div></div>
+      <p>A <b>second pocket, its own insert</b> — it never shares a pouch with the weight. Chill the reusable gel pack, or warm the microwaveable, temperature-limited insert. No wires, no batteries.</p>
+    </div>
+    <div class="fn">
+      <div class="hd"><div class="ic h"><svg viewBox="0 0 32 32"><path d="M10.5 29V14.5a5.5 5.5 0 0 1 11 0V29"/><path d="M13 19.5a3 3 0 0 1 6 0"/><path d="M14.6 23a1.4 1.4 0 0 1 2.8 0"/><circle cx="5" cy="10" r="1.2" fill="#fff" stroke="none"/><circle cx="5" cy="14.5" r="1.2" fill="#fff" stroke="none"/><circle cx="5" cy="19" r="1.2" fill="#fff" stroke="none"/><path d="M25.5 9.5c1.5 1.3 1.5 2.7 0 4s-1.5 2.7 0 4 1.5 2.7 0 4"/></svg></div><div><div class="n">03 · Touch</div><h3>Textures to explore</h3></div></div>
+      <p><b>Every friend feels different</b>: curly, waffle, ribbed, long-pile, smooth. Hidden texture patches on belly, paws and ears, waiting to be found.</p>
+    </div>
+    <div class="fn">
+      <div class="hd"><div class="ic c"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12.5"/><path d="M9.5 14.5q3-3.4 6 0M16.5 14.5q3-3.4 6 0"/><path d="M11.5 20q4.5 4.2 9 0"/></svg></div><div><div class="n">04 · Calm &amp; Fidget</div><h3>Pick by feel</h3></div></div>
+      <p><b>Sloth:</b> extra-long hugging arms. <b>Red Panda:</b> crinkle tail and ribbed paw pads. Kids choose the animal by the feel they like.</p>
+    </div>
+    </div>
+    <div class="band">
+      <svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><circle cx="12" cy="13.2" r="4.6"/><path d="M8.6 13.6c1.1-1.1 2.3-1.1 3.4 0s2.3 1.1 3.4 0"/><path d="M7 7h2.5M14.5 7h2.5"/></svg>
+      <div class="t">Both inserts lift out <i class="dot">·</i> outer plush is <b>machine-washable</b> <i class="dot">·</i> <span>spare inserts available</span></div>
+    </div>
+  </div>
+
+  <div class="sizes">
+    <h4>Two friends, two sizes <span>Sloth and Red Panda, each in Large and Small</span></h4>
+    <div class="srow">
+      <div class="sz"><div class="lbl">Large</div><div class="v"><b>about 16 in · 3 lb</b>prototype target weight</div></div>
+      <div class="sz"><div class="lbl">Small</div><div class="v"><b>about 12 in · 2 lb</b>prototype target weight</div></div>
+    </div>
+    <div class="wash">Weights are <b>prototype targets</b>, tuned in testing · same four comforts in every size</div>
+  </div>
+
+  <div class="story">
+    <div class="tg">Comfort,<br>one hug at a time.</div>
+    <div class="or">Inspired by a therapist. Created with love.</div>
+    <div class="aud">Cozy, soothing, grounding — a sensory friend to hold close.</div>
+  </div>
+
+  <div class="age">
+    <div class="i"><svg viewBox="0 0 24 24"><path d="M12 3 4 6.5v5.5c0 4.6 3.4 8.4 8 9.5 4.6-1.1 8-4.9 8-9.5V6.5L12 3z"/></svg>Ages 3+</div>
+    <div class="sep"></div><div>Not for infants</div>
+    <div class="sep"></div><div>Not a sleep product</div>
+    <div class="sep"></div><div>Adult supervision with the warm insert</div>
+  </div>
+
+  <div class="foot">
+    <div class="disc">Not a medical device. Concept prototype — final weights, materials and age grading are subject to third-party safety testing (ASTM F963 / CPSIA) before sale.</div>
+    <div class="brand2"><div class="w">sowala</div><div class="d">Sensory Friends</div></div>
+  </div>
+</div>
+</body>
+</html>

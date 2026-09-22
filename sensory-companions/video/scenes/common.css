@@ -1,5 +1,5 @@
-/* Shared styles for the demo-video scenes (1920x1080, one CSS timeline per scene).
-   Every animated element uses .a with --i (in time) and --o (out time). */
+/* Shared styles for the demo-video scenes (1920x1080, one CSS timeline per scene, English only).
+   Every animated element uses .a / .f with --i (in time) and --o (out time). Out-fades end 0.15 s before the cut. */
 @import url("../../assets/fonts/fonts.css");
 :root{
   --bg:#F7F1E8; --paper:#FFFDF9; --ink:#33251C; --ink-soft:#6B5A4C;
@@ -11,11 +11,6 @@ html,body{margin:0;padding:0}
 *,*::before,*::after{animation-play-state:paused!important}
 body{width:1920px;height:1080px;overflow:hidden;background:var(--bg);color:var(--ink);
   font-family:var(--body);position:relative;-webkit-font-smoothing:antialiased}
-html[lang=he] body{font-family:'Heebo',sans-serif}
-html[lang=en] .he{display:none!important}
-html[lang=he] .en{display:none!important}
-html[lang=he] .rtl{direction:rtl;text-align:right;font-family:'Heebo',sans-serif}
-html[lang=he] .rtl.center{text-align:center}
 img,video{display:block}
 .abs{position:absolute}
 /* timeline helpers */
@@ -27,12 +22,11 @@ img,video{display:block}
 .f{--i:0s;--o:999s;animation:fade .5s var(--i) ease-out backwards,unfade .4s var(--o) ease-in forwards}
 /* typography */
 .eyebrow{font-family:var(--display);font-weight:600;font-size:26px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+.wordmark{font-family:var(--display);font-weight:700;letter-spacing:-.01em;color:var(--ink);line-height:1}
 .tag{display:inline-flex;align-items:center;gap:14px;font-family:var(--display);font-weight:600;font-size:28px;letter-spacing:.12em;
   text-transform:uppercase;color:#fff;padding:12px 26px;border-radius:999px}
-html[lang=he] .tag{font-family:'Heebo',sans-serif;font-weight:700;letter-spacing:0;font-size:30px}
 .h1{font-family:var(--display);font-weight:700;font-size:78px;line-height:1.08;letter-spacing:-.01em;color:var(--ink);margin:0}
 .h2{font-family:var(--display);font-weight:700;font-size:64px;line-height:1.1;color:var(--ink);margin:0}
-html[lang=he] .h1,html[lang=he] .h2{font-family:'Heebo',sans-serif;font-weight:800;line-height:1.2}
 .sub{font-family:var(--body);font-weight:600;font-size:34px;line-height:1.35;color:var(--ink-soft)}
 /* caption card (bottom-left, safe margins 80px) */
 .cap{position:absolute;left:80px;bottom:80px;max-width:1220px;background:var(--paper);color:var(--ink);
@@ -40,8 +34,6 @@ html[lang=he] .h1,html[lang=he] .h2{font-family:'Heebo',sans-serif;font-weight:8
   box-shadow:0 14px 40px rgba(51,37,28,.14),0 0 0 2px var(--line);}
 .cap b{font-weight:800;color:var(--ink)}
 .cap .accent{font-weight:800}
-html[lang=he] .cap{font-family:'Heebo',sans-serif;font-weight:500;font-size:38px;left:auto;right:80px;direction:rtl;text-align:right}
-html[lang=he] .cap b,html[lang=he] .cap .accent{font-weight:800}
 .cap.dark{background:rgba(51,37,28,.86);color:#fff;box-shadow:0 14px 40px rgba(0,0,0,.25)}
 .cap.dark b{color:#fff}
 /* photo frame */
@@ -49,7 +41,6 @@ html[lang=he] .cap b,html[lang=he] .cap .accent{font-weight:800}
 .shadow{filter:drop-shadow(0 30px 40px rgba(51,37,28,.22))}
 /* small pill label */
 .pill{display:inline-block;font-family:var(--display);font-weight:600;font-size:28px;color:#fff;padding:10px 22px;border-radius:999px;line-height:1.1}
-html[lang=he] .pill{font-family:'Heebo',sans-serif;font-weight:700}
 /* card */
 .card{background:var(--paper);border-radius:28px;box-shadow:0 12px 34px rgba(51,37,28,.10),0 0 0 2px var(--line)}
 /* feature-scene layout: photo left, headline + diagram right, centered caption */
@@ -59,13 +50,8 @@ html[lang=he] .pill{font-family:'Heebo',sans-serif;font-weight:700}
 .feat .head .h2{margin-top:18px}
 .feat .diag{position:absolute;left:680px;top:270px;width:1160px;height:600px}
 .feat .cap{left:80px;right:80px;max-width:none;text-align:center}
-html[lang=he] .feat .photo-col{left:auto;right:80px}
-html[lang=he] .feat .head{left:80px;direction:rtl;text-align:right}
-html[lang=he] .feat .diag{left:80px}
-html[lang=he] .feat .cap{left:80px;right:80px;text-align:center}
 /* diagram label cards */
 .lbl{position:absolute;display:flex;align-items:center;gap:16px;background:var(--paper);border-radius:18px;padding:12px 22px 12px 18px;
   font-family:var(--display);font-weight:600;font-size:29px;color:var(--ink);box-shadow:0 8px 24px rgba(51,37,28,.10),0 0 0 2px var(--line);white-space:nowrap}
 .lbl .dot{width:18px;height:18px;border-radius:50%;flex:none}
-html[lang=he] .lbl{font-family:'Heebo',sans-serif;font-weight:700;direction:rtl}
 svg text{font-family:var(--display);font-weight:600}

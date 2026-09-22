@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><title>S06 red panda signature</title>
 <link rel="stylesheet" href="common.css">
 <style>
-/* 6 s. Tail squeezes (loop from 1.0), crinkle marks pulse; paw pad ribs + thumb rubs (loop from 2.6) */
+/* 5.5 s (out-fades end at 5.35). Tail squeezes (loop from 1.0), crinkle marks pulse; paw pad ribs + thumb rubs (loop from 2.6) */
 .tag{background:var(--rust)}
 #tail{position:absolute;left:0;top:0;width:520px;height:600px}
 #tailShape{transform-origin:260px 330px;animation:squeeze 1.6s 1s ease-in-out infinite}
@@ -19,15 +19,16 @@
 .rib{animation:ribGlow 1.4s var(--d) ease-in-out infinite}
 @keyframes ribGlow{0%{stroke:#4a3325}50%{stroke:#7a5a45}100%{stroke:#4a3325}}
 .lbl{left:600px}
+.photo-col img{height:720px!important}
 </style></head>
 <body class="feat">
-<div class="photo-col f" style="--i:.1s;--o:5.6s"><img class="shadow" src="../../assets/redpanda-small.png" alt=""></div>
+<div class="photo-col f" style="--i:.1s;--o:4.95s"><img class="shadow" src="../../assets/clean/redpanda-small.png" alt=""></div>
 <div class="head">
-  <div class="tag a" style="--i:.2s;--o:5.6s"><span class="en">04 · Calm &amp; Fidget</span><span class="he">04 · רוגע ופידג׳ט</span></div>
-  <h2 class="h2 a" style="--i:.35s;--o:5.6s"><span class="en">Red Panda: a tail you can squeeze.</span><span class="he">פנדה אדומה: זנב שאפשר ללחוץ.</span></h2>
+  <div class="tag a" style="--i:.2s;--o:4.95s">04 · Calm &amp; Fidget</div>
+  <h2 class="h2 a" style="--i:.35s;--o:4.95s">Red Panda: a tail you can squeeze.</h2>
 </div>
 <div class="diag">
-  <svg id="tail" viewBox="0 0 520 600" class="f" style="--i:.5s;--o:5.6s">
+  <svg id="tail" viewBox="0 0 520 600" class="f" style="--i:.5s;--o:4.95s">
     <g id="tailShape">
       <path d="M70 540 C 40 400 110 250 240 205 C 360 165 470 240 460 340 C 452 430 370 470 300 440" fill="none" stroke="#E0BFA0" stroke-width="112" stroke-linecap="round"/>
       <path d="M70 540 C 40 400 110 250 240 205 C 360 165 470 240 460 340 C 452 430 370 470 300 440" fill="none" stroke="var(--rust)" stroke-width="96" stroke-linecap="round"/>
@@ -38,15 +39,15 @@
     <g class="crk"><path d="M300 110 l14 -26 l12 26 l14 -26"/><path d="M380 100 l8 -30 l16 22 l8 -30"/></g>
     <g class="crk" style="animation-delay:1.25s"><path d="M470 210 l22 -10 l-4 26 l22 -10"/><path d="M200 520 l16 -22 l12 26 l14 -26"/></g>
   </svg>
-  <svg id="pad" viewBox="0 0 420 420" class="f" style="--i:2.2s;--o:5.6s">
+  <svg id="pad" viewBox="0 0 420 420" class="f" style="--i:2.2s;--o:4.95s">
     <rect x="40" y="60" width="340" height="300" rx="120" fill="#5b3f2e"/>
     <g fill="none" stroke-width="10" stroke-linecap="round">
       <path class="rib" style="--d:2.6s" d="M110 150 H310"/><path class="rib" style="--d:2.8s" d="M96 200 H324"/><path class="rib" style="--d:3.0s" d="M96 250 H324"/><path class="rib" style="--d:3.2s" d="M110 300 H310"/>
     </g>
     <g id="thumb"><ellipse cx="210" cy="225" rx="54" ry="78" fill="rgba(217,204,185,.85)" stroke="var(--taupe)" stroke-width="4"/></g>
   </svg>
-  <div class="lbl a" style="left:40px;top:540px;--i:1.2s;--o:5.6s"><span class="dot" style="background:var(--rust)"></span><span class="en">Squeezable crinkle tail</span><span class="he">זנב לחיץ מרשרש</span></div>
-  <div class="lbl a" style="left:600px;top:430px;--i:2.6s;--o:5.6s"><span class="dot" style="background:var(--rust)"></span><span class="en">Ribbed paw pads for thumb-rubbing</span><span class="he">כריות מחורצות לשפשוף באגודל</span></div>
+  <div class="lbl a" style="left:40px;top:540px;--i:1.2s;--o:4.95s"><span class="dot" style="background:var(--rust)"></span>Squeezable crinkle tail</div>
+  <div class="lbl a" style="left:600px;top:430px;--i:2.4s;--o:4.95s"><span class="dot" style="background:var(--rust)"></span>Ribbed paw pads for thumb-rubbing</div>
 </div>
-<div class="cap a" style="--i:.8s;--o:5.6s"><span class="en">Squeezable crinkle tail + ribbed paw pads for thumb-rubbing — a fidget built into the&nbsp;animal.</span><span class="he">זנב לחיץ מרשרש + כריות כפות מחורצות לשפשוף באגודל — פידג׳ט מובנה בתוך החיה.</span></div>
+<div class="cap a" style="--i:.8s;--o:4.95s">Squeezable crinkle tail + ribbed paw pads for thumb-rubbing — a fidget built into the&nbsp;animal.</div>
 </body></html>

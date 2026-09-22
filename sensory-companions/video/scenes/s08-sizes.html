@@ -2,36 +2,29 @@
 <html lang="en"><head><meta charset="utf-8"><title>S08 two animals two sizes</title>
 <link rel="stylesheet" href="common.css">
 <style>
-/* 5 s */
+/* 4.75 s. Sloth pair first (left), Red Panda pair second; size cards right. Out-fades end at 4.6 s. */
 #head{position:absolute;left:80px;top:70px;width:1760px}
 #head .h1{font-size:72px}
-html[lang=he] #head{direction:rtl;text-align:right}
-.pair{position:absolute;top:190px;text-align:center}
-.pair img{height:640px;width:auto;margin:0 auto}
-.pair .name{margin-top:10px;font-family:var(--display);font-weight:700;font-size:36px;color:var(--ink)}
-html[lang=he] .pair .name{font-family:'Heebo',sans-serif}
-#p1{left:130px;width:420px}
-#p2{left:560px;width:520px}
+.pair{position:absolute;top:186px;text-align:center}
+.pair img{height:660px;width:auto;margin:0 auto}
+.pair .name{margin-top:14px;font-family:var(--display);font-weight:700;font-size:38px;color:var(--ink)}
+#p1{left:110px;width:480px}
+#p2{left:610px;width:460px}
 #cards{position:absolute;left:1180px;top:250px;width:660px;display:flex;flex-direction:column;gap:26px}
 .sz{padding:30px 36px;display:flex;align-items:center;gap:26px}
 .sz .badge{width:96px;height:96px;border-radius:50%;background:var(--weight);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:30px;flex:none}
 .sz .badge.s{width:74px;height:74px;font-size:26px;margin:0 11px}
 .sz .t{font-family:var(--display);font-weight:700;font-size:40px}
 .sz .d{font-size:28px;color:var(--ink-soft);font-weight:600;margin-top:4px;line-height:1.3}
-html[lang=he] .sz{direction:rtl;text-align:right}
-html[lang=he] .sz .t{font-family:'Heebo',sans-serif}
-html[lang=he] #cards{left:80px}
-html[lang=he] #p1{left:auto;right:130px}
-html[lang=he] #p2{left:auto;right:560px}
 </style></head>
 <body>
-<div id="head" class="a" style="--i:.2s;--o:4.6s"><h1 class="h1"><span class="en">Two animals. Two sizes.</span><span class="he">שתי חיות. שני גדלים.</span></h1></div>
-<div id="p1" class="pair f" style="--i:.4s;--o:4.6s"><img class="shadow" src="../../assets/redpanda-pair.png" alt=""><div class="name"><span class="en">Red Panda</span><span class="he">פנדה אדומה</span></div></div>
-<div id="p2" class="pair f" style="--i:.6s;--o:4.6s"><img class="shadow" src="../../assets/sloth-pair.png" alt=""><div class="name"><span class="en">Sloth</span><span class="he">עצלן</span></div></div>
+<div id="head" class="a" style="--i:.2s;--o:4.2s"><h1 class="h1">Two animals. Two sizes.</h1></div>
+<div id="p1" class="pair f" style="--i:.4s;--o:4.2s"><img class="shadow" src="../../assets/clean/sloth-pair.png" alt=""><div class="name">Sloth</div></div>
+<div id="p2" class="pair f" style="--i:.6s;--o:4.2s"><img class="shadow" src="../../assets/clean/redpanda-pair.png" alt=""><div class="name">Red Panda</div></div>
 <div id="cards">
-  <div class="card sz a" style="--i:1.0s;--o:4.6s"><div class="badge">3 lb</div><div><div class="t"><span class="en">Large · ≈16 in</span><span class="he">גדול · ≈16 אינץ׳</span></div><div class="d"><span class="en">Prototype target weight 3 lb</span><span class="he">משקל יעד לאב-טיפוס 3 lb</span></div></div></div>
-  <div class="card sz a" style="--i:1.3s;--o:4.6s"><div class="badge s">2 lb</div><div><div class="t"><span class="en">Small · ≈12 in</span><span class="he">קטן · ≈12 אינץ׳</span></div><div class="d"><span class="en">Prototype target weight 2 lb</span><span class="he">משקל יעד לאב-טיפוס 2 lb</span></div></div></div>
-  <div class="a" style="--i:1.6s;--o:4.6s;font-size:26px;color:var(--ink-soft);font-weight:600;padding:0 10px" ><span class="en rtl">Weights to be tuned in wear testing · spare inserts sold separately</span><span class="he">המשקלים יכוונו בבדיקות · תוספים חלופיים נמכרים בנפרד</span></div>
+  <div class="card sz a" style="--i:1.0s;--o:4.2s"><div class="badge">3 lb</div><div><div class="t">Large · ≈16 in</div><div class="d">Prototype target weight 3 lb</div></div></div>
+  <div class="card sz a" style="--i:1.3s;--o:4.2s"><div class="badge s">2 lb</div><div><div class="t">Small · ≈12 in</div><div class="d">Prototype target weight 2 lb</div></div></div>
+  <div class="a" style="--i:1.6s;--o:4.2s;font-size:26px;color:var(--ink-soft);font-weight:600;padding:0 10px">Weights to be tuned in wear testing · spare inserts sold separately</div>
 </div>
-<div class="cap a" style="--i:1.9s;--o:4.6s;left:80px;right:80px;max-width:none;text-align:center"><span class="en">Kids pick the animal by the feel they&nbsp;like.</span><span class="he">ילדים בוחרים את החיה לפי התחושה שהם אוהבים.</span></div>
+<div class="cap a" style="--i:1.6s;--o:4.2s;left:80px;right:80px;max-width:none;text-align:center">Kids pick the animal by the feel they&nbsp;like.</div>
 </body></html>
