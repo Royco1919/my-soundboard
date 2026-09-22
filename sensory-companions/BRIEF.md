@@ -1,10 +1,13 @@
-# BRIEF — "Weighted Sensory Companions" (working title)
+# BRIEF — Sowala "Weighted Sensory Companions"
+
+> **UPDATE (read first):** the brand is now **Sowala** only (no "Piga"), the audience is parents of children on the autism spectrum buying through a therapy center, and the brand story in section 2b must appear (one line on poster/video, full text in the explainer). If you started before this update, re-read sections 1, 2b, 3, 7 and 8 and bring your work in line.
 
 Shared creative + technical brief for everyone building the poster, the demo video and the visual explainer.
 Read all of it before producing anything. Paths are absolute.
 
 ## 1. Context
-- Client: Roy (California, US businesses). Project: the **Sowala / Piga** sensory-toy line. Target market: USA (parents, gift shops, sensory/OT-adjacent retail). Marketing materials are in **English**. The explainer is **bilingual EN + HE** (Hebrew, RTL) because the client reads Hebrew more easily.
+- Client: Roy (California). He is producing the marketing material for a friend who runs a **center for children on the autism spectrum** and wants to sell the product to the **parents of those children**. Brand: **Sowala** (only — there is no other brand word; never write "Piga"). Target market: USA. Marketing materials are in **English**. The explainer is **bilingual EN + HE** (Hebrew, RTL) because the client reads Hebrew more easily.
+- Audience truth: parents of autistic children who already know sensory play, deep pressure, fidgets and "the sloth my kid won't let go of". Speak to them warmly and plainly. The brand story (section 2b) is the emotional core — the **sloth is the origin animal** and leads visually; the red panda is the second character.
 - Product: four existing plush toys photographed in the client's shop, to be redesigned as **multi-sensory weighted comfort animals**:
   - **Red Panda** with a curly "lion-mane" hood, closed happy eyes, cream waffle-knit belly, brown embroidered paw pads on the feet. Comes in two sizes (large ≈16 in, small ≈12 in).
   - **Sloth** in taupe long-pile fur, cream face mask + white ear insides, dark nose, white felt claws, paw-pad feet. Also two sizes (large / small). The small sloth has a second sleeping face embroidered on its back.
@@ -23,12 +26,35 @@ Read all of it before producing anything. Paths are absolute.
 
 Extra facts you may use: removable inserts → machine-washable outer plush; inserts sold as spares/replacements; the two pockets are separate; "prototype" and "target" wording for weights.
 
+## 2b. Brand story (verbatim — use it; the explainer carries it in full, the poster and video carry one line of it)
+> **The Story of Sowala**
+> Sowala began with a simple act of love.
+> For years, a therapist dedicated to helping children on the autism spectrum would call her husband while he was out and ask, "Can you pick up another sensory toy for one of my kids?" More often than not, she was looking for something soft, comforting, and especially a sloth, because her clients loved holding and cuddling them.
+> Her husband began noticing how much these simple toys meant to the children. They weren't just stuffed animals—they could provide comfort, security, and a calming sensory experience.
+> That inspired an idea: What if he could create a sensory companion designed specifically with these children in mind?
+> And that's how Sowala was born—a soft, lovable sensory friend designed with different textures to touch and explore, comforting weight to hold close, and a removable warm-or-cool insert for an added soothing experience.
+> Sowala was inspired by a therapist, created with love, and made to bring comfort—one hug at a time.
+
+Hebrew version (for the explainer):
+> **הסיפור של Sowala**
+> Sowala התחילה ממעשה פשוט של אהבה.
+> במשך שנים, מטפלת שהקדישה את עצמה לילדים על הספקטרום האוטיסטי הייתה מתקשרת לבעלה כשהיה בחוץ ומבקשת: "אתה יכול לקנות עוד צעצוע חושי לאחד הילדים שלי?" לרוב היא חיפשה משהו רך ומנחם, ובמיוחד עצלן, כי הילדים שלה אהבו להחזיק ולחבק אותם.
+> בעלה התחיל לשים לב כמה הצעצועים הפשוטים האלה חשובים לילדים. הם לא היו סתם בובות — הם נתנו נחמה, ביטחון וחוויה חושית מרגיעה.
+> מכאן נולד הרעיון: מה אם אפשר ליצור חבר חושי שמעוצב במיוחד עם הילדים האלה בראש?
+> וכך נולדה Sowala — חבר חושי רך ואהוב, עם מרקמים שונים למגע ולחקירה, משקל מנחם להחזיק קרוב, ותוסף נשלף לחימום או לקירור לחוויה מרגיעה נוספת.
+> Sowala נולדה בהשראת מטפלת, נוצרה באהבה, ונועדה להביא נחמה — חיבוק אחד בכל פעם.
+
+Short lines derived from the story (approved for poster / video):
+- Tagline: **Comfort, one hug at a time.** / HE: **נחמה, חיבוק אחד בכל פעם.**
+- Origin line: **Inspired by a therapist. Created with love.** / HE: **בהשראת מטפלת. נוצר באהבה.**
+- Audience line: **Designed with children on the autism spectrum in mind.** / HE: **מעוצב במחשבה על ילדים על הספקטרום האוטיסטי.**
+
 ## 3. Positioning and claims (hard rules)
-- ALLOWED language: weighted sensory companion · warm & cool comfort insert · multiple tactile textures · designed for sensory exploration and comfort · calming deep-pressure feel · cozy, soothing, grounding.
-- FORBIDDEN: any claim that the product treats, helps, relieves or is for autism, ADHD, anxiety, stress disorders, pain, insomnia, sensory processing disorder or any condition; the words "therapy", "therapeutic", "clinical", "medical", "doctor-recommended"; "proven", "scientifically"; sleep claims. Never write "helps with anxiety". (Marketing a children's product with health claims requires substantiation the client does not have.)
+- ALLOWED language: weighted sensory companion · warm & cool comfort insert · multiple tactile textures · designed for sensory exploration and comfort · calming deep-pressure feel · cozy, soothing, grounding · **designed with children on the autism spectrum in mind** · **inspired by a therapist who works with children on the autism spectrum** · sensory-friendly · a sensory friend. (Naming the audience and telling the true origin story is fine; promising an outcome is not.)
+- FORBIDDEN: any claim that the product treats, helps, relieves, reduces or improves autism, ADHD, anxiety, meltdowns, stress, pain, sleep, focus, sensory processing or any condition or symptom; the words "therapy", "therapeutic", "clinical", "medical", "doctor-recommended", "therapist-approved/recommended" (the therapist *inspired* it — that is the only permitted use of the word); "proven", "scientifically", "clinically"; sleep claims. Never write "helps with anxiety", "calms meltdowns", "regulates". (Health-outcome claims on a consumer product require competent and reliable scientific evidence under FTC rules, which the client does not have. Saying who it is designed for is allowed; saying what it will do to them is not.)
 - Age / safety line (short form for poster & video): **Ages 3+ · Not for infants · Not a sleep product · Adult supervision with the warm insert**
 - Footer disclaimer (poster + explainer): *Not a medical device. Concept prototype — final weights, materials and age grading are subject to third-party safety testing (ASTM F963 / CPSIA) before sale.*
-- Brand line: **Sowala · Piga** (small, placeholder — the client will swap in the final brand). Product name on materials: **Weighted Sensory Companions**. Animals are called "Red Panda" and "Sloth" (sizes "Large" / "Small"). Do not invent character names.
+- Brand: **Sowala** — the brand name is the hero word (wordmark in Fredoka 700, lowercase or Title case, with a tiny sloth-claw or hug mark if you draw one; never "Piga", never "Sowala · Piga"). Product descriptor under it: **Weighted Sensory Companions** (or "Sensory Friends" as a softer synonym in body copy). Animals are called "Sloth" and "Red Panda" (sizes "Large" / "Small"). Do not invent character names. The poster and the video end card carry the tagline and the origin line from section 2b; the explainer carries the full story in both languages.
 
 ## 4. Visual direction
 - Mood: warm, cozy, premium-but-playful. Modern kids' brand (think Jellycat / Warmies shelf appeal), NOT a clinical/OT catalog. Real photos of the plush are the heroes — never replace them with cartoon drawings. Icons are simple inline SVG (line or flat), never emoji.
@@ -61,17 +87,18 @@ Extra facts you may use: removable inserts → machine-washable outer plush; ins
 ### Poster
 - Print: 18×24 in portrait. Build `poster.html` at **1350×1800 CSS px**, render with device scale factor 2 → **2700×3600 px PNG** (150 dpi) and a **PDF at 18×24 in**.
 - Social: also produce a **1080×1350 px** (4:5) variant of the same design (`poster-social.html` or a media query), rendered at DSF 1 → 1080×1350 PNG.
-- Must include: headline, one-line promise, the four functions with short copy, the two animals with sizes/prototype weights, the age/safety line, the disclaimer, brand line. Hero = real cutout photo(s).
+- Must include: Sowala wordmark, headline, one-line promise, the four functions with short copy, the two animals with sizes/prototype weights, the tagline + origin line (section 2b), the age/safety line, the disclaimer. Hero = real cutout photo(s), sloth leading.
 ### Demo video
 - 1920×1080, 30 fps, 45–60 s, H.264 yuv420p, AAC audio (generated soft music bed, −18 dBFS-ish, fade out). English captions burned in. Also a Hebrew-caption version (same scenes, `?lang=he` or a JS constant) if time allows — English first.
-- Structure: hook with the client's real footage → "one companion, four kinds of comfort" → one scene per function with an animated diagram (pocket opens, pouch slides in, thermometer warm/cool, texture callouts, hugging arms) → the two animals & sizes → safety/age line → brand end card.
+- Structure: hook with the client's real footage → "one companion, four kinds of comfort" → one scene per function with an animated diagram (pocket opens, pouch slides in, thermometer warm/cool, texture callouts, hugging arms) → the two animals & sizes → a short story beat ("Inspired by a therapist who kept asking for one more sloth…" → "Designed with children on the autism spectrum in mind") → safety/age line → Sowala end card with the tagline "Comfort, one hug at a time."
+
 - Use the real footage inside a rounded phone-style frame or as a blurred full-bleed background with the sharp portrait clip centered; never stretch it.
 ### Visual explainer
 - Single-file responsive HTML (`explainer/index.html`), light + dark tokens, phone width 390 px up to desktop, **EN/HE toggle** (`dir="rtl"` + Heebo when Hebrew), all diagrams inline SVG. Images referenced relative to `../assets/...` (they will be attached as supporting files when published).
-- Sections: hero · "one companion, four comforts" overview · exploded cutaway diagram (outer plush → belly pocket A weighted pouch → pocket B thermal insert → closures) · per-animal texture map (hotspots on the cutout photo) · how it works in 3 steps (chill/warm → slide in → hug) · sizes & prototype weights table · signature features · safety & positioning (what we say / what we never say) · manufacturing notes (materials, closures, washability, spare inserts) · next steps (prototype → wear test → accredited lab test) · footer disclaimer.
+- Sections: hero (Sowala wordmark + tagline) · **The story of Sowala** (full text, section 2b, both languages) · "one companion, four comforts" overview · exploded cutaway diagram (outer plush → belly pocket A weighted pouch → pocket B thermal insert → closures) · per-animal texture map (hotspots on the cutout photo) · how it works in 3 steps (chill/warm → slide in → hug) · sizes & prototype weights table · signature features · safety & positioning (what we say / what we never say) · manufacturing notes (materials, closures, washability, spare inserts) · next steps (prototype → wear test → accredited lab test) · footer disclaimer.
 
 ## 8. Quality bar / review checklist (used by verifiers)
-1. No forbidden claims (section 3). 2. No text overflow, clipping, overlap, or unreadable contrast. 3. Photos not stretched or drawn-over. 4. Copy matches section 2 facts (weights say "prototype target"). 5. Hebrew renders in Heebo, RTL, with correct punctuation order. 6. Brand line + disclaimer + age line present. 7. Video: captions on screen ≥ 2.5 s each, no scene cut mid-word, audio present, first & last frames clean. 8. Files saved where section 6 says, with the exact names in section 7.
+1. No forbidden claims (section 3). 2. No text overflow, clipping, overlap, or unreadable contrast. 3. Photos not stretched or drawn-over. 4. Copy matches section 2 facts (weights say "prototype target"). 5. Hebrew renders in Heebo, RTL, with correct punctuation order. 6. Brand is "Sowala" only (the string "Piga" must not appear anywhere); tagline + origin line present on poster and video end card; the full story present in the explainer in both languages; disclaimer + age line present. 7. Video: captions on screen ≥ 2.5 s each, no scene cut mid-word, audio present, first & last frames clean. 8. Files saved where section 6 says, with the exact names in section 7.
 
 ## 9. Client's concept text (verbatim)
 > This concept can work very well as a multi-sensory weighted comfort animal, and the four plush animals in your photo are especially suitable because their fur, faces, ears, paws, and body shapes already provide different tactile experiences.
