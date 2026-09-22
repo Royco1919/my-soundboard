@@ -43,8 +43,8 @@ SOFT_ZONES={        # straight occlusion seams that should read as fur ending, n
 HUE_ZONES={         # neighbour-fur remnants to knock out: (rect, kind)
  'sloth-pair': [((880,995,965,1135),'panda')],          # red-panda hand fur showing through the gap under the small sloth's claws
  'sloth-small': [((880,995,965,1135),'panda')],
- 'redpanda-pair': [((600,100,790,570),'notpanda')],    # strip of blue bag / grey counter between the mane and the TOP seam
- 'redpanda-small': [((600,100,790,570),'notpanda')],
+ 'redpanda-pair': [((600,100,790,250),'notpanda'),((600,250,790,600),'notpanda-nowhite')],    # strip of blue bag / grey counter / sloth chest fluff between the mane and the TOP seam (white ear inside allowed only at the top)
+ 'redpanda-small': [((600,100,790,250),'notpanda'),((600,250,790,600),'notpanda-nowhite')],
 }
 ERODE=4             # px of extra alpha erosion: the segmenter's matte kept a 2-3 px rim of counter/background inside the opaque area
 MIN_ISLAND=1500   # anything detached and smaller than this is a fleck of counter or neighbour fur
@@ -61,6 +61,8 @@ def hue_mask(kind):
     if kind=='notpanda':                                     # anything that is neither warm fur nor white ear: blue bag, grey/black counter
         warm=(H>=5)&(H<=48)&(S>=0.28); white=(V>=0.78)&(S<=0.22)
         return ~(warm|white)
+    if kind=='notpanda-nowhite':
+        return ~((H>=5)&(H<=48)&(S>=0.28))
     raise ValueError(kind)
 def cut(name,poly):
     m=Image.new('L',(Wd,Ht),0); ImageDraw.Draw(m).polygon(poly,fill=255)
