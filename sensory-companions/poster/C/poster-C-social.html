@@ -27,8 +27,15 @@ h1 .r{color:var(--rust)}
 .field-l{position:absolute;inset:0;background:var(--taupe);clip-path:polygon(0 0,585px 0,515px 100%,0 100%)}
 .field-r{position:absolute;inset:0;background:var(--rust);clip-path:polygon(585px 0,100% 0,100% 100%,515px 100%)}
 .name{position:absolute;font-family:var(--display);font-weight:700;font-size:58px;line-height:.92;letter-spacing:-0.02em;color:#fff}
-.sig{position:absolute;width:210px;font-size:16px;line-height:1.3;font-weight:700;color:#fff}
-.sig .k{display:block;font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin-bottom:4px}
+.bubble{position:absolute;background:var(--paper);border-radius:20px;padding:13px 16px 14px;font-size:15px;line-height:1.34;font-weight:600;color:var(--ink);box-shadow:0 8px 18px rgba(51,37,28,.18)}
+.bubble b{font-weight:800}
+.bubble .k{display:block;font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px;color:var(--ink-soft)}
+.bubble::after{content:"";position:absolute;width:20px;height:20px;background:var(--paper);transform:rotate(45deg);border-radius:3px}
+.bubble.tail-r::after{right:-8px;top:34px}
+.bubble.tail-l::after{left:-8px;top:34px}
+.chips{position:absolute;display:flex;flex-wrap:wrap;gap:6px}
+.chips.r{justify-content:flex-end}
+.chip{font-weight:700;font-size:12.5px;line-height:1;padding:7px 9px;border-radius:999px;background:rgba(255,253,249,.92);color:var(--ink)}
 .sloth-tag{position:absolute;left:48px;top:26px;display:inline-flex;align-items:center;gap:7px;background:var(--ink);color:#fff;font-weight:800;font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:8px 12px;border-radius:999px}
 .sloth-tag svg{width:14px;height:14px}
 .animal{position:absolute;z-index:5}
@@ -82,11 +89,15 @@ h1 .r{color:var(--rust)}
     <div class="field-l"></div><div class="field-r"></div>
     <div class="sloth-tag"><svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M9 26c-3-8-1-16 3-20M16 27c-3-8-1-17 3-21M23 26c-3-8-1-16 3-20"/></svg>Where Sowala began</div>
     <div class="name" style="left:48px;top:70px">Sloth</div>
-    <div class="sig" style="left:48px;top:140px"><span class="k">Signature feel</span>Extra-long hugging arms, child-safe hook-and-loop</div>
-    <div class="sig" style="left:48px;top:214px"><span class="k">Textures</span>long-pile fur · smooth face · textured claws · raised-dot belly · sherpa arms</div>
+    <div class="bubble tail-r" style="left:48px;top:136px;width:214px"><span class="k">Signature feel</span><b>Extra&#8209;long hugging arms</b> fasten around you with child&#8209;safe hook&#8209;and&#8209;loop, no magnets.</div>
+    <div class="chips" style="left:48px;top:276px;width:214px">
+      <span class="chip">long&#8209;pile fur</span><span class="chip">smooth face</span><span class="chip">textured claws</span><span class="chip">raised&#8209;dot belly</span><span class="chip">sherpa arms</span>
+    </div>
     <div class="name" style="right:48px;top:30px;text-align:right">Red<br>Panda</div>
-    <div class="sig" style="right:48px;top:146px;width:236px;text-align:right"><span class="k">Signature feel</span>Ribbed paw pads for thumb-rubbing, plus a crinkle tail</div>
-    <div class="sig" style="right:48px;top:246px;width:236px;text-align:right"><span class="k">Textures</span>curly mane · silky ears · ribbed paw pads · waffle-knit belly · crinkle tail</div>
+    <div class="bubble tail-l" style="right:48px;top:150px;width:236px;text-align:right"><span class="k">Signature feel</span><b>Ribbed paw pads</b> made for thumb&#8209;rubbing, plus a squeezable crinkle tail.</div>
+    <div class="chips r" style="right:48px;top:272px;width:236px">
+      <span class="chip">curly mane</span><span class="chip">silky ears</span><span class="chip">ribbed paw pads</span><span class="chip">waffle&#8209;knit belly</span><span class="chip">crinkle tail</span>
+    </div>
   </div>
   <div class="animal" style="left:268px;top:406px;height:404px"><img src="../../assets/poster-C/sloth-pair.png" alt="Sloth, large and small"></div>
   <div class="animal" style="left:560px;top:412px;height:398px"><img src="../../assets/poster-C/panda-pair.png" alt="Red Panda, large and small"></div>
@@ -96,7 +107,7 @@ h1 .r{color:var(--rust)}
       <div class="fn"><div class="ic w"><svg viewBox="0 0 32 32"><path d="M16 3v8M12.5 7.5 16 11l3.5-3.5"/><rect x="6" y="14" width="20" height="14" rx="5"/><circle cx="11.5" cy="21" r="1.4" fill="#fff" stroke="none"/><circle cx="16" cy="21" r="1.4" fill="#fff" stroke="none"/><circle cx="20.5" cy="21" r="1.4" fill="#fff" stroke="none"/></svg></div>
         <div><div class="n">01 · Weight</div><h3>A hug that stays</h3><p><b>Removable weighted pouch</b> in the lower belly — deep, even pressure. Double-sealed, out of reach in normal use.</p></div></div>
       <div class="fn"><div class="ic t"><svg viewBox="0 0 32 32"><rect x="12.5" y="3" width="7" height="17" rx="3.5"/><circle cx="16" cy="24.5" r="4.5"/><path d="M16 12v10"/></svg></div>
-        <div><div class="n">02 · Warm &amp; Cool</div><h3>Chill it or warm it</h3><p><b>Second pocket, its own insert</b>: reusable gel pack from the fridge, or a microwaveable, temperature-limited insert. No wires, no batteries.</p></div></div>
+        <div><div class="n">02 · Warm &amp; Cool</div><h3>Chill it or warm it</h3><p><b>Second pocket, its own insert</b>: reusable gel pack from the fridge, or a microwaveable grain insert made for plush. No wires, no batteries.</p></div></div>
       <div class="fn"><div class="ic h"><svg viewBox="0 0 32 32"><path d="M10.5 29V14.5a5.5 5.5 0 0 1 11 0V29"/><path d="M13 19.5a3 3 0 0 1 6 0"/><path d="M14.6 23a1.4 1.4 0 0 1 2.8 0"/><circle cx="5" cy="10" r="1.2" fill="#fff" stroke="none"/><circle cx="5" cy="14.5" r="1.2" fill="#fff" stroke="none"/><circle cx="5" cy="19" r="1.2" fill="#fff" stroke="none"/><path d="M25.5 9.5c1.5 1.3 1.5 2.7 0 4s-1.5 2.7 0 4 1.5 2.7 0 4"/></svg></div>
         <div><div class="n">03 · Touch</div><h3>Textures to explore</h3><p><b>Every friend feels different</b> — curly, waffle, ribbed, long-pile, smooth, with hidden texture patches.</p></div></div>
       <div class="fn"><div class="ic c"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12.5"/><path d="M9.5 14.5q3-3.4 6 0M16.5 14.5q3-3.4 6 0"/><path d="M11.5 20q4.5 4.2 9 0"/></svg></div>

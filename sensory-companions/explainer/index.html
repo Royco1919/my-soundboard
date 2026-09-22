@@ -137,13 +137,24 @@ section+section{border-top:1px solid var(--line)}
 .rule b{color:var(--ink)}
 .svg-t{font-family:var(--display);font-weight:600;fill:var(--ink)}
 .svg-s{font-family:var(--body);font-weight:700;fill:var(--ink-soft)}
+.diagram .svg-t{font-size:22px}
+.diagram .svg-s{font-size:18px}
+.diagram .svg-pk{font-family:var(--display);font-weight:600;fill:var(--ink);font-size:18px;letter-spacing:.04em}
+.diagram .svg-warn{fill:var(--rust)}
 .badge{fill:var(--ink)}
-.badge-t{font-family:var(--display);font-weight:600;fill:var(--paper)}
+.badge-t{font-family:var(--display);font-weight:600;fill:var(--paper);font-size:24px}
+@media (max-width:760px){
+  /* phone: the SVG is ~325 px wide, so keep only short titles at ~14 px and leave the details to the numbered list below */
+  .diagram .detail{display:none}
+  .diagram .svg-t{font-size:30px}
+  .diagram .svg-s{font-size:24px}
+  .diagram .svg-pk{font-size:22px}
+}
 /* texture maps */
 .tex-grid{display:grid;gap:40px}
 @media (min-width:900px){.tex-grid{gap:56px}}
 .tex{display:grid;gap:22px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:20px}
-@media (min-width:760px){.tex{grid-template-columns:minmax(260px,380px) 1fr;gap:32px;padding:28px}}
+@media (min-width:900px){.tex{grid-template-columns:minmax(260px,380px) 1fr;gap:32px;padding:28px}}
 .tex-photo svg{width:100%;height:auto;max-width:380px;margin-inline:auto}
 .tex-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
 .tex-head h3{font-size:1.6rem}
@@ -170,7 +181,21 @@ section+section{border-top:1px solid var(--line)}
 .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:20px;background:var(--paper)}
 table{border-collapse:collapse;width:100%;min-width:560px;font-size:.98rem}
 .sizes-table td:nth-child(2),.sizes-table td:nth-child(3),.sizes-table td:nth-child(4){white-space:nowrap}
-.mkt-table{min-width:720px;font-size:.95rem}
+.sizes-inserts{display:none}
+@media (min-width:601px){.sizes-table td:first-child{white-space:nowrap}}
+@media (max-width:600px){
+  .sizes-table{min-width:0;font-size:.92rem}
+  .sizes-table th,.sizes-table td{padding:12px 9px}
+  .sizes-table th:first-child,.sizes-table td:first-child{padding-left:14px}
+  .sizes-table th:nth-child(5),.sizes-table td:nth-child(5){display:none}
+  .sizes-inserts{display:block;margin:0;padding:12px 14px;border-top:1px solid var(--line);font-size:.9rem;color:var(--ink-soft)}
+}
+.mkt-table{min-width:960px;font-size:.95rem}
+.mkt-table th:first-child,.mkt-table td:first-child{min-width:170px}
+.mkt-table th:nth-child(4),.mkt-table td:nth-child(4){min-width:170px}
+.mkt-table th:last-child,.mkt-table td:last-child{min-width:330px}
+.scroll-hint{display:none;font-size:.82rem;color:var(--ink-soft);margin:0 0 8px;font-weight:700}
+@media (max-width:1000px){.scroll-hint{display:block}}
 .mkt-table td:nth-child(2),.mkt-table td:nth-child(3){white-space:nowrap}
 .mkt-table tr.us td{background:var(--weight-soft);font-weight:700}
 .mkt-table tr.us td .w{color:var(--weight)}
@@ -180,6 +205,12 @@ table{border-collapse:collapse;width:100%;min-width:560px;font-size:.98rem}
 .ladder span{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:var(--paper);border:1px solid var(--line);font-size:.88rem;font-weight:700}
 .ladder span.us{background:var(--weight);color:#fff;border-color:var(--weight)}
 .ladder .arrow{font-family:var(--display);color:var(--ink-soft);padding:0 2px;background:none;border:0}
+.ladder .cap{flex-basis:100%;background:none;border:0;padding:0;color:var(--ink-soft);font-size:.82rem;text-transform:uppercase;letter-spacing:.08em}
+@media (max-width:600px){
+  .ladder{flex-direction:column;align-items:flex-start;gap:4px}
+  .ladder .arrow{transform:rotate(90deg);margin-left:12px;line-height:1}
+  .ladder .cap{margin-bottom:4px}
+}
 th,td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
 th{font-family:var(--display);font-weight:600;font-size:.95rem;color:var(--ink-soft);background:var(--bg)}
 tr:last-child td{border-bottom:0}
@@ -274,7 +305,7 @@ footer p{max-width:70ch}
       sowala
     </a>
     <nav class="nav" aria-label="Sections">
-      <a href="#story">Story</a><a href="#comforts">Four comforts</a><a href="#inside">Inside</a><a href="#textures">Textures</a><a href="#sizes">Sizes</a><a href="#safety">Safety</a>
+      <a href="#story">Story</a><a href="#comforts">Four comforts</a><a href="#inside">Inside</a><a href="#textures">Textures</a><a href="#sizes">Sizes</a><a href="#market">Market</a><a href="#safety">Safety</a>
     </nav>
     <button class="toggle" id="themeToggle" type="button" aria-label="Switch theme">
       <span class="on-light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></span>
@@ -312,7 +343,7 @@ footer p{max-width:70ch}
 <section class="story" id="story">
   <div class="wrap">
     <figure class="story-art">
-      <img src="../assets/sloth-pair.png" alt="The large and small Sowala sloths sitting together" width="980" height="1540">
+      <img src="../assets/sloth-pair-clean.png" alt="The large and small Sowala sloths sitting together" width="891" height="1392">
       <figcaption>The sloth is where it all started.</figcaption>
     </figure>
     <div>
@@ -376,12 +407,13 @@ footer p{max-width:70ch}
     </div>
     <div class="cutaway">
       <div class="diagram">
-        <svg viewBox="0 0 700 600" role="img" aria-labelledby="cutTitle">
+        <svg viewBox="0 0 700 612" role="img" aria-labelledby="cutTitle">
           <title id="cutTitle">Exploded cutaway of the plush showing the outer body, the belly flap, the weighted pouch and the thermal insert</title>
           <defs>
             <pattern id="pellets" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="2.2" fill="var(--weight)" opacity=".7"/><circle cx="11" cy="10" r="2.2" fill="var(--weight)" opacity=".7"/></pattern>
             <linearGradient id="thermo" x1="0" x2="1"><stop offset="0" stop-color="var(--cool)"/><stop offset="1" stop-color="var(--warm)"/></linearGradient>
             <pattern id="hook" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.6" fill="var(--ink)" opacity=".45"/></pattern>
+            <marker id="arrow" viewBox="0 0 10 12" refX="9" refY="6" markerWidth="10" markerHeight="12" orient="auto"><path d="M0 0l10 6-10 6Z" fill="var(--ink)"/></marker>
           </defs>
 
           <!-- OUTER PLUSH (sloth silhouette) -->
@@ -391,9 +423,9 @@ footer p{max-width:70ch}
             <circle cx="112" cy="110" r="26" fill="var(--plush)"/><circle cx="288" cy="110" r="26" fill="var(--plush)"/>
             <circle cx="112" cy="112" r="14" fill="var(--skin)"/><circle cx="288" cy="112" r="14" fill="var(--skin)"/>
             <ellipse cx="200" cy="160" rx="66" ry="52" fill="var(--skin)"/>
-            <ellipse cx="200" cy="168" rx="16" ry="12" fill="var(--ink-soft)"/>
-            <path d="M150 150q20-8 34-2l4 20q-22 4-40-4Z" fill="var(--plush-dark)" opacity=".55"/><path d="M250 150q-20-8-34-2l-4 20q22 4 40-4Z" fill="var(--plush-dark)" opacity=".55"/><circle cx="170" cy="150" r="6" fill="var(--ink)"/><circle cx="230" cy="150" r="6" fill="var(--ink)"/>
-            <path d="M184 190q16 12 32 0" stroke="var(--ink)" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <ellipse cx="200" cy="168" rx="16" ry="12" fill="#6B5A4C"/>
+            <path d="M150 150q20-8 34-2l4 20q-22 4-40-4Z" fill="var(--plush-dark)" opacity=".55"/><path d="M250 150q-20-8-34-2l-4 20q22 4 40-4Z" fill="var(--plush-dark)" opacity=".55"/><circle cx="170" cy="150" r="6" fill="#33251C"/><circle cx="230" cy="150" r="6" fill="#33251C"/>
+            <path d="M184 190q16 12 32 0" stroke="#33251C" stroke-width="3" fill="none" stroke-linecap="round"/>
             <path d="M62 300q-20 60 12 130" stroke="var(--plush-dark)" stroke-width="3" fill="none" stroke-linecap="round" opacity=".6"/>
             <path d="M338 300q20 60-12 130" stroke="var(--plush-dark)" stroke-width="3" fill="none" stroke-linecap="round" opacity=".6"/>
             <!-- arm hint (long hugging arm) -->
@@ -407,67 +439,69 @@ footer p{max-width:70ch}
             <!-- pocket B (upper, thermal) -->
             <rect x="112" y="332" width="176" height="66" rx="10" fill="url(#thermo)" opacity=".35"/>
             <rect x="112" y="332" width="176" height="66" rx="10" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
-            <text x="200" y="370" text-anchor="middle" class="svg-s" font-size="14">POCKET B · thermal</text>
+            <text x="200" y="359" text-anchor="middle" class="svg-pk">POCKET B</text>
+            <text x="200" y="383" text-anchor="middle" class="svg-s">warm‑or‑cool</text>
             <!-- divider seam -->
             <line x1="104" y1="410" x2="296" y2="410" stroke="var(--ink)" stroke-width="3"/>
             <line x1="104" y1="416" x2="296" y2="416" stroke="var(--ink)" stroke-width="1" stroke-dasharray="3 3"/>
             <!-- pocket A (lower belly, weighted) -->
             <rect x="112" y="426" width="176" height="70" rx="10" fill="var(--weight)" opacity=".28"/>
             <rect x="112" y="426" width="176" height="70" rx="10" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
-            <text x="200" y="466" text-anchor="middle" class="svg-s" font-size="14">POCKET A · weight</text>
+            <text x="200" y="455" text-anchor="middle" class="svg-pk">POCKET A</text>
+            <text x="200" y="479" text-anchor="middle" class="svg-s">weighted pouch</text>
           </g>
 
           <!-- FLAP (closure) exploded up-right -->
-          <g transform="translate(430 40)">
+          <path d="M300 318 Q330 62 376 62" stroke="var(--ink)" stroke-width="1.5" fill="none" stroke-dasharray="5 5" marker-end="url(#arrow)"/>
+          <g transform="translate(420 30)">
             <path d="M0 0h200a10 10 0 0 1 10 10v44a10 10 0 0 1-10 10H0Z" fill="var(--plush)"/>
             <rect x="12" y="20" width="176" height="24" rx="5" fill="url(#hook)"/>
             <rect x="12" y="20" width="176" height="24" rx="5" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
-            <text x="105" y="90" text-anchor="middle" class="svg-t" font-size="17">Hidden flap · hook‑and‑loop</text>
-            <text x="105" y="110" text-anchor="middle" class="svg-s" font-size="13">child‑resistant · no magnets · no zipper</text>
+            <text x="105" y="92" text-anchor="middle" class="svg-t">Hidden flap<tspan class="detail"> · hook‑and‑loop</tspan></text>
+            <text x="105" y="116" text-anchor="middle" class="svg-s detail">child‑resistant · no magnets</text>
+            <text x="105" y="138" text-anchor="middle" class="svg-s detail">no zipper · an adult opens it</text>
           </g>
-          <!-- leader from flap to window top edge -->
-          <path d="M430 72 Q330 72 300 318" stroke="var(--ink)" stroke-width="1.5" fill="none" stroke-dasharray="5 5"/>
 
           <!-- THERMAL INSERT exploded right -->
-          <g transform="translate(450 200)">
+          <path d="M296 365 C350 365 340 215 376 215" stroke="var(--ink)" stroke-width="1.5" fill="none" stroke-dasharray="5 5" marker-end="url(#arrow)"/>
+          <g transform="translate(420 180)">
             <rect x="0" y="0" width="180" height="70" rx="14" fill="url(#thermo)"/>
             <rect x="0" y="0" width="180" height="70" rx="14" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
             <path d="M28 35h124" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".8"/>
             <circle cx="28" cy="35" r="5" fill="#fff"/><circle cx="152" cy="35" r="5" fill="#fff"/>
-            <text x="90" y="98" text-anchor="middle" class="svg-t" font-size="17">Warm‑or‑cool insert</text>
-            <text x="90" y="118" text-anchor="middle" class="svg-s" font-size="13">gel pack (fridge) · grain insert (microwave)</text>
-            <text x="90" y="136" text-anchor="middle" class="svg-s" font-size="13">heat by the guide · adult checks · no wires</text>
+            <text x="90" y="98" text-anchor="middle" class="svg-t">Warm‑or‑cool insert</text>
+            <text x="90" y="122" text-anchor="middle" class="svg-s detail">gel pack · chilled in the fridge</text>
+            <text x="90" y="144" text-anchor="middle" class="svg-s detail">grain insert · microwaved by the guide</text>
+            <text x="90" y="166" text-anchor="middle" class="svg-s detail">an adult checks it · no wires</text>
           </g>
-          <path d="M296 365 H450" stroke="var(--ink)" stroke-width="1.5" fill="none" stroke-dasharray="5 5"/>
-          <path d="M440 359l10 6-10 6Z" fill="var(--ink)"/>
 
           <!-- WEIGHTED POUCH exploded right -->
-          <g transform="translate(450 400)">
+          <path d="M296 461 C340 461 340 423 376 423" stroke="var(--ink)" stroke-width="1.5" fill="none" stroke-dasharray="5 5" marker-end="url(#arrow)"/>
+          <g transform="translate(420 385)">
             <rect x="0" y="0" width="180" height="76" rx="18" fill="var(--weight-soft)"/>
             <rect x="0" y="0" width="180" height="76" rx="18" fill="url(#pellets)"/>
             <rect x="0" y="0" width="180" height="76" rx="18" fill="none" stroke="var(--weight)" stroke-width="3"/>
             <rect x="6" y="6" width="168" height="64" rx="14" fill="none" stroke="var(--weight)" stroke-width="1.5" stroke-dasharray="4 3"/>
-            <text x="90" y="104" text-anchor="middle" class="svg-t" font-size="17">Weighted pouch</text>
-            <text x="90" y="124" text-anchor="middle" class="svg-s" font-size="13">poly pellets · double‑sealed · DO NOT MICROWAVE</text>
-            <text x="90" y="142" text-anchor="middle" class="svg-s" font-size="13">Large 3 lb · Small 2 lb (prototype target)</text>
+            <text x="90" y="104" text-anchor="middle" class="svg-t">Weighted pouch</text>
+            <text x="90" y="128" text-anchor="middle" class="svg-s detail">poly pellets · double‑sealed</text>
+            <text x="90" y="150" text-anchor="middle" class="svg-s detail">Large 3 lb · Small 2 lb · prototype target</text>
+            <text x="90" y="172" text-anchor="middle" class="svg-s svg-warn detail">DO NOT MICROWAVE</text>
           </g>
-          <path d="M296 461 H450" stroke="var(--ink)" stroke-width="1.5" fill="none" stroke-dasharray="5 5"/>
-          <path d="M440 455l10 6-10 6Z" fill="var(--ink)"/>
 
           <!-- washing note -->
-          <g transform="translate(24 536)">
+          <g transform="translate(24 568)">
             <circle cx="14" cy="14" r="13" fill="none" stroke="var(--cool)" stroke-width="2"/>
             <path d="M6 15q4-4 8 0t8 0" stroke="var(--cool)" stroke-width="2" fill="none" stroke-linecap="round"/>
-            <text x="38" y="19" class="svg-s" font-size="14">Inserts out → outer plush is machine‑washable</text>
+            <text x="38" y="20" class="svg-s">Inserts out → outer plush is machine‑washable</text>
           </g>
 
           <!-- NUMBER BADGES -->
           <g>
-            <circle cx="52" cy="200" r="17" class="badge"/><text x="52" y="206" text-anchor="middle" class="badge-t" font-size="18">1</text>
-            <circle cx="405" cy="62" r="17" class="badge"/><text x="405" y="68" text-anchor="middle" class="badge-t" font-size="18">2</text>
-            <circle cx="390" cy="252" r="17" class="badge"/><text x="390" y="258" text-anchor="middle" class="badge-t" font-size="18">3</text>
-            <circle cx="390" cy="452" r="17" class="badge"/><text x="390" y="458" text-anchor="middle" class="badge-t" font-size="18">4</text>
-            <circle cx="76" cy="413" r="17" class="badge"/><text x="76" y="419" text-anchor="middle" class="badge-t" font-size="18">5</text>
+            <circle cx="52" cy="200" r="22" class="badge"/><text x="52" y="208" text-anchor="middle" class="badge-t">1</text>
+            <circle cx="398" cy="62" r="22" class="badge"/><text x="398" y="70" text-anchor="middle" class="badge-t">2</text>
+            <circle cx="398" cy="215" r="22" class="badge"/><text x="398" y="223" text-anchor="middle" class="badge-t">3</text>
+            <circle cx="398" cy="423" r="22" class="badge"/><text x="398" y="431" text-anchor="middle" class="badge-t">4</text>
+            <circle cx="76" cy="413" r="22" class="badge"/><text x="76" y="421" text-anchor="middle" class="badge-t">5</text>
           </g>
         </svg>
       </div>
@@ -496,15 +530,15 @@ footer p{max-width:70ch}
       <!-- SLOTH -->
       <article class="tex">
         <div class="tex-photo">
-          <svg viewBox="150 20 570 1050" role="img" aria-label="Sloth with numbered texture hotspots">
-            <image href="../assets/sloth-small.png" x="0" y="0" width="720" height="1160"/>
+          <svg viewBox="0 0 700 1020" role="img" aria-label="Sloth with numbered texture hotspots">
+            <image href="../assets/clean/sloth-small.png" x="0" y="0" width="700" height="1020"/>
             <g>
-              <circle cx="470" cy="470" r="27" class="dot"/><text x="470" y="480" text-anchor="middle" class="dot-t" font-size="28">1</text>
-              <circle cx="265" cy="290" r="27" class="dot"/><text x="265" y="300" text-anchor="middle" class="dot-t" font-size="28">2</text>
-              <circle cx="205" cy="600" r="27" class="dot"/><text x="205" y="610" text-anchor="middle" class="dot-t" font-size="28">3</text>
-              <circle cx="360" cy="720" r="27" class="dot"/><text x="360" y="730" text-anchor="middle" class="dot-t" font-size="28">4</text>
-                            <circle cx="570" cy="470" r="27" class="dot"/><text x="570" y="480" text-anchor="middle" class="dot-t" font-size="28">5</text>
-              <circle cx="215" cy="965" r="27" class="dot"/><text x="215" y="975" text-anchor="middle" class="dot-t" font-size="28">6</text>
+              <circle cx="494" cy="458" r="27" class="dot"/><text x="494" y="468" text-anchor="middle" class="dot-t" font-size="28">1</text>
+              <circle cx="289" cy="278" r="27" class="dot"/><text x="289" y="288" text-anchor="middle" class="dot-t" font-size="28">2</text>
+              <circle cx="229" cy="588" r="27" class="dot"/><text x="229" y="598" text-anchor="middle" class="dot-t" font-size="28">3</text>
+              <circle cx="384" cy="708" r="27" class="dot"/><text x="384" y="718" text-anchor="middle" class="dot-t" font-size="28">4</text>
+              <circle cx="594" cy="458" r="27" class="dot"/><text x="594" y="468" text-anchor="middle" class="dot-t" font-size="28">5</text>
+              <circle cx="239" cy="953" r="27" class="dot"/><text x="239" y="963" text-anchor="middle" class="dot-t" font-size="28">6</text>
             </g>
           </svg>
         </div>
@@ -515,7 +549,7 @@ footer p{max-width:70ch}
             <li><span class="n">2</span><img src="../assets/closeups/sloth-face.jpg" alt=""><div><b>Smooth face mask</b><span>Short, smooth cream fabric on the face and inside the ears—a cool, calm contrast to the fur.</span></div></li>
             <li><span class="n">3</span><img src="../assets/closeups/sloth-claws.jpg" alt=""><div><b>Textured claws</b><span>Firm felt claws at the end of each arm—something to run a thumb across.</span></div></li>
             <li><span class="n">4</span><img src="../assets/closeups/sloth-belly-patch.jpg" alt=""><div><b>Raised‑dot belly patch</b><span>A hidden patch of raised dots on the lower belly, over the insert pockets.</span></div></li>
-            <li><span class="n">5</span><img src="../assets/closeups/sloth-fur.jpg" alt=""><div><b>Sherpa inside the arms</b><span>The inner side of the long arms is lined with sherpa—warm and nubbly against the child.</span></div></li>
+            <li><span class="n">5</span><img src="../assets/closeups/sloth-sherpa.jpg" alt=""><div><b>Sherpa inside the arms</b><span>The inner side of the long arms is lined with sherpa—warm and nubbly against the child.</span></div></li>
             <li><span class="n">6</span><img src="../assets/closeups/sloth-foot.jpg" alt=""><div><b>Paw‑pad feet</b><span>Smooth minky pads with embroidered toes.</span></div></li>
           </ul>
           <p class="tex-sig"><b>Signature feature:</b> extra‑long, wire‑free hugging arms that wrap around the child and fasten with child‑safe hook‑and‑loop.</p>
@@ -525,15 +559,15 @@ footer p{max-width:70ch}
       <!-- RED PANDA -->
       <article class="tex">
         <div class="tex-photo">
-          <svg viewBox="30 30 760 1110" role="img" aria-label="Red Panda with numbered texture hotspots">
-            <image href="../assets/redpanda-small.png" x="0" y="0" width="790" height="1140"/>
+          <svg viewBox="0 0 868 1078" role="img" aria-label="Red Panda with numbered texture hotspots">
+            <image href="../assets/clean/redpanda-small.png" x="0" y="0" width="868" height="1078"/>
             <g>
-              <circle cx="560" cy="220" r="27" class="dot"/><text x="560" y="230" text-anchor="middle" class="dot-t" font-size="28">1</text>
-              <circle cx="560" cy="98" r="27" class="dot"/><text x="560" y="108" text-anchor="middle" class="dot-t" font-size="28">2</text>
-              <circle cx="700" cy="990" r="27" class="dot"/><text x="700" y="1000" text-anchor="middle" class="dot-t" font-size="28">3</text>
-              <circle cx="440" cy="700" r="27" class="dot"/><text x="440" y="710" text-anchor="middle" class="dot-t" font-size="28">4</text>
-              <circle cx="740" cy="820" r="27" class="dot"/><text x="740" y="830" text-anchor="middle" class="dot-t" font-size="28">5</text>
-              <circle cx="120" cy="580" r="27" class="dot"/><text x="120" y="590" text-anchor="middle" class="dot-t" font-size="28">6</text>
+              <circle cx="544" cy="191" r="27" class="dot"/><text x="544" y="201" text-anchor="middle" class="dot-t" font-size="28">1</text>
+              <circle cx="556" cy="52" r="27" class="dot"/><text x="556" y="62" text-anchor="middle" class="dot-t" font-size="28">2</text>
+              <circle cx="684" cy="961" r="27" class="dot"/><text x="684" y="971" text-anchor="middle" class="dot-t" font-size="28">3</text>
+              <circle cx="424" cy="671" r="27" class="dot"/><text x="424" y="681" text-anchor="middle" class="dot-t" font-size="28">4</text>
+              <circle cx="790" cy="470" r="27" class="dot"/><text x="790" y="480" text-anchor="middle" class="dot-t" font-size="28">5</text>
+              <circle cx="104" cy="551" r="27" class="dot"/><text x="104" y="561" text-anchor="middle" class="dot-t" font-size="28">6</text>
             </g>
           </svg>
         </div>
@@ -544,7 +578,7 @@ footer p{max-width:70ch}
             <li><span class="n">2</span><img src="../assets/closeups/redpanda-face.jpg" alt=""><div><b>Silky‑smooth ears</b><span>Satin‑smooth ear insides tucked into the curls.</span></div></li>
             <li><span class="n">3</span><img src="../assets/closeups/paw-pad.jpg" alt=""><div><b>Ribbed paw pads</b><span>Corduroy‑ribbed pads with embroidered toes on both feet—made for thumb‑rubbing.</span></div></li>
             <li><span class="n">4</span><img src="../assets/closeups/waffle-belly.jpg" alt=""><div><b>Waffle‑knit belly</b><span>A cream waffle texture across the whole belly, over the insert pockets.</span></div></li>
-            <li><span class="n">5</span><img src="../assets/closeups/curly-mane.jpg" alt=""><div><b>Crinkle tail</b><span>Behind the body: a squeezable tail with a quiet crinkle layer sealed inside—a feature to try, since some children prefer no sound.</span></div></li>
+            <li><span class="n">5</span><img src="../assets/closeups/redpanda-tail.jpg" alt=""><div><b>Crinkle tail</b><span>Behind the body: a squeezable tail with a quiet crinkle layer sealed inside—a feature to try, since some children prefer no sound.</span></div></li>
             <li><span class="n">6</span><img src="../assets/closeups/paw-pad-2.jpg" alt=""><div><b>Embroidered hand pads</b><span>Short, dense fur on the arms with stitched pads at the paws.</span></div></li>
           </ul>
           <p class="tex-sig"><b>Signature feature:</b> a squeezable, quiet crinkle tail plus ribbed paw pads for thumb‑rubbing. Try the tail first—sound‑sensitive children may prefer the pads alone.</p>
@@ -619,16 +653,16 @@ footer p{max-width:70ch}
     <div class="sec-head">
       <p class="eyebrow">Sizes &amp; weights</p>
       <h2>Two animals, two sizes, one system.</h2>
-      <p class="lede">Every size takes the same inserts. Weights are prototype targets for roughly 12–16 inch plush and will be tuned in wear testing rather than defaulting to heavier.</p>
+      <p class="lede">Every size takes the same inserts. Weights are prototype targets for roughly <span style="white-space:nowrap">12–16 inch</span> plush and will be tuned in wear testing rather than defaulting to heavier.</p>
     </div>
     <div class="sizes-grid">
       <div class="sizes-art">
-        <figure><div class="ph"><img src="../assets/sloth-pair.png" alt="Large and small sloth" width="980" height="1540"></div><figcaption>Sloth<small>Large · Small</small></figcaption></figure>
+        <figure><div class="ph"><img src="../assets/sloth-pair-clean.png" alt="Large and small sloth" width="891" height="1392"></div><figcaption>Sloth<small>Large · Small</small></figcaption></figure>
         <figure><div class="ph"><img src="../assets/redpanda-pair.png" alt="Large and small red panda" width="800" height="1720"></div><figcaption>Red Panda<small>Large · Small</small></figcaption></figure>
       </div>
       <div>
         <div class="tablewrap">
-          <table>
+          <table class="sizes-table">
             <thead><tr><th>Companion</th><th>Size</th><th>Height</th><th>Weighted pouch<br><span style="font-weight:400">(prototype target)</span></th><th>Inserts</th></tr></thead>
             <tbody>
               <tr><td><span class="lbl">Sloth</span></td><td>Large</td><td>≈ 16 in</td><td><span class="w">3 lb</span></td><td rowspan="2">Gel pack (cool) · microwave insert (warm)</td></tr>
@@ -637,11 +671,47 @@ footer p{max-width:70ch}
               <tr><td><span class="lbl">Red Panda</span></td><td>Small</td><td>≈ 12 in</td><td><span class="w">2 lb</span></td></tr>
             </tbody>
           </table>
+          <p class="sizes-inserts"><b>Inserts, every size:</b> gel pack (cool) · microwave insert (warm)</p>
         </div>
         <p class="note">The small sloth also carries a second, eyes‑closed face embroidered on its back—turn it over for a quieter friend. All inserts are sold separately as spares and replacements.</p>
         <p class="note"><b>Sizing hint, not a dose:</b> lap‑pad makers work from roughly 5 % of body weight (3 lb for a 60 lb child; 2 lb for 40 lb) and don’t recommend weighted lap items under age 3 or for children who mouth objects. No prescription guideline for weighted items is established, so the final weights are set in wear testing.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- MARKET CONTEXT -->
+<section id="market">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Market context</p>
+      <h2>Where the concept lands.</h2>
+      <p class="lede">Weighted plush is an existing shelf. Sowala’s 2–3 lb prototype target sits in the middle of it—lighter than the big catalog animals, heavier than a microwavable plush—and is the only one that separates the weight from the warm‑or‑cool insert.</p>
+    </div>
+    <p class="scroll-hint" aria-hidden="true">Swipe the table sideways →</p>
+    <div class="tablewrap">
+      <table class="mkt-table">
+        <thead><tr><th>Product</th><th>Weight</th><th>Price (USD)</th><th>Age label</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr class="us"><td>Sowala Large / Small<span class="sub">concept prototype</span></td><td><span class="w">3 lb / 2 lb</span><span class="sub">prototype target</span></td><td>TBD</td><td>Ages 3+ · not for infants · not a sleep product</td><td>≈ 16 in / 12 in. Removable weighted pouch plus a separate warm‑or‑cool insert; machine‑washable outer plush; hidden textures; one signature feature per animal.</td></tr>
+          <tr><td>Hugimals (original line)<span class="sub">e.g. Charlie the Puppy; the line includes a sloth</span></td><td><span class="w">4.5 lb</span></td><td>≈ $68</td><td>Ages 2+ (kids, teens, adults)</td><td>≈ 20 in long / 11 in sitting. Glass beads in a removable inner insert; machine‑washable outer. Sold with outcome language Sowala avoids.</td></tr>
+          <tr><td>Hugimals Hugarounds<span class="sub">warmable weighted line</span></td><td><span class="w">≈ 2.5 lb</span></td><td>not confirmed</td><td>not stated</td><td>Microwave‑ and freezer‑safe plush weighted all over. The closest weight + warm/cool competitor; Sowala keeps the two inserts separate.</td></tr>
+          <tr><td>Moon Pals<span class="sub">Bo, Mylo, Opal</span></td><td><span class="w">5 lb</span></td><td>≈ $70 <span class="sub">$60–95 with sales / bundles</span></td><td>Ages 3+</td><td>22 in jumbo. Poly pellets spread through arms, legs and stomach; big fidget ears. Sold with outcome wording Sowala avoids.</td></tr>
+          <tr><td>Warmies 13 in microwavable plush<span class="sub">e.g. Sloth</span></td><td><span class="w">1.5–2 lb</span></td><td>$25–30</td><td>All ages under adult supervision; not under 3 unsupervised</td><td>Flaxseed + dried lavender fill; max 90 s at 800 W; freezer‑chillable; surface‑clean only. Proves the plush‑warm category and its supervision labeling.</td></tr>
+          <tr><td>Fun &amp; Function weighted animal lap pad<span class="sub">Momo the Monkey</span></td><td><span class="w">3 lb</span></td><td>≈ $42.50</td><td>Children 30 lb and up; not under 3; not for mouthing children</td><td>Catalog product built on a ≈ 5 % body‑weight rule of thumb. Same 3 lb as Sowala Large—a normal child lap weight.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ladder" aria-label="Weight ladder, light to heavy">
+      <span class="cap">Light → heavy</span>
+      <span>Warmies 1.5–2 lb</span><span class="arrow">→</span>
+      <span class="us">Sowala 2–3 lb</span><span class="arrow">→</span>
+      <span>Hugarounds ≈ 2.5 lb</span><span class="arrow">→</span>
+      <span>Lap pad 3 lb</span><span class="arrow">→</span>
+      <span>Hugimals 4.5 lb</span><span class="arrow">→</span>
+      <span>Moon Pals 5 lb</span>
+    </div>
+    <p class="note">A defensible middle weight—but 2–3 lb is a prototype target to be tuned in wear testing, not a recommended amount. Prices and weights are retailer listings as checked in September 2026 and will move.</p>
   </div>
 </section>
 
@@ -664,7 +734,7 @@ footer p{max-width:70ch}
         </div>
       </article>
       <article class="sig">
-        <img src="../assets/closeups/paw-pad.jpg" alt="The red panda's embroidered paw pad" width="190" height="220">
+        <img src="../assets/closeups/paw-pad-wide.jpg" alt="The red panda's ribbed, embroidered paw pads on both feet" width="880" height="495">
         <div class="body">
           <span class="tag">Red Panda</span>
           <h3>Crinkle tail &amp; ribbed paw pads</h3>
@@ -697,36 +767,102 @@ footer p{max-width:70ch}
           <li>Inspired by a therapist who works with children on the autism spectrum</li>
           <li>Sensory‑friendly · a sensory friend</li>
         </ul>
+        <p class="small muted" style="margin-top:14px">“Calming” always describes the feel of the weight, never the child. The therapist <em>inspired</em> it—that is the only way the word appears.</p>
       </div>
       <div class="say no">
         <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 8 8 8M16 8l-8 8"/></svg>What we never say</h3>
         <ul>
           <li>That it treats, helps, relieves, reduces or improves autism, ADHD, anxiety, meltdowns, stress, pain, sleep, focus or sensory processing</li>
-          <li><s>Therapeutic</s>, <s>clinical</s>, <s>medical</s>, <s>doctor‑recommended</s>, <s>therapist‑approved</s></li>
-          <li><s>Proven</s>, <s>scientifically</s>, <s>clinically</s></li>
+          <li><s>Therapeutic</s>, <s>clinical</s>, <s>medical</s>, <s>doctor‑recommended</s>, <s>therapist‑approved</s>, <s>hot/cold therapy</s></li>
+          <li><s>Proven</s>, <s>scientifically</s>, <s>clinically</s>, <s>temperature‑limited</s></li>
           <li>Any sleep claim—it is not a sleep product</li>
-          <li>“Helps with anxiety”, “calms meltdowns”, “regulates”</li>
+          <li>“Helps with anxiety”, “calms meltdowns”, “regulates”, “may help”—a hedge is still read as a claim</li>
+          <li>“10 % of body weight” as if it were evidence</li>
+          <li>That CPSC “approves” or “regulates” weighted plush—there is no such rule</li>
         </ul>
-        <p class="small muted" style="margin-top:14px">Health‑outcome claims on a consumer product require competent and reliable scientific evidence under FTC rules. Saying who it is designed for is allowed; saying what it will do to them is not.</p>
+        <p class="small muted" style="margin-top:14px">The FTC’s Health Products Compliance Guidance (2022) treats any health‑related claim on any product—express or implied—as needing competent and reliable scientific evidence, generally randomized controlled trials. Testimonials don’t count. Saying who it is designed for is allowed; saying what it will do to them is not.</p>
       </div>
     </div>
     <div class="ageline" aria-label="Age and safety line">
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 7v5l3 2"/></svg>Ages 3+</span>
       <span>Not for infants</span>
       <span>Not a sleep product</span>
-      <span>Adult supervision with the warm insert</span>
+      <span>An adult heats and checks the warm insert</span>
+      <span>Never leave a child alone under the weighted companion</span>
     </div>
-    <p class="disclaimer">Not a medical device. Concept prototype — final weights, materials and age grading are subject to third‑party safety testing (ASTM F963 / CPSIA) before sale.</p>
+    <p class="disclaimer">Not a medical device and not intended to diagnose, treat, cure or prevent any condition. Concept prototype — final weights, materials, closures and age grading are subject to third‑party testing at a CPSC‑accepted laboratory (ASTM F963‑23 / CPSIA) before sale. Follow the heating guide; never microwave the plush or the weighted pouch; remove all inserts before washing.</p>
+
+    <div class="heat">
+      <b>The heating guide that goes on the insert</b>
+      <ul>
+        <li>Only the grain insert goes in the microwave—never the plush, never the weighted pouch (poly pellets melt and burn).</li>
+        <li>Heat from room temperature only, by the printed time and wattage (Warmies‑type flaxseed: max 90 s at 600–800 W, 60 s at 850–1000 W), in 5–20 s bursts.</li>
+        <li>An adult heats it, stays at the microwave, and tests it on their own skin before the child gets it.</li>
+        <li>Never reheat until it is fully cool; never heat with a blocked turntable; stop if it smells scorched.</li>
+        <li>For cool: gel pack in the fridge, or the grain insert in a sealed bag in the freezer for 2–3 hours.</li>
+        <li>Inspect the gel pack for leaks before each use and discard it if damaged.</li>
+      </ul>
+    </div>
 
     <div class="check">
       <h3>Regulatory checklist (U.S.)</h3>
       <ol>
-        <li><div><b>ASTM F963 toy safety standard</b><span>The mandatory U.S. toy standard under CPSIA. Covers mechanical, seam and stuffing requirements, plus the small‑parts and flammability tests a plush with inserts has to pass.</span></div></li>
-        <li><div><b>CPSIA third‑party testing</b><span>Testing at a CPSC‑accepted laboratory, with a Children’s Product Certificate issued before the product is sold. Includes lead and phthalate limits for the fabrics, pellets and inserts.</span></div></li>
-        <li><div><b>Small parts &amp; pellet containment</b><span>Ages 3+ grading; the pellet pouch is double‑sealed and not reachable in normal use, seams are tested for stuffing and pellet release, and no magnets are used anywhere.</span></div></li>
-        <li><div><b>Tracking label</b><span>Permanent CPSIA tracking information on the plush and on each insert: manufacturer, production location and date, and batch—so a single insert can be traced or recalled.</span></div></li>
-        <li><div><b>Thermal insert review</b><span>The microwave insert is a temperature‑limited product made for plush; the final design still needs its heating instructions, surface temperatures and misuse cases reviewed. Sources for each item will be added in a later step.</span></div></li>
+        <li><div><b>ASTM F963‑23 — the mandatory toy standard</b><span>ASTM F963 is mandatory under CPSIA §106 and codified at 16 CFR 1250 for toys for children under 14. The current edition is F963‑23; the CPSC rule adopting it took effect April 20, 2024, so anything made after that date is tested to F963‑23. For a stuffed toy that means seam strength (pellets and stuffing must not escape), stuffing cleanliness, bite / drop / torque / tension / compression use‑and‑abuse tests, and cords and elastics.</span></div></li>
+        <li><div><b>A children’s product, third‑party tested</b><span>Marketed for kids, Sowala is a “children’s product” (designed primarily for ages 12 and under, 16 CFR 1200.2) whoever pays for it. It must be tested by a CPSC‑accepted, ISO/IEC 17025‑accredited laboratory and retested periodically (at least annually for most firms), and the maker or importer issues a written Children’s Product Certificate under CPSA §14 before the first sale.</span></div></li>
+        <li><div><b>Lead &amp; phthalates</b><span>Accessible parts: total lead ≤ 100 ppm; paint and coatings ≤ 90 ppm. No more than 0.1 % of any of eight phthalates—DEHP, DBP, BBP, DINP, DIBP, DPENP, DHEXP, DCHP (16 CFR 1307)—which matters for any vinyl or plasticized film such as a gel‑pack skin.</span></div></li>
+        <li><div><b>Small parts &amp; age grading</b><span>16 CFR 1501 bans small parts in toys for under‑3s, including parts freed in use‑and‑abuse testing; a toy for ages 3–6 that has a small part carries the fixed 16 CFR 1500.19 choking warning. CPSC judges the intended age by labeling, marketing, consumer recognition and its 2020 Age Determination Guidelines—ordinary plush is listed as fine for infants—so “Ages 3+” has to be earned by the weight and the inserts, not by the label alone.</span></div></li>
+        <li><div><b>Magnets: none, and the right rule</b><span>For toys the magnet rule is ASTM F963 §4.38—no hazardous magnet (a small object with a flux index ≥ 50 kG²·mm²) in the toy or liberated from it after use‑and‑abuse—not 16 CFR 1262, which excludes toys. Hook‑and‑loop closures keep Sowala out of that section and out of the ingestion hazard altogether.</span></div></li>
+        <li><div><b>Closures &amp; entrapment</b><span>Target’s 2022 Pillowfort weighted‑blanket recall (≈ 204,000 units, two children aged 4 and 6 died) was a zipper a child could open and climb inside. Sowala’s single flap is concealed and child‑resistant, sized so a child cannot open the pocket or reach the pellets or the gel pack; F963 seam and use‑and‑abuse tests check that it holds.</span></div></li>
+        <li><div><b>Weighted items &amp; sleep</b><span>The 2024 AAP and CPSC warnings and retailer withdrawals concern weighted <em>infant sleep</em> products—blankets, sacks, swaddles. There is no CPSC rule on weighted products for children, and none was in progress at the time of writing (confirm on cpsc.gov before print). Sowala is an awake, supervised companion: not for infants, not a sleep product, never over the face, never left on a child alone (a 2008 Quebec coroner’s case involved an unattended child wrapped in a weighted blanket).</span></div></li>
+        <li><div><b>Heat: the hazard is over‑timing</b><span>Grain heat packs have caused burns needing surgery and house fires when heated far past the guide or with a blocked turntable; “no wires, no batteries” is not “no heat hazard”. No consumer plush insert is truly temperature‑limited—self‑limiting warmth is phase‑change‑material research, not a stock part—so the guide above is printed on the insert, and the weighted pouch is unmistakably different and tagged “Do not microwave”.</span></div></li>
+        <li><div><b>Flammability</b><span>F963 requires the plush fabrics to meet 16 CFR 1610 (Class 1 normal flammability) and the stuffed toy to pass 16 CFR 1500.44. Long‑pile fur, sherpa and the curly mane are exactly the fabrics that need this test.</span></div></li>
+        <li><div><b>Tracking label</b><span>CPSIA §103: a permanent tracking label on the plush, its packaging and each insert—manufacturer or private labeler, production location and date, and batch—so a single insert can be traced or recalled.</span></div></li>
+        <li class="wide"><div><b>Claims: FTC &amp; FDA</b><span>Express and implied health claims need competent and reliable scientific evidence (objective tests by qualified experts, generally RCTs); hedges like “may help” don’t cure them. Disease claims also change a product’s intended use toward an FDA medical device—Gravity Blanket dropped its treatment claims in 2017 for that reason. And the best trial in autistic children (Gringras 2014, about 70 children) found a weighted blanket did not improve sleep, even though children and parents preferred it. So Sowala says “calming deep‑pressure feel” and “comfort”—never an outcome.</span></div></li>
       </ol>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ol>
+        <li><a href="https://www.federalregister.gov/documents/2024/01/18/2024-00741/safety-standard-mandating-astm-f963-for-toys">Federal Register — 16 CFR 1250, ASTM F963 mandatory</a></li>
+        <li><a href="https://www.toyassociation.org/PressRoom2/News/2024_News/cpsc-approves-updated-federal-toy-safety-standard-effective-april-20.aspx">Toy Association — F963‑23 effective April 20, 2024</a></li>
+        <li><a href="https://www.cpsc.gov/Business--Manufacturing/Testing-Certification/Third-Party-Testing">CPSC — Third‑party testing</a></li>
+        <li><a href="https://www.cpsc.gov/Business--Manufacturing/Testing-Certification/Childrens-Product-Certificate">CPSC — Children’s Product Certificate</a></li>
+        <li><a href="https://www.kelleydrye.com/viewpoints/client-advisories/consumer-product-safety-commission-defines-childrens-product">Kelley Drye — “children’s product” definition</a></li>
+        <li><a href="https://www.kelleydrye.com/viewpoints/client-advisories/cpsc-releases-policy-statement-and-faqs-on-cpsia-tracking-label-requirements">Kelley Drye — CPSIA tracking labels</a></li>
+        <li><a href="https://www.compliancegate.com/cpsia-importers-manufacturers-guide/">Compliance Gate — CPSIA lead limits</a></li>
+        <li><a href="https://www.ecfr.gov/current/title-16/chapter-II/subchapter-B/part-1307">eCFR — 16 CFR 1307 phthalates</a></li>
+        <li><a href="https://www.ecfr.gov/current/title-16/chapter-II/subchapter-C/part-1501">eCFR — 16 CFR 1501 small parts</a></li>
+        <li><a href="https://www.compliancegate.com/small-parts-regulations-warnings-united-states/">Compliance Gate — small‑parts warning</a></li>
+        <li><a href="https://www.ul.com/resources/new-cpsc-age-determination-guidelines-toys-and-childrens-products">UL — CPSC Age Determination Guidelines 2020</a></li>
+        <li><a href="https://www.stc.group/getfile/index/action/images/name/5f45c1e368f6a.pdf">STC — 16 CFR 1610 flammability in toys</a></li>
+        <li><a href="https://www.qima.com/consumer-products/lab-testing/stuff-toy-regulation-labeling-requirement">QIMA — stuffed‑toy testing</a></li>
+        <li><a href="https://www.sgs.com/en/news/2022/10/safeguards-11622-us-cpsc-issues-a-final-rule-for-magnets">SGS — 16 CFR 1262 magnet rule (toys excluded)</a></li>
+        <li><a href="https://www.compliancegate.com/magnet-regulations-united-states/">Compliance Gate — magnets in toys, F963 §4.38</a></li>
+        <li><a href="https://www.cpsc.gov/Recalls/2023/Target-Recalls-Childrens-Pillowfort-Weighted-Blankets-Due-to-Asphyxiation-Hazard-Two-Fatalities-Reported">CPSC — Target Pillowfort recall</a></li>
+        <li><a href="https://www.cbc.ca/news/canada/montreal/autistic-child-suffocated-in-therapeutic-blanket-quebec-coroner-1.755381">CBC — 2008 Quebec coroner’s case</a></li>
+        <li><a href="https://publications.aap.org/aapnews/news/28768/AAP-leaders-call-decision-to-pull-harmful-weighted">AAP News — weighted infant sleep products</a></li>
+        <li><a href="https://sleepreviewmag.com/sleep-health/prevailing-attitudes/sleep-safety/advocacy-groups-accuse-consumer-product-safety-commission-unsubstantiated-claims-infant-sleep-products/">Sleep Review — CPSC weighted‑sleep actions, no rule</a></li>
+        <li><a href="https://warmies.co.uk/pages/care-use-safety">Warmies UK — care, use &amp; safety</a></li>
+        <li><a href="https://warmies.com/pages/faq">Warmies — FAQ (not washable)</a></li>
+        <li><a href="https://www.fire.nsw.gov.au/wheatbags/">Fire &amp; Rescue NSW — wheat‑bag burns and fires</a></li>
+        <li><a href="https://niuniudaddy.com/blogs/weighted-stuffed-animals/microwave-safety">Niuniudaddy — pellets and microwaves</a></li>
+        <li><a href="https://www.poison.org/articles/whats-inside-ice-packs-201">Poison Control — what’s inside gel packs</a></li>
+        <li><a href="https://www.tandfonline.com/doi/full/10.1080/29963176.2024.2374351">Taylor &amp; Francis — phase‑change self‑limiting heat</a></li>
+        <li><a href="https://www.ftc.gov/news-events/news/press-releases/2022/12/ftc-announces-new-business-guidance-marketers-sellers-health-products">FTC — Health Products Compliance Guidance</a></li>
+        <li><a href="https://www.cooley.com/news/insight/2023/2023-03-02-ftc-revises-health-products-compliance-guidance">Cooley — FTC substantiation standard</a></li>
+        <li><a href="https://www.statnews.com/2017/05/12/gravity-blanket-anxiety-fda/">STAT — Gravity Blanket and FDA intended use</a></li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/25022743/">PubMed — Gringras 2014 weighted‑blanket RCT</a></li>
+        <li><a href="https://doi.org/10.5014/ajot.2024.050676">AJOT 2024 — weighted‑blanket scoping review</a></li>
+        <li><a href="https://truhugs.com/research-science/do-weighted-blankets-work-occupational-therapy-vests/">TruHugs — origin of the vest percentage rule</a></li>
+        <li><a href="https://yourkidstable.com/weighted-lap-pad/">Your Kid’s Table — lap‑pad weight guidance</a></li>
+        <li><a href="https://diversityintoys.com/sensory-toys-buying-guide-part-2-sights-sounds-and-smells/">Diversity in Toys — sounds in sensory toys</a></li>
+        <li><a href="https://www.walmart.com/ip/Hugimals-Charlie-the-Puppy-4-5lbs-Weighted-Stuffed-Animal-Stress-and-Anxiety-Relief-Plush-for-Adults-and-Kids/2124266045">Walmart — Hugimals listing</a></li>
+        <li><a href="https://www.hugimalsworld.com/">Hugimals — Hugarounds</a></li>
+        <li><a href="https://www.reviewed.com/accessibility/features/weighted-stuffed-animals-anxiety-adhd">Reviewed — Moon Pals</a></li>
+        <li><a href="https://www.walmart.com/ip/Warmies-Microwavable-Weighted-Stuffed-Animals-Spider-Heated-Animal-Plushie-Warmth-Comfort-Cute-Soft-Plush-Toys-Adults-Children-Boys-Girls-Babies-Todd/14934960320">Walmart — Warmies listing</a></li>
+      </ol>
+      <p class="caveat">Regulatory citations were compiled from the pages above as retrieved in September 2026; the client’s compliance reviewer should confirm each against the primary CPSC, eCFR and FTC pages before anything is printed.</p>
     </div>
   </div>
 </section>
@@ -745,22 +881,22 @@ footer p{max-width:70ch}
           <li>Outer: long‑pile plush (Sloth) or short plush with curly‑pile mane (Red Panda), embroidered eyes and nose—no hard eyes.</li>
           <li>Texture patches: minky, corduroy, satin, sherpa, raised‑dot fabric, waffle knit—all sewn in, none glued.</li>
           <li>Weighting: poly pellets in a double‑sealed inner bag, then a fabric outer pouch.</li>
-          <li>Thermal: reusable gel pack; microwaveable temperature‑limited insert designed for plush.</li>
+          <li>Thermal: microwaveable grain insert (flaxseed‑type, made for plush), heating guide printed on it. Cool: non‑toxic gel pack in puncture‑resistant, phthalate‑compliant film—or the same grain insert chilled in the freezer.</li>
         </ul>
       </div>
       <div>
         <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="10" rx="3"/><path d="M7 12h10"/></svg>Closures</h3>
         <ul>
-          <li>One hidden belly flap with wide, soft hook‑and‑loop under a fur‑covered seam.</li>
+          <li>One hidden belly flap with wide, soft hook‑and‑loop under a fur‑covered seam—concealed and child‑resistant, so a child cannot open the pocket.</li>
           <li>No magnets, no zipper pulls, no buttons or beads.</li>
-          <li>Sloth arm fastening: child‑safe hook‑and‑loop at the claws, sized so a child can pull free.</li>
+          <li>Sloth arm fastening: child‑safe hook‑and‑loop at the claws, sized so a child can pull free. Arms are stuffed, not wired—no armature, nothing posable, no wire ends to expose in testing.</li>
         </ul>
       </div>
       <div>
         <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M7 13q2.5-3 5 0t5 0"/></svg>Washability</h3>
         <ul>
           <li>Both inserts out → outer plush is machine‑washable on a gentle cycle, air dry.</li>
-          <li>Weighted pouch: wipe clean. Gel pack: wipe clean. Microwave insert: follow the maker’s care instructions.</li>
+          <li>Weighted pouch: wipe clean. Gel pack: wipe clean, inspect for leaks. Grain insert: spot‑clean only—never in the washer or dryer—and sold as a replacement part when it wears.</li>
         </ul>
       </div>
       <div>
@@ -768,6 +904,7 @@ footer p{max-width:70ch}
         <ul>
           <li>Weighted pouch, gel pack and microwave insert each sold separately as spares and replacements.</li>
           <li>One insert size fits both Large and Small pockets; only the pellet weight differs.</li>
+          <li>The two inserts differ in colour, shape and label so they cannot be confused; the weighted pouch and the plush are tagged “Do not microwave”.</li>
         </ul>
       </div>
     </div>
@@ -784,7 +921,7 @@ footer p{max-width:70ch}
     <div class="timeline">
       <div class="tl"><span class="k">Now</span><h3>Prototype</h3><p>Sew the two pockets, the flap and the texture patches into the existing plush. Build 2 lb and 3 lb pouches and the two thermal inserts.</p></div>
       <div class="tl"><span class="k">Then</span><h3>Wear test</h3><p>Families try both sizes at home. Tune the pouch weight instead of defaulting to heavier, check the flap stays closed, and see which textures get used most.</p></div>
-      <div class="tl"><span class="k">Before sale</span><h3>Accredited lab test</h3><p>ASTM F963 and CPSIA testing at a CPSC‑accepted lab, Children’s Product Certificate, tracking labels, and a review of the warm insert’s instructions.</p></div>
+      <div class="tl"><span class="k">Before sale</span><h3>Accredited lab test</h3><p>ASTM F963‑23 and CPSIA testing at a CPSC‑accepted lab (seams, small parts, flammability, lead and phthalates, closure use‑and‑abuse), Children’s Product Certificate, tracking labels, and a review of the heating guide and misuse cases.</p></div>
     </div>
   </div>
 </section>
@@ -798,8 +935,8 @@ footer p{max-width:70ch}
       sowala
     </a>
     <p><b>Weighted Sensory Companions</b> · Comfort, one hug at a time. · Inspired by a therapist. Created with love.</p>
-    <p>Ages 3+ · Not for infants · Not a sleep product · Adult supervision with the warm insert</p>
-    <p><em>Not a medical device. Concept prototype — final weights, materials and age grading are subject to third‑party safety testing (ASTM F963 / CPSIA) before sale.</em></p>
+    <p>Ages 3+ · Not for infants · Not a sleep product · An adult heats and checks the warm insert · Never leave a child alone under the weighted companion</p>
+    <p><em>Not a medical device and not intended to diagnose, treat, cure or prevent any condition. Concept prototype — final weights, materials, closures and age grading are subject to third‑party testing at a CPSC‑accepted laboratory (ASTM F963‑23 / CPSIA) before sale. Follow the heating guide; never microwave the plush or the weighted pouch; remove all inserts before washing.</em></p>
   </div>
 </footer>
 

@@ -33,6 +33,7 @@ h1 .r{color:var(--rust)}
 .field-l{position:absolute;inset:0;background:linear-gradient(180deg,#A28E74 0%,#957F66 100%);clip-path:polygon(0 0,725px 0,635px 100%,0 100%)}
 .field-r{position:absolute;inset:0;background:linear-gradient(180deg,#C8552A 0%,#BC4E25 100%);clip-path:polygon(725px 0,100% 0,100% 100%,635px 100%)}
 .fields .name{position:absolute;font-family:var(--display);font-weight:700;font-size:86px;line-height:.92;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 0 rgba(51,37,28,.12)}
+html.pdf .fields .name{text-shadow:none}
 .chips{position:absolute;display:flex;flex-wrap:wrap;gap:7px}
 .chip{font-weight:700;font-size:14px;line-height:1;padding:8px 11px;border-radius:999px;background:rgba(255,253,249,.94);color:var(--ink);white-space:nowrap}
 .chip.lead{padding-left:9px}
@@ -46,7 +47,7 @@ h1 .r{color:var(--rust)}
 .bubble .k{display:block;font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;color:var(--ink-soft)}
 .bubble::after{content:"";position:absolute;width:26px;height:26px;background:var(--paper);transform:rotate(45deg);border-radius:4px}
 .bubble.tail-r::after{right:-10px;top:58px}
-.bubble.tail-l::after{left:-10px;top:58px}
+.bubble.tail-l::after{left:-8px;top:58px}
 .sloth-tag{position:absolute;left:60px;top:34px;display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;font-weight:800;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:9px 14px;border-radius:999px}
 .sloth-tag svg{width:16px;height:16px}
 .sizes{position:absolute;display:flex;flex-direction:column;align-items:flex-start;gap:7px}
@@ -131,7 +132,7 @@ h1 .r{color:var(--rust)}
     <div class="sloth-tag"><svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M9 26c-3-8-1-16 3-20M16 27c-3-8-1-17 3-21M23 26c-3-8-1-16 3-20"/></svg>Where Sowala began</div>
     <div class="name" style="left:60px;top:84px">Sloth</div>
     <div class="chips" style="left:60px;top:176px;width:250px">
-      <span class="chip lead" data-lead="388,258">long-pile fur</span><span class="chip">smooth face</span>
+      <span class="chip">smooth face</span><span class="chip lead" data-lead="388,258">long-pile fur</span>
       <span class="chip lead" data-lead="487,452">textured claws</span><span class="chip">raised-dot belly patch</span>
       <span class="chip">sherpa inside the arms</span>
     </div>
@@ -151,7 +152,7 @@ h1 .r{color:var(--rust)}
       <span class="chip">ribbed paw pads</span><span class="chip lead" data-lead="842,505,elbow">waffle-knit belly</span>
       <span class="chip">crinkle tail</span>
     </div>
-    <div class="bubble tail-l" style="left:1070px;top:378px;width:220px">
+    <div class="bubble tail-l" style="left:1070px;top:363px;width:220px">
       <span class="k">Signature feel</span>
       <b>Squeezable crinkle tail</b> plus ribbed paw pads for thumb-rubbing.
     </div>
@@ -169,7 +170,7 @@ h1 .r{color:var(--rust)}
     </div>
     <div class="fn">
       <div class="hd"><div class="ic t"><svg viewBox="0 0 32 32"><rect x="12.5" y="3" width="7" height="17" rx="3.5"/><circle cx="16" cy="24.5" r="4.5"/><path d="M16 12v10"/></svg></div><div><div class="n">02 · Warm &amp; Cool <span class="pk b">B</span></div><h3>Chill it or warm it</h3></div></div>
-      <p>A <b>second pocket, its own insert</b>: chill the reusable gel pack, or warm the microwaveable, temperature-limited insert. No wires, no batteries.</p>
+      <p>A <b>second pocket, its own insert</b>: chill the reusable gel pack or warm the microwaveable grain insert made for plush. No wires, no batteries.</p>
     </div>
     <div class="fn">
       <div class="hd"><div class="ic h"><svg viewBox="0 0 32 32"><path d="M9 17.5V9.5a2 2 0 0 1 4 0V16M13 15V6.5a2 2 0 0 1 4 0V16M17 15V8a2 2 0 0 1 4 0v8M21 16v-4.5a2 2 0 0 1 4 0V20c0 5-3 8.5-8 8.5S9.5 26 8 22.5L5.3 17a2 2 0 0 1 3.6-1.8L11 18.5"/></svg></div><div><div class="n">03 · Touch</div><h3>Textures to explore</h3></div></div>
@@ -210,8 +211,8 @@ h1 .r{color:var(--rust)}
       <h4>Inside the belly <span>two hidden pockets · two removable inserts</span></h4>
       <ul>
         <li><span class="pk a">A</span><span><b>Weighted pouch</b> — double-sealed poly pellets, out of reach in normal use, lifts out to wash.</span></li>
-        <li><span class="pk b">B</span><span><b>Warm &amp; cool insert</b> — gel pack for the fridge, or a microwaveable, temperature-limited insert.</span></li>
-        <li><span class="pk x">✕</span><span><b>Never one pouch</b> — weighted and thermal materials each get their own pocket. Outer plush is machine-washable once both are out · spare inserts available.</span></li>
+        <li><span class="pk b">B</span><span><b>Warm &amp; cool insert</b> — gel pack for the fridge, or a microwaveable grain insert made for plush.</span></li>
+        <li><span class="pk x"><svg viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg></span><span><b>Never one pouch</b> — weighted and thermal materials each get their own pocket. Outer plush is machine-washable once both are out · spare inserts available.</span></li>
       </ul>
     </div>
   </div>
@@ -225,7 +226,7 @@ h1 .r{color:var(--rust)}
   <div class="age"><svg viewBox="0 0 24 24"><path d="M12 3 4 6.5v5.5c0 4.6 3.4 8.4 8 9.5 4.6-1.1 8-4.9 8-9.5V6.5L12 3z"/></svg><span>Ages 3+</span><span class="sep">·</span><span>Not for infants</span><span class="sep">·</span><span>Not a sleep product</span><span class="sep">·</span><span>Adult supervision with the warm insert</span></div>
 
   <div class="foot">
-    <div class="disc">Not a medical device. Concept prototype — final weights, materials and age grading are subject to third-party safety testing (ASTM F963 / CPSIA) before sale.</div>
+    <div class="disc">Not a medical device. Concept prototype — final weights, materials and age grading are subject to third-party safety testing (ASTM&nbsp;F963&nbsp;/&nbsp;CPSIA) before sale.</div>
     <div class="brand2"><div class="w">sowala</div><div class="d">Sensory Friends</div></div>
   </div>
 </div>
@@ -240,7 +241,7 @@ h1 .r{color:var(--rust)}
     var cx=r.left-hr.left+r.width/2, cy=r.top-hr.top+r.height/2;
     var sx=(tx>cx)?(r.right-hr.left+1):(r.left-hr.left-1), sy=cy, d;
     if(mode==='elbow'){
-      var ex=(tx>cx)?(sx+32):(sx-32), dir=(tx>cx)?1:-1, k=14;
+      var ex=(tx>cx)?(sx+48):(sx-48), dir=(tx>cx)?1:-1, k=14;
       d='M'+sx+' '+sy+' L'+(ex-dir*k)+' '+sy+' Q'+ex+' '+sy+' '+ex+' '+(sy+k)+' L'+ex+' '+(ty-k)+' Q'+ex+' '+ty+' '+(ex-dir*k)+' '+ty+' L'+tx+' '+ty;
     } else {
       var midx=sx+(tx-sx)*0.55;

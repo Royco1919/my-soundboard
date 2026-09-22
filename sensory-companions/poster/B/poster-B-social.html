@@ -22,8 +22,8 @@ html,body{width:1080px;height:1350px;overflow:hidden;background:var(--bg);color:
 .sub b{color:var(--ink);font-weight:700}
 /* hero */
 .disc{left:60px;top:300px;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle at 50% 40%,#FFFDF9 0%,#FBF7F0 60%,rgba(251,247,240,0) 72%)}
-.sloth{left:160px;top:296px;height:520px;filter:drop-shadow(0 14px 18px rgba(51,37,28,.22))}
-.panda{left:790px;top:560px;height:250px;filter:drop-shadow(0 12px 16px rgba(51,37,28,.22))}
+.sloth{left:131.45px;top:281.22px;height:534.78px;filter:drop-shadow(0 14px 18px rgba(51,37,28,.22))}
+.panda{left:750px;top:575px;height:225px;filter:drop-shadow(0 12px 16px rgba(51,37,28,.22))}
 .sw{width:96px;height:96px;border-radius:50%;overflow:hidden;border:4px solid var(--paper);box-shadow:0 6px 16px rgba(51,37,28,.16);background:var(--taupe-light)}
 .sw img{width:100%;height:100%;object-fit:cover;display:block}
 .pill{display:inline-flex;align-items:center;gap:6px;padding:5px 11px 5px 9px;border-radius:999px;background:var(--paper);border:1.5px solid var(--line);font-family:'Fredoka';font-weight:600;font-size:15px;color:var(--ink);white-space:nowrap;box-shadow:0 3px 8px rgba(51,37,28,.08)}
@@ -37,11 +37,11 @@ html,body{width:1080px;height:1350px;overflow:hidden;background:var(--bg);color:
 .badge.a{background:var(--weight)} .badge.b{background:linear-gradient(135deg,var(--warm) 50%,var(--cool) 50%)}
 .row p{font-size:15px;line-height:1.35;font-weight:600;color:var(--ink-soft)}
 .row p b{color:var(--ink)}
-.name{left:640px;top:520px;width:140px}
+.name{left:640px;top:512px;width:140px}
 .name .k{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:2px}
 .name h3{font-family:'Fredoka';font-weight:600;font-size:22px;line-height:1.05}
 .name p{font-size:13px;line-height:1.35;font-weight:600;color:var(--ink-soft);margin-top:4px}
-.sig{left:160px;top:838px;width:400px;padding:9px 14px 10px;border-radius:14px;background:var(--ink-soft);color:#fff}
+.sig{left:160px;top:824px;width:400px;padding:9px 14px 10px;border-radius:14px;background:var(--ink-soft);color:#fff}
 .sig .k{font-size:10px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;opacity:.9;margin-bottom:2px}
 .sig .t{font-family:'Fredoka';font-weight:600;font-size:15px;line-height:1.2}
 /* functions 2x2 */
@@ -94,31 +94,31 @@ svg.over{left:0;top:0;width:1080px;height:1350px;pointer-events:none}
     <linearGradient id="wc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F0894B"/><stop offset=".5" stop-color="#F0894B"/><stop offset=".5" stop-color="#4E9DBF"/><stop offset="1" stop-color="#4E9DBF"/></linearGradient>
     <pattern id="pel" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.4" fill="#fff" opacity=".8"/></pattern>
   </defs>
-  <!-- hug arc -->
-  <path d="M236 626 C 246 694, 306 730, 348 730 C 392 730, 428 690, 434 592" fill="none" stroke="#33251C" stroke-width="2.4" stroke-dasharray="1 6" stroke-linecap="round" opacity=".85"/>
-  <circle cx="236" cy="626" r="4" fill="#33251C"/><circle cx="434" cy="592" r="4" fill="#33251C"/>
-  <g transform="translate(348 730)"><rect x="-14" y="-10" width="28" height="20" rx="5" fill="#6B5A4C" stroke="#FFFDF9" stroke-width="2"/><path d="M-8 -3.5 h16 M-8 0 h16 M-8 3.5 h16" stroke="#F7F1E8" stroke-width="1.5" stroke-linecap="round"/></g>
-  <!-- cutaway panel -->
+  <!-- cutaway panel (pouches centred) -->
   <g>
     <path d="M294 582 h122 a15 15 0 0 1 15 15 v76 a25 25 0 0 1 -25 25 h-118 a25 25 0 0 1 -25 -25 v-76 a15 15 0 0 1 15 -15 z" fill="rgba(255,253,249,.74)" stroke="#6B5A4C" stroke-width="1.8" stroke-dasharray="5 4"/>
-    <rect x="289" y="592" width="128" height="44" rx="12" fill="#8F7FC4" opacity=".94"/>
-    <rect x="289" y="592" width="128" height="44" rx="12" fill="url(#pel)"/>
-    <rect x="312" y="604" width="98" height="21" rx="7" fill="#FFFDF9" opacity=".96"/>
-    <circle cx="303" cy="614" r="10.5" fill="#fff"/><text x="303" y="618.5" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="12.5" fill="#8F7FC4">A</text>
-    <text x="320" y="618.5" font-family="Fredoka" font-weight="600" font-size="12" fill="#33251C">weighted pouch</text>
-    <rect x="292" y="644" width="122" height="42" rx="12" fill="url(#wc)" opacity=".94"/>
-    <rect x="314" y="655" width="80" height="21" rx="7" fill="#FFFDF9" opacity=".96"/>
-    <circle cx="305" cy="665" r="10.5" fill="#fff"/><text x="305" y="669.5" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="12.5" fill="#33251C">B</text>
-    <text x="322" y="669.5" font-family="Fredoka" font-weight="600" font-size="12" fill="#33251C">warm / cool</text>
+    <rect x="283" y="592" width="128" height="44" rx="12" fill="#8F7FC4" opacity=".94"/>
+    <rect x="283" y="592" width="128" height="44" rx="12" fill="url(#pel)"/>
+    <rect x="306" y="604" width="98" height="21" rx="7" fill="#FFFDF9" opacity=".96"/>
+    <circle cx="297" cy="614" r="10.5" fill="#fff"/><text x="297" y="618.5" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="12.5" fill="#8F7FC4">A</text>
+    <text x="314" y="618.5" font-family="Fredoka" font-weight="600" font-size="12" fill="#33251C">weighted pouch</text>
+    <rect x="286" y="644" width="122" height="42" rx="12" fill="url(#wc)" opacity=".94"/>
+    <rect x="308" y="655" width="80" height="21" rx="7" fill="#FFFDF9" opacity=".96"/>
+    <circle cx="299" cy="665" r="10.5" fill="#fff"/><text x="299" y="669.5" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="12.5" fill="#33251C">B</text>
+    <text x="316" y="669.5" font-family="Fredoka" font-weight="600" font-size="12" fill="#33251C">warm / cool</text>
   </g>
-  <!-- leaders to the A/B rows on the right -->
+  <!-- leaders to the A/B rows on the right, leaving from the panel's right edge -->
   <g fill="none" stroke="#6B5A4C" stroke-width="2" stroke-dasharray="1 6" stroke-linecap="round">
-    <path d="M417 614 C 510 614, 540 386, 636 386"/>
-    <path d="M414 665 C 510 665, 540 458, 636 458"/>
+    <path d="M431 614 C 510 614, 540 386, 636 386"/>
+    <path d="M431 665 C 510 665, 540 458, 636 458"/>
   </g>
-  <g fill="#6B5A4C"><circle cx="417" cy="614" r="4"/><circle cx="414" cy="665" r="4"/></g>
+  <g fill="#6B5A4C"><circle cx="431" cy="614" r="4"/><circle cx="431" cy="665" r="4"/></g>
+  <!-- hug arc (rust, solid): left hand -> outside the panel -> fastener -> up the right side -> right hand -->
+  <path d="M236 626 C 225 682, 262 736, 348 736 C 424 738, 472 714, 474 650 C 474 606, 456 591, 434 592" fill="none" stroke="#C8552A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="236" cy="626" r="5" fill="#C8552A" stroke="#FFFDF9" stroke-width="1.8"/><circle cx="434" cy="592" r="5" fill="#C8552A" stroke="#FFFDF9" stroke-width="1.8"/>
+  <g transform="translate(348 736)"><rect x="-14" y="-10" width="28" height="20" rx="5" fill="#6B5A4C" stroke="#FFFDF9" stroke-width="2"/><path d="M-8 -3.5 h16 M-8 0 h16 M-8 3.5 h16" stroke="#F7F1E8" stroke-width="1.5" stroke-linecap="round"/></g>
   <!-- signature leader: glyph -> tag -->
-  <path d="M348 742 v36 C 348 800, 336 838, 336 838" fill="none" stroke="#6B5A4C" stroke-width="2" stroke-dasharray="1 6" stroke-linecap="round"/>
+  <path d="M348 748 v22 C 348 790, 336 824, 336 824" fill="none" stroke="#6B5A4C" stroke-width="2" stroke-dasharray="1 6" stroke-linecap="round"/>
 </svg>
 
 <!-- swatches: sloth textures left, panda textures right -->
@@ -129,15 +129,15 @@ svg.over{left:0;top:0;width:1080px;height:1350px;pointer-events:none}
 <div class="abs sw" style="left:40px;top:670px"><img src="../../assets/poster-B/sw-claws.jpg"></div>
 <div class="abs pill s" style="left:36px;top:772px"><i></i>Textured</div>
 
-<div class="abs sw" style="left:944px;top:560px"><img src="../../assets/closeups/curly-mane.jpg" style="object-position:50% 35%"></div>
-<div class="abs pill p" style="left:958px;top:662px"><i></i>Curly</div>
-<div class="abs sw" style="left:944px;top:722px"><img src="../../assets/poster-B/sw-waffle.jpg"></div>
-<div class="abs pill p" style="left:952px;top:824px"><i></i>Waffle</div>
+<div class="abs sw" style="left:936px;top:560px"><img src="../../assets/closeups/curly-mane.jpg" style="object-position:50% 55%;transform:scale(1.25)"></div>
+<div class="abs pill p" style="left:950px;top:662px"><i></i>Curly</div>
+<div class="abs sw" style="left:936px;top:722px"><img src="../../assets/poster-B/sw-waffle.jpg"></div>
+<div class="abs pill p" style="left:944px;top:824px"><i></i>Waffle</div>
 
 <div class="abs inside">
   <h2>Inside the belly</h2>
   <div class="row"><span class="badge a">A</span><p><b>Weighted pouch</b> — poly pellets, double-sealed, removable to wash. Prototype target: <b>Large 3 lb · Small 2 lb</b>, tuned in testing.</p></div>
-  <div class="row"><span class="badge b">B</span><p><b>Warm &amp; cool insert</b> — reusable gel pack or <span style="white-space:nowrap">temperature-limited</span> microwaveable insert. Its own pocket. No wires, no batteries.</p></div>
+  <div class="row"><span class="badge b">B</span><p><b>Warm &amp; cool insert</b> — reusable gel pack or microwaveable grain insert made for plush. Its own pocket. No wires, no batteries.</p></div>
 </div>
 <div class="abs name"><div class="k">Second friend</div><h3>Red Panda</h3><p>Squeezable crinkle tail + ribbed paw pads.</p></div>
 
