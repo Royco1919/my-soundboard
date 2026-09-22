@@ -43,8 +43,8 @@ SOFT_ZONES={        # straight occlusion seams that should read as fur ending, n
 HUE_ZONES={         # neighbour-fur remnants to knock out: (rect, kind)
  'sloth-pair': [((880,995,965,1135),'panda')],          # red-panda hand fur showing through the gap under the small sloth's claws
  'sloth-small': [((880,995,965,1135),'panda')],
- 'redpanda-pair': [((600,100,790,250),'notpanda'),((600,250,790,600),'notpanda-nowhite')],    # strip of blue bag / grey counter / sloth chest fluff between the mane and the TOP seam (white ear inside allowed only at the top)
- 'redpanda-small': [((600,100,790,250),'notpanda'),((600,250,790,600),'notpanda-nowhite')],
+ 'redpanda-pair': [((590,60,790,250),'notpanda'),((590,250,790,760),'notpanda-nowhite')],    # strip of blue bag / grey counter / sloth chest fluff between the mane and the TOP seam (white ear inside allowed only at the top)
+ 'redpanda-small': [((590,60,790,250),'notpanda'),((590,250,790,760),'notpanda-nowhite')],
 }
 ERODE=4             # px of extra alpha erosion: the segmenter's matte kept a 2-3 px rim of counter/background inside the opaque area
 MIN_ISLAND=1500   # anything detached and smaller than this is a fleck of counter or neighbour fur
@@ -59,10 +59,10 @@ def hue_mask(kind):
     H=np.where(mx==R,((G-B)/d)%6,np.where(mx==G,(B-R)/d+2,(R-G)/d+4))*60
     if kind=='panda': return (H<=31)&(S>=0.42)&(V<=0.40)     # dark rust panda fur; sloth taupe shadow is H>=32 / S<0.46
     if kind=='notpanda':                                     # anything that is neither warm fur nor white ear: blue bag, grey/black counter
-        warm=(H>=5)&(H<=48)&(S>=0.28); white=(V>=0.78)&(S<=0.22)
+        warm=(H>=5)&(H<=48)&(S>=0.42); white=(V>=0.78)&(S<=0.22)   # sloth taupe is S 0.25-0.40
         return ~(warm|white)
     if kind=='notpanda-nowhite':
-        return ~((H>=5)&(H<=48)&(S>=0.28))
+        return ~((H>=5)&(H<=48)&(S>=0.42))
     raise ValueError(kind)
 def cut(name,poly):
     m=Image.new('L',(Wd,Ht),0); ImageDraw.Draw(m).polygon(poly,fill=255)
@@ -80,7 +80,10 @@ def cut(name,poly):
     # 1) neighbour-fur remnants inside the silhouette
     for rect,kind in HUE_ZONES.get(name,[]):
         km=hue_mask(kind)&rect_mask([rect])
-        km=ndi.binary_dilation(ndi.binary_closing(km,iterations=1),iterations=3)
+        km=ndi.binary_closing(km,iterations=1)
+        # only knock out what is connected to the outside (the seam side): never punch holes into shadowed fur deeper inside
+        lab_k,nk=ndi.label(km); touch=np.unique(lab_k[ndi.binary_dilation(a<0.5,iterations=3)&km]); km=np.isin(lab_k,touch[touch>0])
+        km=ndi.binary_dilation(km,iterations=3)
         a=a*(1-ndi.gaussian_filter(km.astype(np.float32),1.0))
     # 2) erode ERODE px (kills the grey background rim inside the matte), then smooth the ramp
     a=ndi.grey_erosion(a,size=(2*ERODE+1,2*ERODE+1))

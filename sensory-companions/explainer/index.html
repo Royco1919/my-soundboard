@@ -15,6 +15,7 @@
   --rust:#C8552A; --rust-light:#E8865A; --taupe:#A28E74; --taupe-light:#D9CCB9;
   --weight:#8F7FC4; --warm:#F0894B; --cool:#4E9DBF; --touch:#7FA86B; --line:#E7DDD0;
   --weight-soft:#EDE9F7; --warm-soft:#FDEBDD; --cool-soft:#E1EFF5; --touch-soft:#E8F0E1; --rust-soft:#F8E3D8;
+  --rust-text:#B04A22; --weight-text:#6A5AA6; --touch-deep:#4F7A3D;
   --shadow:0 12px 32px rgba(51,37,28,.08);
   --plush:#CDB99C; --plush-dark:#A28E74; --skin:#F3E6D2;
   --display:'Fredoka','Nunito',system-ui,sans-serif;
@@ -27,6 +28,7 @@
     --rust:#E8865A; --rust-light:#F2A57F; --taupe:#B9A78E; --taupe-light:#5B4C3E; --line:#41352C;
     --weight:#A99BDA; --warm:#F59A63; --cool:#6FB4D2; --touch:#97BF83;
     --weight-soft:#342E48; --warm-soft:#46301F; --cool-soft:#1F3540; --touch-soft:#2A3A22; --rust-soft:#4A2C1E;
+    --rust-text:#E8865A; --weight-text:#B7ABE3; --touch-deep:#4F7A3D;
     --shadow:0 12px 32px rgba(0,0,0,.35);
     --plush:#8C7A62; --plush-dark:#6B5A47; --skin:#D9C7AC;
     color-scheme:dark;
@@ -37,6 +39,7 @@
   --rust:#E8865A; --rust-light:#F2A57F; --taupe:#B9A78E; --taupe-light:#5B4C3E; --line:#41352C;
   --weight:#A99BDA; --warm:#F59A63; --cool:#6FB4D2; --touch:#97BF83;
   --weight-soft:#342E48; --warm-soft:#46301F; --cool-soft:#1F3540; --touch-soft:#2A3A22; --rust-soft:#4A2C1E;
+  --rust-text:#E8865A; --weight-text:#B7ABE3; --touch-deep:#4F7A3D;
   --shadow:0 12px 32px rgba(0,0,0,.35);
   --plush:#8C7A62; --plush-dark:#6B5A47; --skin:#D9C7AC;
   color-scheme:dark;
@@ -57,7 +60,7 @@ p{margin:0}
 @media (min-width:720px){.wrap{padding-inline:32px}}
 section{padding-block:clamp(56px,8vw,104px)}
 section+section{border-top:1px solid var(--line)}
-.eyebrow{font-family:var(--display);font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.eyebrow{font-family:var(--display);font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust-text);margin-bottom:14px;display:flex;align-items:center;gap:10px}
 .eyebrow::before{content:"";width:22px;height:3px;border-radius:2px;background:currentColor}
 .lede{font-size:1.15rem;color:var(--ink-soft);max-width:62ch;margin-top:16px}
 .sec-head{max-width:760px;margin-bottom:clamp(28px,4vw,48px)}
@@ -86,8 +89,8 @@ section+section{border-top:1px solid var(--line)}
 .hero{padding-block:clamp(40px,6vw,80px) clamp(40px,6vw,72px)}
 .hero .wrap{display:grid;gap:36px;align-items:center}
 @media (min-width:860px){.hero .wrap{grid-template-columns:1.05fr .95fr;gap:48px}}
-.hero-kicker{font-family:var(--display);font-weight:600;font-size:1rem;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe);margin-bottom:18px}
-.hero h1 .accent{color:var(--rust)}
+.hero-kicker{font-family:var(--display);font-weight:600;font-size:1rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:18px}
+.hero h1 .accent{color:var(--rust);white-space:nowrap}
 .hero .lede{font-size:1.2rem;margin-top:22px}
 .pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
 .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 14px 8px 10px;font-weight:700;font-size:.92rem;background:var(--paper);border:1px solid var(--line)}
@@ -147,8 +150,9 @@ section+section{border-top:1px solid var(--line)}
   /* phone: the SVG is ~325 px wide, so keep only short titles at ~14 px and leave the details to the numbered list below */
   .diagram .detail{display:none}
   .diagram .svg-t{font-size:30px}
-  .diagram .svg-s{font-size:24px}
-  .diagram .svg-pk{font-size:22px}
+  .diagram .svg-s{font-size:27px}
+  .diagram .svg-ps{font-size:25px}
+  .diagram .svg-pk{font-size:26px}
 }
 /* texture maps */
 .tex-grid{display:grid;gap:40px}
@@ -162,18 +166,18 @@ section+section{border-top:1px solid var(--line)}
 .tex-list{margin:0;padding:0;list-style:none;display:grid;gap:10px}
 @media (min-width:1000px){.tex-list{grid-template-columns:1fr 1fr}}
 .tex-list li{display:grid;grid-template-columns:30px 56px 1fr;gap:10px;align-items:center;padding:8px 10px 8px 8px;border-radius:14px;background:var(--bg)}
-.tex-list .n{width:26px;height:26px;border-radius:50%;background:var(--touch);color:#fff;display:grid;place-items:center;font:600 .9rem var(--display)}
-.tex-list img{width:56px;height:56px;object-fit:cover;border-radius:10px}
+.tex-list .n{width:26px;height:26px;border-radius:50%;background:var(--touch-deep);color:#fff;display:grid;place-items:center;font:600 .9rem var(--display)}
+.tex-list img,.tex-list .swatch{width:56px;height:56px;object-fit:cover;border-radius:10px;flex:none}
 .tex-list b{display:block;font-size:.98rem}
 .tex-list span{font-size:.86rem;color:var(--ink-soft);line-height:1.35;display:block}
 .tex-sig{margin-top:16px;padding:12px 14px;border-radius:14px;background:var(--rust-soft);font-size:.95rem}
-.tex-sig b{color:var(--rust)}
-.dot{fill:var(--touch);stroke:#fff;stroke-width:3}
+.tex-sig b{color:var(--rust-text)}
+.dot{fill:var(--touch-deep);stroke:#fff;stroke-width:3}
 .dot-t{font-family:var(--display);font-weight:600;fill:#fff}
 /* steps */
 .steps{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));counter-reset:step}
 .step{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:14px;position:relative}
-.step .num{font-family:var(--display);font-weight:700;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rust)}
+.step .num{font-family:var(--display);font-weight:700;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rust-text)}
 .step svg{width:100%;height:auto;max-width:280px;background:var(--bg);border-radius:16px}
 .step h3{font-size:1.25rem}
 .step p{color:var(--ink-soft);font-size:.97rem}
@@ -198,12 +202,12 @@ table{border-collapse:collapse;width:100%;min-width:560px;font-size:.98rem}
 @media (max-width:1000px){.scroll-hint{display:block}}
 .mkt-table td:nth-child(2),.mkt-table td:nth-child(3){white-space:nowrap}
 .mkt-table tr.us td{background:var(--weight-soft);font-weight:700}
-.mkt-table tr.us td .w{color:var(--weight)}
+.mkt-table tr.us td .w{color:var(--weight-text)}
 .mkt-table td .w{font-size:1.1rem}
 .mkt-table .sub{display:block;font-size:.84rem;color:var(--ink-soft);font-weight:400;margin-top:2px}
 .ladder{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;align-items:center}
 .ladder span{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:var(--paper);border:1px solid var(--line);font-size:.88rem;font-weight:700}
-.ladder span.us{background:var(--weight);color:#fff;border-color:var(--weight)}
+.ladder span.us{background:var(--weight-soft);color:var(--ink);border:2px solid var(--weight)}
 .ladder .arrow{font-family:var(--display);color:var(--ink-soft);padding:0 2px;background:none;border:0}
 .ladder .cap{flex-basis:100%;background:none;border:0;padding:0;color:var(--ink-soft);font-size:.82rem;text-transform:uppercase;letter-spacing:.08em}
 @media (max-width:600px){
@@ -215,13 +219,13 @@ th,td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line);vert
 th{font-family:var(--display);font-weight:600;font-size:.95rem;color:var(--ink-soft);background:var(--bg)}
 tr:last-child td{border-bottom:0}
 td .lbl{font-weight:800}
-td .w{font-family:var(--display);font-weight:600;font-size:1.25rem;color:var(--weight);font-variant-numeric:tabular-nums}
+td .w{font-family:var(--display);font-weight:600;font-size:1.25rem;color:var(--weight-text);font-variant-numeric:tabular-nums}
 .sizes-grid{display:grid;gap:28px;align-items:center}
 @media (min-width:900px){.sizes-grid{grid-template-columns:1fr 1.3fr}}
 .sizes-art{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end}
 .sizes-art figure{margin:0;text-align:center}
 .sizes-art .ph{height:340px;margin-inline:auto;filter:drop-shadow(0 10px 18px rgba(51,37,28,.18))}
-.sizes-art .ph img{width:auto;height:100%;margin-inline:auto}
+.sizes-art .ph img{width:100%;height:100%;object-fit:contain;object-position:center bottom;margin-inline:auto}
 .sizes-art figcaption{font-family:var(--display);font-weight:600;margin-top:8px}
 .sizes-art figcaption small{display:block;font:700 .85rem var(--body);color:var(--ink-soft)}
 .note{font-size:.9rem;color:var(--ink-soft);margin-top:14px}
@@ -230,7 +234,7 @@ td .w{font-family:var(--display);font-weight:600;font-size:1.25rem;color:var(--w
 .sig{background:var(--paper);border:1px solid var(--line);border-radius:24px;overflow:hidden;display:grid;grid-template-rows:auto 1fr}
 .sig img{width:100%;aspect-ratio:16/9;object-fit:cover}
 .sig .body{padding:22px;display:flex;flex-direction:column;gap:10px}
-.sig .tag{font-family:var(--display);font-weight:600;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rust)}
+.sig .tag{font-family:var(--display);font-weight:600;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rust-text)}
 .sig p{color:var(--ink-soft);font-size:.97rem}
 .sig .why{font-size:.9rem;color:var(--ink);font-weight:700;padding-top:10px;border-top:1px dashed var(--line);margin-top:4px}
 /* safety */
@@ -286,7 +290,7 @@ td .w{font-family:var(--display);font-weight:600;font-size:1.25rem;color:var(--w
 @media (min-width:760px){.tl{padding:26px 0 0 0;border-left:0;border-top:2px solid var(--line)}}
 .tl::before{content:"";position:absolute;left:-9px;top:30px;width:16px;height:16px;border-radius:50%;background:var(--rust);border:3px solid var(--bg)}
 @media (min-width:760px){.tl::before{left:0;top:-9px}}
-.tl .k{font-family:var(--display);font-weight:600;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rust)}
+.tl .k{font-family:var(--display);font-weight:600;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rust-text)}
 .tl h3{margin:6px 0 8px}
 .tl p{color:var(--ink-soft);font-size:.96rem}
 /* footer */
@@ -333,7 +337,7 @@ footer p{max-width:70ch}
       <p class="origin">Inspired by a therapist. Created with love.</p>
     </div>
     <figure class="hero-art" style="margin:0">
-      <img src="../assets/group-cutout-1200.png" alt="The four Sowala plush companions: two sloths and two red pandas in large and small sizes" width="1085" height="1200">
+      <img src="../assets/clean/group-sloth-first-1200.png" alt="The four Sowala plush companions: the large and small sloth in front, the two red pandas beside them" width="1077" height="1200">
       <figcaption class="hero-note">Sloth and Red Panda, each in Large and Small. Concept prototypes photographed in the shop.</figcaption>
     </figure>
   </div>
@@ -343,7 +347,7 @@ footer p{max-width:70ch}
 <section class="story" id="story">
   <div class="wrap">
     <figure class="story-art">
-      <img src="../assets/sloth-pair-clean.png" alt="The large and small Sowala sloths sitting together" width="891" height="1392">
+      <img src="../assets/sloth-pair-clean.png" alt="The large and small Sowala sloths sitting together" width="880" height="1386">
       <figcaption>The sloth is where it all started.</figcaption>
     </figure>
     <div>
@@ -437,18 +441,18 @@ footer p{max-width:70ch}
           <g>
             <path d="M104 318h192a10 10 0 0 1 10 10v170a10 10 0 0 1-10 10H104a10 10 0 0 1-10-10V328a10 10 0 0 1 10-10Z" fill="var(--paper)" stroke="var(--ink)" stroke-width="2.5" stroke-dasharray="7 6"/>
             <!-- pocket B (upper, thermal) -->
-            <rect x="112" y="332" width="176" height="66" rx="10" fill="url(#thermo)" opacity=".35"/>
-            <rect x="112" y="332" width="176" height="66" rx="10" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <rect x="98" y="332" width="204" height="66" rx="10" fill="url(#thermo)" opacity=".35"/>
+            <rect x="98" y="332" width="204" height="66" rx="10" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
             <text x="200" y="359" text-anchor="middle" class="svg-pk">POCKET B</text>
-            <text x="200" y="383" text-anchor="middle" class="svg-s">warm‑or‑cool</text>
+            <text x="200" y="383" text-anchor="middle" class="svg-s svg-ps">warm‑or‑cool</text>
             <!-- divider seam -->
             <line x1="104" y1="410" x2="296" y2="410" stroke="var(--ink)" stroke-width="3"/>
             <line x1="104" y1="416" x2="296" y2="416" stroke="var(--ink)" stroke-width="1" stroke-dasharray="3 3"/>
             <!-- pocket A (lower belly, weighted) -->
-            <rect x="112" y="426" width="176" height="70" rx="10" fill="var(--weight)" opacity=".28"/>
-            <rect x="112" y="426" width="176" height="70" rx="10" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <rect x="98" y="426" width="204" height="70" rx="10" fill="var(--weight)" opacity=".28"/>
+            <rect x="98" y="426" width="204" height="70" rx="10" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
             <text x="200" y="455" text-anchor="middle" class="svg-pk">POCKET A</text>
-            <text x="200" y="479" text-anchor="middle" class="svg-s">weighted pouch</text>
+            <text x="200" y="479" text-anchor="middle" class="svg-s svg-ps">weighted pouch</text>
           </g>
 
           <!-- FLAP (closure) exploded up-right -->
@@ -530,15 +534,15 @@ footer p{max-width:70ch}
       <!-- SLOTH -->
       <article class="tex">
         <div class="tex-photo">
-          <svg viewBox="0 0 700 1020" role="img" aria-label="Sloth with numbered texture hotspots">
-            <image href="../assets/clean/sloth-small.png" x="0" y="0" width="700" height="1020"/>
+          <svg viewBox="0 0 693 1012" role="img" aria-label="Sloth with numbered texture hotspots">
+            <image href="../assets/clean/sloth-small.png" x="0" y="0" width="693" height="1012"/>
             <g>
-              <circle cx="494" cy="458" r="27" class="dot"/><text x="494" y="468" text-anchor="middle" class="dot-t" font-size="28">1</text>
-              <circle cx="289" cy="278" r="27" class="dot"/><text x="289" y="288" text-anchor="middle" class="dot-t" font-size="28">2</text>
-              <circle cx="229" cy="588" r="27" class="dot"/><text x="229" y="598" text-anchor="middle" class="dot-t" font-size="28">3</text>
-              <circle cx="384" cy="708" r="27" class="dot"/><text x="384" y="718" text-anchor="middle" class="dot-t" font-size="28">4</text>
-              <circle cx="594" cy="458" r="27" class="dot"/><text x="594" y="468" text-anchor="middle" class="dot-t" font-size="28">5</text>
-              <circle cx="239" cy="953" r="27" class="dot"/><text x="239" y="963" text-anchor="middle" class="dot-t" font-size="28">6</text>
+              <circle cx="490" cy="453" r="27" class="dot"/><text x="490" y="463" text-anchor="middle" class="dot-t" font-size="28">1</text>
+              <circle cx="285" cy="273" r="27" class="dot"/><text x="285" y="283" text-anchor="middle" class="dot-t" font-size="28">2</text>
+              <circle cx="225" cy="583" r="27" class="dot"/><text x="225" y="593" text-anchor="middle" class="dot-t" font-size="28">3</text>
+              <circle cx="380" cy="703" r="27" class="dot"/><text x="380" y="713" text-anchor="middle" class="dot-t" font-size="28">4</text>
+              <circle cx="541" cy="515" r="27" class="dot"/><text x="541" y="525" text-anchor="middle" class="dot-t" font-size="28">5</text>
+              <circle cx="235" cy="948" r="27" class="dot"/><text x="235" y="958" text-anchor="middle" class="dot-t" font-size="28">6</text>
             </g>
           </svg>
         </div>
@@ -548,7 +552,7 @@ footer p{max-width:70ch}
             <li><span class="n">1</span><img src="../assets/closeups/sloth-fur.jpg" alt=""><div><b>Long‑pile fur</b><span>Very soft, long strands over the whole body—for stroking and burying fingers.</span></div></li>
             <li><span class="n">2</span><img src="../assets/closeups/sloth-face.jpg" alt=""><div><b>Smooth face mask</b><span>Short, smooth cream fabric on the face and inside the ears—a cool, calm contrast to the fur.</span></div></li>
             <li><span class="n">3</span><img src="../assets/closeups/sloth-claws.jpg" alt=""><div><b>Textured claws</b><span>Firm felt claws at the end of each arm—something to run a thumb across.</span></div></li>
-            <li><span class="n">4</span><img src="../assets/closeups/sloth-belly-patch.jpg" alt=""><div><b>Raised‑dot belly patch</b><span>A hidden patch of raised dots on the lower belly, over the insert pockets.</span></div></li>
+            <li><span class="n">4</span><svg class="swatch" viewBox="0 0 56 56" aria-hidden="true"><rect width="56" height="56" rx="10" fill="var(--touch-soft)"/><g fill="var(--touch)"><circle cx="8.0" cy="8.0" r="4.2"/><circle cx="21.4" cy="8.0" r="4.2"/><circle cx="34.8" cy="8.0" r="4.2"/><circle cx="48.2" cy="8.0" r="4.2"/><circle cx="14.7" cy="21.4" r="4.2"/><circle cx="28.1" cy="21.4" r="4.2"/><circle cx="41.5" cy="21.4" r="4.2"/><circle cx="8.0" cy="34.8" r="4.2"/><circle cx="21.4" cy="34.8" r="4.2"/><circle cx="34.8" cy="34.8" r="4.2"/><circle cx="48.2" cy="34.8" r="4.2"/><circle cx="14.7" cy="48.2" r="4.2"/><circle cx="28.1" cy="48.2" r="4.2"/><circle cx="41.5" cy="48.2" r="4.2"/></g><g fill="#fff" opacity=".55"><circle cx="6.7" cy="6.7" r="1.5"/><circle cx="20.1" cy="6.7" r="1.5"/><circle cx="33.5" cy="6.7" r="1.5"/><circle cx="46.9" cy="6.7" r="1.5"/><circle cx="13.4" cy="20.1" r="1.5"/><circle cx="26.8" cy="20.1" r="1.5"/><circle cx="40.2" cy="20.1" r="1.5"/><circle cx="6.7" cy="33.5" r="1.5"/><circle cx="20.1" cy="33.5" r="1.5"/><circle cx="33.5" cy="33.5" r="1.5"/><circle cx="46.9" cy="33.5" r="1.5"/><circle cx="13.4" cy="46.9" r="1.5"/><circle cx="26.8" cy="46.9" r="1.5"/><circle cx="40.2" cy="46.9" r="1.5"/></g></svg><div><b>Raised‑dot belly patch</b><span>A hidden patch of raised dots on the lower belly, over the insert pockets (design feature—not yet on the prototype).</span></div></li>
             <li><span class="n">5</span><img src="../assets/closeups/sloth-sherpa.jpg" alt=""><div><b>Sherpa inside the arms</b><span>The inner side of the long arms is lined with sherpa—warm and nubbly against the child.</span></div></li>
             <li><span class="n">6</span><img src="../assets/closeups/sloth-foot.jpg" alt=""><div><b>Paw‑pad feet</b><span>Smooth minky pads with embroidered toes.</span></div></li>
           </ul>
@@ -559,15 +563,15 @@ footer p{max-width:70ch}
       <!-- RED PANDA -->
       <article class="tex">
         <div class="tex-photo">
-          <svg viewBox="0 0 868 1078" role="img" aria-label="Red Panda with numbered texture hotspots">
-            <image href="../assets/clean/redpanda-small.png" x="0" y="0" width="868" height="1078"/>
+          <svg viewBox="0 0 859 1069" role="img" aria-label="Red Panda with numbered texture hotspots">
+            <image href="../assets/clean/redpanda-small.png" x="0" y="0" width="859" height="1069"/>
             <g>
-              <circle cx="544" cy="191" r="27" class="dot"/><text x="544" y="201" text-anchor="middle" class="dot-t" font-size="28">1</text>
-              <circle cx="556" cy="52" r="27" class="dot"/><text x="556" y="62" text-anchor="middle" class="dot-t" font-size="28">2</text>
-              <circle cx="684" cy="961" r="27" class="dot"/><text x="684" y="971" text-anchor="middle" class="dot-t" font-size="28">3</text>
-              <circle cx="424" cy="671" r="27" class="dot"/><text x="424" y="681" text-anchor="middle" class="dot-t" font-size="28">4</text>
-              <circle cx="790" cy="470" r="27" class="dot"/><text x="790" y="480" text-anchor="middle" class="dot-t" font-size="28">5</text>
-              <circle cx="104" cy="551" r="27" class="dot"/><text x="104" y="561" text-anchor="middle" class="dot-t" font-size="28">6</text>
+              <circle cx="540" cy="185" r="27" class="dot"/><text x="540" y="195" text-anchor="middle" class="dot-t" font-size="28">1</text>
+              <circle cx="552" cy="46" r="27" class="dot"/><text x="552" y="56" text-anchor="middle" class="dot-t" font-size="28">2</text>
+              <circle cx="680" cy="955" r="27" class="dot"/><text x="680" y="965" text-anchor="middle" class="dot-t" font-size="28">3</text>
+              <circle cx="420" cy="665" r="27" class="dot"/><text x="420" y="675" text-anchor="middle" class="dot-t" font-size="28">4</text>
+              <circle cx="786" cy="464" r="27" class="dot"/><text x="786" y="474" text-anchor="middle" class="dot-t" font-size="28">5</text>
+              <circle cx="100" cy="545" r="27" class="dot"/><text x="100" y="555" text-anchor="middle" class="dot-t" font-size="28">6</text>
             </g>
           </svg>
         </div>
@@ -575,7 +579,7 @@ footer p{max-width:70ch}
           <div class="tex-head"><h3>Red Panda</h3><span>The second character · curly, crinkly, squeezable</span></div>
           <ul class="tex-list">
             <li><span class="n">1</span><img src="../assets/closeups/curly-mane.jpg" alt=""><div><b>Curly mane</b><span>A hood of tight curls around the face—springy under the fingers.</span></div></li>
-            <li><span class="n">2</span><img src="../assets/closeups/redpanda-face.jpg" alt=""><div><b>Silky‑smooth ears</b><span>Satin‑smooth ear insides tucked into the curls.</span></div></li>
+            <li><span class="n">2</span><img src="../assets/closeups/redpanda-ear.jpg" alt=""><div><b>Silky‑smooth ears</b><span>Satin‑smooth ear insides tucked into the curls.</span></div></li>
             <li><span class="n">3</span><img src="../assets/closeups/paw-pad.jpg" alt=""><div><b>Ribbed paw pads</b><span>Corduroy‑ribbed pads with embroidered toes on both feet—made for thumb‑rubbing.</span></div></li>
             <li><span class="n">4</span><img src="../assets/closeups/waffle-belly.jpg" alt=""><div><b>Waffle‑knit belly</b><span>A cream waffle texture across the whole belly, over the insert pockets.</span></div></li>
             <li><span class="n">5</span><img src="../assets/closeups/redpanda-tail.jpg" alt=""><div><b>Crinkle tail</b><span>Behind the body: a squeezable tail with a quiet crinkle layer sealed inside—a feature to try, since some children prefer no sound.</span></div></li>
@@ -603,12 +607,12 @@ footer p{max-width:70ch}
           <rect x="24" y="22" width="96" height="112" rx="10" fill="var(--paper)" stroke="var(--cool)" stroke-width="3"/>
           <line x1="24" y1="62" x2="120" y2="62" stroke="var(--cool)" stroke-width="3"/>
           <rect x="34" y="78" width="76" height="30" rx="8" fill="var(--cool)" opacity=".85"/>
-          <text x="72" y="150" text-anchor="middle" font-size="12" class="svg-s">FRIDGE</text><text x="72" y="165" text-anchor="middle" font-size="11" class="svg-s">gel pack · cool</text>
+          <text x="72" y="148" text-anchor="middle" font-size="14" class="svg-s">FRIDGE</text><text x="72" y="164" text-anchor="middle" font-size="13" class="svg-s">gel pack · cool</text>
           <rect x="150" y="42" width="96" height="76" rx="10" fill="var(--paper)" stroke="var(--warm)" stroke-width="3"/>
           <rect x="162" y="54" width="56" height="52" rx="6" fill="none" stroke="var(--warm)" stroke-width="2"/>
           <rect x="172" y="70" width="36" height="22" rx="6" fill="var(--warm)" opacity=".85"/>
           <circle cx="232" cy="64" r="4" fill="var(--warm)"/><circle cx="232" cy="80" r="4" fill="var(--warm)"/>
-          <text x="198" y="150" text-anchor="middle" font-size="12" class="svg-s">MICROWAVE</text><text x="198" y="165" text-anchor="middle" font-size="11" class="svg-s">grain insert · warm</text>
+          <text x="198" y="148" text-anchor="middle" font-size="14" class="svg-s">MICROWAVE</text><text x="198" y="164" text-anchor="middle" font-size="13" class="svg-s">grain insert · warm</text>
           <text x="135" y="20" text-anchor="middle" font-size="14" class="svg-t">or</text>
         </svg>
         <h3>Chill or warm the insert</h3>
@@ -623,7 +627,7 @@ footer p{max-width:70ch}
           <rect x="100" y="110" width="100" height="20" rx="6" fill="var(--weight-soft)" stroke="var(--weight)" stroke-width="1.5"/>
           <rect x="16" y="86" width="62" height="22" rx="8" fill="url(#thermo)"/>
           <path d="M84 97h10" stroke="var(--ink)" stroke-width="2"/><path d="M90 92l7 5-7 5" fill="none" stroke="var(--ink)" stroke-width="2"/>
-          <text x="150" y="160" text-anchor="middle" font-size="12" class="svg-s">flap opens · insert slides into pocket B</text>
+          <text x="150" y="160" text-anchor="middle" font-size="13" class="svg-s">flap opens · insert slides in</text>
         </svg>
         <h3>Slide it into the belly pocket</h3>
         <p>Open the hidden flap, slide the insert into its own pocket above the weighted pouch, and press the flap closed.</p>
@@ -638,7 +642,7 @@ footer p{max-width:70ch}
           <path d="M140 118c-10-8-22-15-22-25a6 6 0 0 1 11-3 6 6 0 0 1 11 3c0 10-12 17-22 25Z" transform="translate(11 -4)" fill="var(--rust)"/>
           <path d="M124 50q16 12 32 0" stroke="var(--ink)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
           <circle cx="126" cy="42" r="3.5" fill="var(--ink)"/><circle cx="154" cy="42" r="3.5" fill="var(--ink)"/>
-          <text x="140" y="160" text-anchor="middle" font-size="12" class="svg-s">weight low in the lap · arms wrap around</text>
+          <text x="140" y="160" text-anchor="middle" font-size="13" class="svg-s">weight low · arms wrap around</text>
         </svg>
         <h3>Hug</h3>
         <p>The weight settles low in the lap, the insert warms or cools the belly, and the long arms wrap around. Awake and supervised—never left alone under the weight, never over the face.</p>
@@ -657,8 +661,8 @@ footer p{max-width:70ch}
     </div>
     <div class="sizes-grid">
       <div class="sizes-art">
-        <figure><div class="ph"><img src="../assets/sloth-pair-clean.png" alt="Large and small sloth" width="891" height="1392"></div><figcaption>Sloth<small>Large · Small</small></figcaption></figure>
-        <figure><div class="ph"><img src="../assets/redpanda-pair.png" alt="Large and small red panda" width="800" height="1720"></div><figcaption>Red Panda<small>Large · Small</small></figcaption></figure>
+        <figure><div class="ph"><img src="../assets/sloth-pair-clean.png" alt="Large and small sloth" width="880" height="1386"></div><figcaption>Sloth<small>Large · Small</small></figcaption></figure>
+        <figure><div class="ph"><img src="../assets/clean/redpanda-pair.png" alt="Large and small red panda" width="859" height="1548"></div><figcaption>Red Panda<small>Large · Small</small></figcaption></figure>
       </div>
       <div>
         <div class="tablewrap">
@@ -725,7 +729,7 @@ footer p{max-width:70ch}
     </div>
     <div class="sig-grid">
       <article class="sig">
-        <img src="../assets/closeups/sloth-claws.jpg" alt="The sloth's felt claws at the end of its arm" width="350" height="250">
+        <img src="../assets/closeups/sloth-arm-wide.jpg" alt="The small sloth's long arms, each ending in white felt claws" width="880" height="495">
         <div class="body">
           <span class="tag">Sloth</span>
           <h3>Extra‑long hugging arms</h3>
@@ -787,9 +791,9 @@ footer p{max-width:70ch}
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 7v5l3 2"/></svg>Ages 3+</span>
       <span>Not for infants</span>
       <span>Not a sleep product</span>
-      <span>An adult heats and checks the warm insert</span>
-      <span>Never leave a child alone under the weighted companion</span>
+      <span>Adult supervision with the warm insert</span>
     </div>
+    <p class="note"><b>In practice:</b> an adult heats and checks the warm insert, and a child is never left alone under the weighted companion.</p>
     <p class="disclaimer">Not a medical device and not intended to diagnose, treat, cure or prevent any condition. Concept prototype — final weights, materials, closures and age grading are subject to third‑party testing at a CPSC‑accepted laboratory (ASTM F963‑23 / CPSIA) before sale. Follow the heating guide; never microwave the plush or the weighted pouch; remove all inserts before washing.</p>
 
     <div class="heat">
@@ -904,7 +908,7 @@ footer p{max-width:70ch}
         <ul>
           <li>Weighted pouch, gel pack and microwave insert each sold separately as spares and replacements.</li>
           <li>One insert size fits both Large and Small pockets; only the pellet weight differs.</li>
-          <li>The two inserts differ in colour, shape and label so they cannot be confused; the weighted pouch and the plush are tagged “Do not microwave”.</li>
+          <li>The two inserts differ in color, shape and label so they cannot be confused; the weighted pouch and the plush are tagged “Do not microwave”.</li>
         </ul>
       </div>
     </div>
@@ -935,7 +939,8 @@ footer p{max-width:70ch}
       sowala
     </a>
     <p><b>Weighted Sensory Companions</b> · Comfort, one hug at a time. · Inspired by a therapist. Created with love.</p>
-    <p>Ages 3+ · Not for infants · Not a sleep product · An adult heats and checks the warm insert · Never leave a child alone under the weighted companion</p>
+    <p>Ages 3+ · Not for infants · Not a sleep product · Adult supervision with the warm insert</p>
+    <p>An adult heats and checks the warm insert; a child is never left alone under the weighted companion.</p>
     <p><em>Not a medical device and not intended to diagnose, treat, cure or prevent any condition. Concept prototype — final weights, materials, closures and age grading are subject to third‑party testing at a CPSC‑accepted laboratory (ASTM F963‑23 / CPSIA) before sale. Follow the heating guide; never microwave the plush or the weighted pouch; remove all inserts before washing.</em></p>
   </div>
 </footer>
