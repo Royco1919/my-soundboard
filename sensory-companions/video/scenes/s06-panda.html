@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>S06 red panda signature</title>
+<link rel="stylesheet" href="common.css">
+<style>
+/* 6 s. Tail squeezes (loop from 1.0), crinkle marks pulse; paw pad ribs + thumb rubs (loop from 2.6) */
+.tag{background:var(--rust)}
+#tail{position:absolute;left:0;top:0;width:560px;height:600px}
+#tailShape{transform-origin:280px 300px;animation:squeeze 1.6s 1s ease-in-out infinite}
+@keyframes squeeze{0%{transform:scale(1,1)}35%{transform:scale(.86,1.06)}55%{transform:scale(.86,1.06)}100%{transform:scale(1,1)}}
+#hand{transform-origin:280px 300px;animation:press 1.6s 1s ease-in-out infinite}
+@keyframes press{0%{transform:translate(0,0)}35%{transform:translate(-28px,0)}55%{transform:translate(-28px,0)}100%{transform:translate(0,0)}}
+#hand2{transform-origin:280px 300px;animation:press2 1.6s 1s ease-in-out infinite}
+@keyframes press2{0%{transform:translate(0,0)}35%{transform:translate(28px,0)}55%{transform:translate(28px,0)}100%{transform:translate(0,0)}}
+.crk{fill:none;stroke:var(--rust);stroke-width:6;stroke-linecap:round;stroke-linejoin:round;opacity:0;animation:crk 1.6s 1s ease-out infinite}
+@keyframes crk{0%{opacity:0}30%{opacity:0}45%{opacity:1}85%{opacity:0}100%{opacity:0}}
+#pad{position:absolute;left:640px;top:40px;width:420px;height:420px}
+#thumb{animation:rub 1.4s 2.6s ease-in-out infinite}
+@keyframes rub{0%{transform:translate(-70px,0)}50%{transform:translate(70px,0)}100%{transform:translate(-70px,0)}}
+.rib{animation:ribGlow 1.4s var(--d) ease-in-out infinite}
+@keyframes ribGlow{0%{stroke:#4a3325}50%{stroke:#7a5a45}100%{stroke:#4a3325}}
+.lbl{left:640px}
+</style></head>
+<body class="feat">
+<div class="photo-col f" style="--i:.1s;--o:5.6s"><img class="shadow" src="../../assets/redpanda-small.png" alt=""></div>
+<div class="head">
+  <div class="tag a" style="--i:.2s;--o:5.6s"><span class="en">04 · Calm &amp; Fidget</span><span class="he">04 · רוגע ופידג׳ט</span></div>
+  <h2 class="h2 a" style="--i:.35s;--o:5.6s"><span class="en">Red Panda: a tail you can squeeze.</span><span class="he">פנדה אדומה: זנב שאפשר ללחוץ.</span></h2>
+</div>
+<div class="diag">
+  <svg id="tail" viewBox="0 0 560 600" class="f" style="--i:.5s;--o:5.6s">
+    <g id="tailShape">
+      <path d="M90 520 C 60 380 140 250 260 210 C 380 170 470 240 470 330 C 470 420 400 470 330 450 C 250 430 210 330 260 290" fill="none" stroke="var(--rust)" stroke-width="86" stroke-linecap="round"/>
+      <path d="M90 520 C 60 380 140 250 260 210 C 380 170 470 240 470 330 C 470 420 400 470 330 450 C 250 430 210 330 260 290" fill="none" stroke="#F2DFC4" stroke-width="86" stroke-linecap="round" stroke-dasharray="40 62" opacity=".9"/>
+    </g>
+    <g id="hand" fill="var(--taupe-light)" stroke="var(--taupe)" stroke-width="4"><ellipse cx="120" cy="300" rx="34" ry="60"/></g>
+    <g id="hand2" fill="var(--taupe-light)" stroke="var(--taupe)" stroke-width="4"><ellipse cx="500" cy="420" rx="34" ry="60"/></g>
+    <g class="crk"><path d="M300 120 l14 -26 l12 26 l14 -26"/><path d="M370 110 l8 -30 l16 22 l8 -30"/></g>
+    <g class="crk" style="animation-delay:1.25s"><path d="M470 500 l16 -22 l12 26 l14 -26"/><path d="M520 250 l22 -10 l-4 26 l22 -10"/></g>
+  </svg>
+  <svg id="pad" viewBox="0 0 420 420" class="f" style="--i:2.2s;--o:5.6s">
+    <rect x="40" y="60" width="340" height="300" rx="120" fill="#5b3f2e"/>
+    <g fill="none" stroke-width="10" stroke-linecap="round">
+      <path class="rib" style="--d:2.6s" d="M110 150 H310"/><path class="rib" style="--d:2.8s" d="M96 200 H324"/><path class="rib" style="--d:3.0s" d="M96 250 H324"/><path class="rib" style="--d:3.2s" d="M110 300 H310"/>
+    </g>
+    <g id="thumb"><ellipse cx="210" cy="225" rx="54" ry="78" fill="rgba(217,204,185,.85)" stroke="var(--taupe)" stroke-width="4"/></g>
+  </svg>
+  <div class="lbl a" style="top:492px;--i:1.2s;--o:5.6s"><span class="dot" style="background:var(--rust)"></span><span class="en">Squeezable crinkle tail</span><span class="he">זנב לחיץ מרשרש</span></div>
+  <div class="lbl a" style="left:1080px;top:190px;--i:2.6s;--o:5.6s"><span class="dot" style="background:var(--rust)"></span><span class="en">Ribbed paw pads for thumb-rubbing</span><span class="he">כריות מחורצות לשפשוף באגודל</span></div>
+</div>
+<div class="cap a" style="--i:.8s;--o:5.6s"><span class="en">Squeezable crinkle tail + ribbed paw pads for thumb-rubbing — a fidget built into the&nbsp;animal.</span><span class="he">זנב לחיץ מרשרש + כריות כפות מחורצות לשפשוף באגודל — פידג׳ט מובנה בתוך החיה.</span></div>
+</body></html>
