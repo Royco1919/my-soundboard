@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sowala Sensory Companions</title>
+<meta name="description" content="Visual explainer for Sowala weighted sensory companions: removable weight, warm and cool insert, textures to explore.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<style>
+:root{
+  --bg:#F7F1E8; --paper:#FFFDF9; --ink:#33251C; --ink-soft:#6B5A4C;
+  --rust:#C8552A; --rust-light:#E8865A; --taupe:#A28E74; --taupe-light:#D9CCB9;
+  --weight:#8F7FC4; --warm:#F0894B; --cool:#4E9DBF; --touch:#7FA86B; --line:#E7DDD0;
+  --weight-soft:#EDE9F7; --warm-soft:#FDEBDD; --cool-soft:#E1EFF5; --touch-soft:#E8F0E1; --rust-soft:#F8E3D8;
+  --shadow:0 12px 32px rgba(51,37,28,.08);
+  --plush:#CDB99C; --plush-dark:#A28E74; --skin:#F3E6D2;
+  --display:'Fredoka','Nunito',system-ui,sans-serif;
+  --body:'Nunito','Fredoka',system-ui,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#1F1813; --paper:#2A211B; --ink:#F4EBE0; --ink-soft:#C9B8A6;
+    --rust:#E8865A; --rust-light:#F2A57F; --taupe:#B9A78E; --taupe-light:#5B4C3E; --line:#41352C;
+    --weight:#A99BDA; --warm:#F59A63; --cool:#6FB4D2; --touch:#97BF83;
+    --weight-soft:#342E48; --warm-soft:#46301F; --cool-soft:#1F3540; --touch-soft:#2A3A22; --rust-soft:#4A2C1E;
+    --shadow:0 12px 32px rgba(0,0,0,.35);
+    --plush:#8C7A62; --plush-dark:#6B5A47; --skin:#D9C7AC;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1F1813; --paper:#2A211B; --ink:#F4EBE0; --ink-soft:#C9B8A6;
+  --rust:#E8865A; --rust-light:#F2A57F; --taupe:#B9A78E; --taupe-light:#5B4C3E; --line:#41352C;
+  --weight:#A99BDA; --warm:#F59A63; --cool:#6FB4D2; --touch:#97BF83;
+  --weight-soft:#342E48; --warm-soft:#46301F; --cool-soft:#1F3540; --touch-soft:#2A3A22; --rust-soft:#4A2C1E;
+  --shadow:0 12px 32px rgba(0,0,0,.35);
+  --plush:#8C7A62; --plush-dark:#6B5A47; --skin:#D9C7AC;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:var(--rust);text-decoration-thickness:1px;text-underline-offset:3px}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;line-height:1.12;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:clamp(2.3rem,5.4vw,4rem);font-weight:700}
+h2{font-size:clamp(1.75rem,3.4vw,2.5rem)}
+h3{font-size:1.3rem}
+p{margin:0}
+.wrap{width:100%;max-width:1100px;margin-inline:auto;padding-inline:16px}
+@media (min-width:720px){.wrap{padding-inline:32px}}
+section{padding-block:clamp(56px,8vw,104px)}
+section+section{border-top:1px solid var(--line)}
+.eyebrow{font-family:var(--display);font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:22px;height:3px;border-radius:2px;background:currentColor}
+.lede{font-size:1.15rem;color:var(--ink-soft);max-width:62ch;margin-top:16px}
+.sec-head{max-width:760px;margin-bottom:clamp(28px,4vw,48px)}
+.muted{color:var(--ink-soft)}
+.small{font-size:.92rem}
+/* header */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.wordmark{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.55rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em;line-height:1}
+.wordmark svg{width:28px;height:28px}
+.nav{display:none;gap:22px;font-weight:700;font-size:.92rem}
+.nav a{color:var(--ink-soft);text-decoration:none}
+.nav a:hover{color:var(--rust)}
+@media (min-width:900px){.nav{display:flex}}
+.toggle{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:7px 12px;font:700 .85rem var(--body);cursor:pointer}
+.toggle svg{width:16px;height:16px}
+.toggle:focus-visible,.nav a:focus-visible,a:focus-visible{outline:3px solid var(--cool);outline-offset:3px;border-radius:6px}
+.toggle .on-dark{display:none}
+:root[data-theme="dark"] .toggle .on-dark{display:inline}
+:root[data-theme="dark"] .toggle .on-light{display:none}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .toggle .on-dark{display:inline}
+  :root:not([data-theme="light"]) .toggle .on-light{display:none}
+}
+/* hero */
+.hero{padding-block:clamp(40px,6vw,80px) clamp(40px,6vw,72px)}
+.hero .wrap{display:grid;gap:36px;align-items:center}
+@media (min-width:860px){.hero .wrap{grid-template-columns:1.05fr .95fr;gap:48px}}
+.hero-kicker{font-family:var(--display);font-weight:600;font-size:1rem;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe);margin-bottom:18px}
+.hero h1 .accent{color:var(--rust)}
+.hero .lede{font-size:1.2rem;margin-top:22px}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 14px 8px 10px;font-weight:700;font-size:.92rem;background:var(--paper);border:1px solid var(--line)}
+.pill i{width:12px;height:12px;border-radius:50%;display:inline-block}
+.origin{margin-top:28px;font-family:var(--display);font-weight:500;font-size:1.15rem;color:var(--ink-soft)}
+.hero-art{position:relative}
+.hero-art::before{content:"";position:absolute;inset:8% 4% 2% 4%;border-radius:48% 52% 46% 54%/55% 45% 55% 45%;background:var(--rust-soft);z-index:0}
+.hero-art img{position:relative;z-index:1;width:100%;max-width:560px;margin-inline:auto;filter:drop-shadow(0 18px 24px rgba(51,37,28,.18))}
+.hero-note{margin-top:14px;text-align:center;font-size:.9rem;color:var(--ink-soft)}
+/* story */
+.story .wrap{display:grid;gap:36px;align-items:center}
+@media (min-width:860px){.story .wrap{grid-template-columns:.8fr 1.2fr;gap:56px}}
+.story-art{position:relative;max-width:420px;margin-inline:auto;width:100%}
+.story-art::before{content:"";position:absolute;inset:6% 10% 0 6%;border-radius:50% 50% 45% 55%/60% 60% 40% 40%;background:var(--taupe-light);opacity:.55}
+.story-art img{position:relative;filter:drop-shadow(0 14px 22px rgba(51,37,28,.18))}
+.story-art figcaption{position:relative;margin-top:12px;text-align:center;font-size:.9rem;color:var(--ink-soft)}
+.story-text{font-size:1.08rem;display:flex;flex-direction:column;gap:16px;max-width:62ch}
+.story-text p:first-of-type{font-family:var(--display);font-size:1.45rem;font-weight:500;color:var(--rust)}
+.story-text q{quotes:"\201C" "\201D";font-style:italic}
+.story-text .sign{font-family:var(--display);font-weight:600;font-size:1.2rem;color:var(--ink);margin-top:8px}
+/* four comforts */
+.comforts{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.comfort{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:24px;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:12px}
+.comfort::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:var(--c)}
+.comfort .ic{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:var(--cs);color:var(--c)}
+.comfort .ic svg{width:30px;height:30px}
+.comfort h3{font-size:1.25rem}
+.comfort p{color:var(--ink-soft);font-size:.98rem}
+.comfort .fact{margin-top:auto;padding-top:10px;border-top:1px dashed var(--line);font-size:.86rem;font-weight:700;color:var(--ink)}
+.c-weight{--c:var(--weight);--cs:var(--weight-soft)}
+.c-thermal{--c:var(--warm);--cs:var(--warm-soft)}
+.c-touch{--c:var(--touch);--cs:var(--touch-soft)}
+.c-calm{--c:var(--rust);--cs:var(--rust-soft)}
+.c-thermal::before{background:linear-gradient(90deg,var(--cool),var(--warm))}
+/* cutaway */
+.cutaway{display:grid;gap:32px;align-items:start}
+@media (min-width:900px){.cutaway{grid-template-columns:1.15fr .85fr;gap:48px}}
+.diagram{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:16px;box-shadow:var(--shadow)}
+.diagram svg{width:100%;height:auto}
+.legend{display:flex;flex-direction:column;gap:14px;counter-reset:leg}
+.legend li{list-style:none;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}
+.legend .n{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font:600 .95rem var(--display);color:#fff;background:var(--ink);margin-top:2px}
+.legend b{display:block;font-family:var(--display);font-weight:600;font-size:1.08rem}
+.legend p{color:var(--ink-soft);font-size:.96rem}
+.legend ul,.legend ol{margin:0;padding:0}
+.rule{margin-top:26px;padding:16px 18px;border-radius:16px;background:var(--cool-soft);border-left:4px solid var(--cool);font-size:.95rem}
+.rule b{color:var(--ink)}
+.svg-t{font-family:var(--display);font-weight:600;fill:var(--ink)}
+.svg-s{font-family:var(--body);font-weight:700;fill:var(--ink-soft)}
+.badge{fill:var(--ink)}
+.badge-t{font-family:var(--display);font-weight:600;fill:var(--paper)}
+/* texture maps */
+.tex-grid{display:grid;gap:40px}
+@media (min-width:900px){.tex-grid{gap:56px}}
+.tex{display:grid;gap:22px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:20px}
+@media (min-width:760px){.tex{grid-template-columns:minmax(260px,380px) 1fr;gap:32px;padding:28px}}
+.tex-photo svg{width:100%;height:auto;max-width:380px;margin-inline:auto}
+.tex-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.tex-head h3{font-size:1.6rem}
+.tex-head span{font-size:.9rem;color:var(--ink-soft);font-weight:700}
+.tex-list{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+@media (min-width:1000px){.tex-list{grid-template-columns:1fr 1fr}}
+.tex-list li{display:grid;grid-template-columns:30px 56px 1fr;gap:10px;align-items:center;padding:8px 10px 8px 8px;border-radius:14px;background:var(--bg)}
+.tex-list .n{width:26px;height:26px;border-radius:50%;background:var(--touch);color:#fff;display:grid;place-items:center;font:600 .9rem var(--display)}
+.tex-list img{width:56px;height:56px;object-fit:cover;border-radius:10px}
+.tex-list b{display:block;font-size:.98rem}
+.tex-list span{font-size:.86rem;color:var(--ink-soft);line-height:1.35;display:block}
+.tex-sig{margin-top:16px;padding:12px 14px;border-radius:14px;background:var(--rust-soft);font-size:.95rem}
+.tex-sig b{color:var(--rust)}
+.dot{fill:var(--touch);stroke:#fff;stroke-width:3}
+.dot-t{font-family:var(--display);font-weight:600;fill:#fff}
+/* steps */
+.steps{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));counter-reset:step}
+.step{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:14px;position:relative}
+.step .num{font-family:var(--display);font-weight:700;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rust)}
+.step svg{width:100%;height:auto;max-width:280px;background:var(--bg);border-radius:16px}
+.step h3{font-size:1.25rem}
+.step p{color:var(--ink-soft);font-size:.97rem}
+/* table */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:20px;background:var(--paper)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.98rem}
+th,td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--display);font-weight:600;font-size:.95rem;color:var(--ink-soft);background:var(--bg)}
+tr:last-child td{border-bottom:0}
+td .lbl{font-weight:800}
+td .w{font-family:var(--display);font-weight:600;font-size:1.25rem;color:var(--weight);font-variant-numeric:tabular-nums}
+.sizes-grid{display:grid;gap:28px;align-items:center}
+@media (min-width:900px){.sizes-grid{grid-template-columns:1fr 1.3fr}}
+.sizes-art{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end}
+.sizes-art figure{margin:0;text-align:center}
+.sizes-art img{margin-inline:auto;filter:drop-shadow(0 10px 18px rgba(51,37,28,.18))}
+.sizes-art figcaption{font-family:var(--display);font-weight:600;margin-top:8px}
+.sizes-art figcaption small{display:block;font:700 .85rem var(--body);color:var(--ink-soft)}
+.note{font-size:.9rem;color:var(--ink-soft);margin-top:14px}
+/* signature */
+.sig-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.sig{background:var(--paper);border:1px solid var(--line);border-radius:24px;overflow:hidden;display:grid;grid-template-rows:auto 1fr}
+.sig img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.sig .body{padding:22px;display:flex;flex-direction:column;gap:10px}
+.sig .tag{font-family:var(--display);font-weight:600;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rust)}
+.sig p{color:var(--ink-soft);font-size:.97rem}
+.sig .why{font-size:.9rem;color:var(--ink);font-weight:700;padding-top:10px;border-top:1px dashed var(--line);margin-top:4px}
+/* safety */
+.saynot{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.say{border-radius:22px;padding:24px;border:1px solid var(--line);background:var(--paper)}
+.say h3{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.say h3 svg{width:26px;height:26px;flex:none}
+.say.ok h3{color:var(--touch)}
+.say.no h3{color:var(--rust)}
+.say ul{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+.say li{padding-left:22px;position:relative;font-size:.98rem}
+.say.ok li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;border-radius:50%;background:var(--touch)}
+.say.no li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;border-radius:50%;background:var(--rust)}
+.say.no li s{text-decoration-color:var(--rust);text-decoration-thickness:2px}
+.ageline{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px 22px;padding:16px 20px;border-radius:16px;background:var(--rust-soft);font-family:var(--display);font-weight:600;font-size:1.02rem}
+.ageline span{display:inline-flex;align-items:center;gap:8px}
+.ageline svg{width:20px;height:20px;color:var(--rust)}
+.disclaimer{margin-top:16px;font-size:.92rem;color:var(--ink-soft);font-style:italic}
+.check{margin-top:36px}
+.check h3{margin-bottom:14px}
+.check ol{margin:0;padding:0;list-style:none;display:grid;gap:10px;counter-reset:ck}
+@media (min-width:760px){.check ol{grid-template-columns:1fr 1fr}}
+.check li{display:grid;grid-template-columns:26px 1fr;gap:12px;padding:14px 16px;border-radius:16px;background:var(--paper);border:1px solid var(--line);font-size:.95rem}
+.check li::before{counter-increment:ck;content:counter(ck);width:24px;height:24px;border-radius:7px;background:var(--ink);color:var(--paper);display:grid;place-items:center;font:600 .85rem var(--display);margin-top:2px}
+.check b{display:block}
+.check span{color:var(--ink-soft)}
+/* manufacturing */
+.mfg{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.mfg div{padding:22px;border-radius:20px;background:var(--paper);border:1px solid var(--line)}
+.mfg h3{font-size:1.1rem;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.mfg h3 svg{width:22px;height:22px;color:var(--taupe)}
+.mfg ul{margin:0;padding-left:18px;color:var(--ink-soft);font-size:.95rem;display:grid;gap:6px}
+/* next steps */
+.timeline{display:grid;gap:0;position:relative}
+@media (min-width:760px){.timeline{grid-template-columns:repeat(3,1fr);gap:18px}}
+.tl{position:relative;padding:22px 0 22px 34px;border-left:2px solid var(--line)}
+@media (min-width:760px){.tl{padding:26px 0 0 0;border-left:0;border-top:2px solid var(--line)}}
+.tl::before{content:"";position:absolute;left:-9px;top:30px;width:16px;height:16px;border-radius:50%;background:var(--rust);border:3px solid var(--bg)}
+@media (min-width:760px){.tl::before{left:0;top:-9px}}
+.tl .k{font-family:var(--display);font-weight:600;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rust)}
+.tl h3{margin:6px 0 8px}
+.tl p{color:var(--ink-soft);font-size:.96rem}
+/* footer */
+footer{border-top:1px solid var(--line);padding-block:40px 56px;font-size:.9rem;color:var(--ink-soft)}
+footer .wrap{display:grid;gap:18px}
+footer .wordmark{font-size:1.35rem}
+footer p{max-width:70ch}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="wordmark" href="#top" aria-label="Sowala">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 27c-5-3.6-10-7.6-10-13a5.5 5.5 0 0 1 10-3 5.5 5.5 0 0 1 10 3c0 5.4-5 9.4-10 13Z" fill="var(--rust)"/><path d="M8.5 20.5c2 2.6 4.6 4.7 7.5 6.5M23.5 20.5c-2 2.6-4.6 4.7-7.5 6.5" stroke="var(--paper)" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>
+      sowala
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#story">Story</a><a href="#comforts">Four comforts</a><a href="#inside">Inside</a><a href="#textures">Textures</a><a href="#sizes">Sizes</a><a href="#safety">Safety</a>
+    </nav>
+    <button class="toggle" id="themeToggle" type="button" aria-label="Switch theme">
+      <span class="on-light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></span>
+      <span class="on-dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
+      <span class="on-light">Dark</span><span class="on-dark">Light</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="hero-kicker">Weighted Sensory Companions</p>
+      <h1>Comfort, <span class="accent">one hug</span> at a time.</h1>
+      <p class="lede">Sowala is a soft, weighted sensory friend: comforting weight to hold close, a removable warm‑or‑cool insert, and a whole map of textures to touch and explore. Designed with children on the autism spectrum in mind.</p>
+      <div class="pills" aria-label="Four kinds of comfort">
+        <span class="pill"><i style="background:var(--weight)"></i>Weight</span>
+        <span class="pill"><i style="background:linear-gradient(90deg,var(--cool),var(--warm))"></i>Warm &amp; Cool</span>
+        <span class="pill"><i style="background:var(--touch)"></i>Touch</span>
+        <span class="pill"><i style="background:var(--rust)"></i>Calm &amp; Fidget</span>
+      </div>
+      <p class="origin">Inspired by a therapist. Created with love.</p>
+    </div>
+    <figure class="hero-art" style="margin:0">
+      <img src="../assets/group-cutout-1200.png" alt="The four Sowala plush companions: two sloths and two red pandas in large and small sizes" width="1085" height="1200">
+      <figcaption class="hero-note">Sloth and Red Panda, each in Large and Small. Concept prototypes photographed in the shop.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="wrap">
+    <figure class="story-art">
+      <img src="../assets/sloth-pair.png" alt="The large and small Sowala sloths sitting together" width="980" height="1540">
+      <figcaption>The sloth is where it all started.</figcaption>
+    </figure>
+    <div>
+      <p class="eyebrow">The Story of Sowala</p>
+      <div class="story-text">
+        <p>Sowala began with a simple act of love.</p>
+        <p>For years, a therapist dedicated to helping children on the autism spectrum would call her husband while he was out and ask, <q>Can you pick up another sensory toy for one of my kids?</q> More often than not, she was looking for something soft, comforting, and especially a sloth, because her clients loved holding and cuddling them.</p>
+        <p>Her husband began noticing how much these simple toys meant to the children. They weren’t just stuffed animals—they could provide comfort, security, and a calming sensory experience.</p>
+        <p>That inspired an idea: What if he could create a sensory companion designed specifically with these children in mind?</p>
+        <p>And that’s how Sowala was born—a soft, lovable sensory friend designed with different textures to touch and explore, comforting weight to hold close, and a removable warm‑or‑cool insert for an added soothing experience.</p>
+        <p class="sign">Sowala was inspired by a therapist, created with love, and made to bring comfort—one hug at a time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUR COMFORTS -->
+<section id="comforts">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">The system</p>
+      <h2>One companion, four kinds of comfort.</h2>
+      <p class="lede">Every Sowala combines four sensory functions in one plush. All inserts are removable, so the outer animal goes in the washing machine.</p>
+    </div>
+    <div class="comforts">
+      <article class="comfort c-weight">
+        <div class="ic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h14l3 14H6l3-14Z"/><path d="M12 12V9a4 4 0 0 1 8 0v3"/><path d="M12 20h8"/></svg></div>
+        <h3>Weight</h3>
+        <p>A removable weighted pouch sits in the lower belly. Deep, even pressure—a hug that stays. Double‑sealed inner pouch with poly pellets, not reachable in normal use; take it out to wash.</p>
+        <p class="fact">Prototype target: Large 3 lb · Small 2 lb</p>
+      </article>
+      <article class="comfort c-thermal">
+        <div class="ic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 5a3 3 0 0 1 6 0v13.5a5 5 0 1 1-6 0V5Z"/><path d="M16 12v9"/><circle cx="16" cy="23" r="1.5" fill="currentColor"/><path d="M23 6h4M23 10h3"/></svg></div>
+        <h3>Warm &amp; Cool</h3>
+        <p>A second pocket holds a separate insert. Chill the reusable gel pack in the fridge, or warm the microwaveable, temperature‑limited insert made for plush. No wires, no batteries.</p>
+        <p class="fact">Thermal and weighted materials never share a pouch</p>
+      </article>
+      <article class="comfort c-touch">
+        <div class="ic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17V8a2 2 0 1 1 4 0v7"/><path d="M14 15V6a2 2 0 1 1 4 0v9"/><path d="M18 15V8a2 2 0 1 1 4 0v9"/><path d="M22 17v-1a2 2 0 1 1 4 0v5a8 8 0 0 1-8 8h-2a8 8 0 0 1-7-4l-3-5a2 2 0 0 1 3.4-2L10 20"/></svg></div>
+        <h3>Touch</h3>
+        <p>Every animal feels different: curly mane, silky ears, ribbed paw pads and a crinkle tail on the Red Panda; long‑pile fur, a smooth face and textured claws on the Sloth. Hidden texture patches—nothing looks clinical.</p>
+        <p class="fact">Minky · corduroy · satin · sherpa · raised dots</p>
+      </article>
+      <article class="comfort c-calm">
+        <div class="ic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 27c-5.5-3.8-11-8-11-13.5A5.5 5.5 0 0 1 16 10a5.5 5.5 0 0 1 11 3.5C27 19 21.5 23.2 16 27Z"/></svg></div>
+        <h3>Calm &amp; Fidget</h3>
+        <p>One signature feature per animal. Red Panda: a squeezable crinkle tail and ribbed pads for thumb‑rubbing. Sloth: extra‑long hugging arms that wrap around the child and fasten with child‑safe hook‑and‑loop.</p>
+        <p class="fact">Kids pick the animal by the feel they like</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CUTAWAY -->
+<section id="inside">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">What’s inside</p>
+      <h2>Two pockets, two inserts, one washable plush.</h2>
+      <p class="lede">An exploded view of the lower belly. The weighted pouch and the thermal insert live in separate pockets behind one hidden flap—so each can be removed, replaced or left out on its own.</p>
+    </div>
+    <div class="cutaway">
+      <div class="diagram">
+        <svg viewBox="0 0 660 600" role="img" aria-labelledby="cutTitle">
+          <title id="cutTitle">Exploded cutaway of the plush showing the outer body, the belly flap, the weighted pouch and the thermal insert</title>
+          <defs>
+            <pattern id="pellets" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="2.2" fill="var(--weight)" opacity=".7"/><circle cx="11" cy="10" r="2.2" fill="var(--weight)" opacity=".7"/></pattern>
+            <linearGradient id="thermo" x1="0" x2="1"><stop offset="0" stop-color="var(--cool)"/><stop offset="1" stop-color="var(--warm)"/></linearGradient>
+            <pattern id="hook" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.6" fill="var(--ink)" opacity=".45"/></pattern>
+          </defs>
+
+          <!-- OUTER PLUSH (sloth silhouette) -->
+          <g>
+            <ellipse cx="200" cy="335" rx="150" ry="205" fill="var(--plush)"/>
+            <circle cx="200" cy="150" r="98" fill="var(--plush)"/>
+            <circle cx="112" cy="110" r="26" fill="var(--plush)"/><circle cx="288" cy="110" r="26" fill="var(--plush)"/>
+            <circle cx="112" cy="112" r="14" fill="var(--skin)"/><circle cx="288" cy="112" r="14" fill="var(--skin)"/>
+            <ellipse cx="200" cy="160" rx="66" ry="52" fill="var(--skin)"/>
+            <ellipse cx="200" cy="168" rx="16" ry="12" fill="var(--ink-soft)"/>
+            <circle cx="170" cy="146" r="6" fill="var(--ink)"/><circle cx="230" cy="146" r="6" fill="var(--ink)"/>
+            <path d="M184 190q16 12 32 0" stroke="var(--ink)" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M62 300q-20 60 12 130" stroke="var(--plush-dark)" stroke-width="3" fill="none" stroke-linecap="round" opacity=".6"/>
+            <path d="M338 300q20 60-12 130" stroke="var(--plush-dark)" stroke-width="3" fill="none" stroke-linecap="round" opacity=".6"/>
+            <!-- arm hint (long hugging arm) -->
+            <path d="M92 280q-52 60 6 150" stroke="var(--plush-dark)" stroke-width="20" fill="none" stroke-linecap="round" opacity=".55"/>
+            <path d="M308 280q52 60-6 150" stroke="var(--plush-dark)" stroke-width="20" fill="none" stroke-linecap="round" opacity=".55"/>
+          </g>
+
+          <!-- CUTAWAY WINDOW into the lower belly -->
+          <g>
+            <path d="M104 318h192a10 10 0 0 1 10 10v170a10 10 0 0 1-10 10H104a10 10 0 0 1-10-10V328a10 10 0 0 1 10-10Z" fill="var(--paper)" stroke="var(--ink)" stroke-width="2.5" stroke-dasharray="7 6"/>
+            <!-- pocket B (upper, thermal) -->
+            <rect x="112" y="332" width="176" height="66" rx="10" fill="url(#thermo)" opacity=".35"/>
+            <rect x="112" y="332" width="176" height="66" rx="10" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <text x="200" y="370" text-anchor="middle" class="svg-s" font-size="14">POCKET B · thermal</text>
+            <!-- divider seam -->
+            <line x1="104" y1="410" x2="296" y2="410" stroke="var(--ink)" stroke-width="3"/>
+            <line x1="104" y1="416" x2="296" y2="416" stroke="var(--ink)" stroke-width="1" stroke-dasharray="3 3"/>
+            <!-- pocket A (lower belly, weighted) -->
+            <rect x="112" y="426" width="176" height="70" rx="10" fill="var(--weight)" opacity=".28"/>
+            <rect x="112" y="426" width="176" height="70" rx="10" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <text x="200" y="466" text-anchor="middle" class="svg-s" font-size="14">POCKET A · weight</text>
+          </g>
+
+          <!-- FLAP (closure) exploded up-right -->
+          <g transform="translate(420 40)">
+            <path d="M0 0h200a10 10 0 0 1 10 10v44a10 10 0 0 1-10 10H0Z" fill="var(--plush)"/>
+            <rect x="12" y="20" width="176" height="24" rx="5" fill="url(#hook)"/>
+            <rect x="12" y="20" width="176" height="24" rx="5" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <text x="105" y="90" text-anchor="middle" class="svg-t" font-size="17">Hidden flap · hook‑and‑loop</text>
+            <text x="105" y="110" text-anchor="middle" class="svg-s" font-size="13">fur‑covered seam · no magnets · no zipper pull</text>
+          </g>
+          <!-- leader from flap to window top edge -->
+          <path d="M420 72 Q330 72 300 318" stroke="var(--ink)" stroke-width="1.5" fill="none" stroke-dasharray="5 5"/>
+
+          <!-- THERMAL INSERT exploded right -->
+          <g transform="translate(440 200)">
+            <rect x="0" y="0" width="180" height="70" rx="14" fill="url(#thermo)"/>
+            <rect x="0" y="0" width="180" height="70" rx="14" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <path d="M28 35h124" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+            <circle cx="28" cy="35" r="5" fill="#fff"/><circle cx="152" cy="35" r="5" fill="#fff"/>
+            <text x="90" y="98" text-anchor="middle" class="svg-t" font-size="17">Warm‑or‑cool insert</text>
+            <text x="90" y="118" text-anchor="middle" class="svg-s" font-size="13">gel pack (fridge) · microwave insert</text>
+            <text x="90" y="136" text-anchor="middle" class="svg-s" font-size="13">temperature‑limited · no wires · no batteries</text>
+          </g>
+          <path d="M296 365 H440" stroke="var(--ink)" stroke-width="1.5" fill="none" stroke-dasharray="5 5"/>
+          <path d="M430 359l10 6-10 6Z" fill="var(--ink)"/>
+
+          <!-- WEIGHTED POUCH exploded right -->
+          <g transform="translate(440 400)">
+            <rect x="0" y="0" width="180" height="76" rx="18" fill="var(--weight-soft)"/>
+            <rect x="0" y="0" width="180" height="76" rx="18" fill="url(#pellets)"/>
+            <rect x="0" y="0" width="180" height="76" rx="18" fill="none" stroke="var(--weight)" stroke-width="3"/>
+            <rect x="6" y="6" width="168" height="64" rx="14" fill="none" stroke="var(--weight)" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <text x="90" y="104" text-anchor="middle" class="svg-t" font-size="17">Weighted pouch</text>
+            <text x="90" y="124" text-anchor="middle" class="svg-s" font-size="13">poly pellets · double‑sealed inner bag</text>
+            <text x="90" y="142" text-anchor="middle" class="svg-s" font-size="13">Large 3 lb · Small 2 lb (prototype target)</text>
+          </g>
+          <path d="M296 461 H440" stroke="var(--ink)" stroke-width="1.5" fill="none" stroke-dasharray="5 5"/>
+          <path d="M430 455l10 6-10 6Z" fill="var(--ink)"/>
+
+          <!-- washing note -->
+          <g transform="translate(24 536)">
+            <circle cx="14" cy="14" r="13" fill="none" stroke="var(--cool)" stroke-width="2"/>
+            <path d="M6 15q4-4 8 0t8 0" stroke="var(--cool)" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <text x="38" y="19" class="svg-s" font-size="14">Inserts out → outer plush is machine‑washable</text>
+          </g>
+
+          <!-- NUMBER BADGES -->
+          <g>
+            <circle cx="52" cy="200" r="17" class="badge"/><text x="52" y="206" text-anchor="middle" class="badge-t" font-size="18">1</text>
+            <circle cx="395" cy="62" r="17" class="badge"/><text x="395" y="68" text-anchor="middle" class="badge-t" font-size="18">2</text>
+            <circle cx="380" cy="252" r="17" class="badge"/><text x="380" y="258" text-anchor="middle" class="badge-t" font-size="18">3</text>
+            <circle cx="380" cy="452" r="17" class="badge"/><text x="380" y="458" text-anchor="middle" class="badge-t" font-size="18">4</text>
+            <circle cx="76" cy="413" r="17" class="badge"/><text x="76" y="419" text-anchor="middle" class="badge-t" font-size="18">5</text>
+          </g>
+        </svg>
+      </div>
+      <ol class="legend">
+        <li><span class="n">1</span><div><b>Outer plush</b><p>The animal itself: long‑pile or curly fur, embroidered face, no loose parts. With both inserts removed it goes in the washing machine.</p></div></li>
+        <li><span class="n">2</span><div><b>Hidden belly flap</b><p>One fur‑covered opening on the lower belly, closed with child‑safe hook‑and‑loop under the seam. It is not obvious to a child in normal play and needs an adult’s deliberate pull.</p></div></li>
+        <li><span class="n">3</span><div><b>Pocket B · warm‑or‑cool insert</b><p>The upper pocket takes either the reusable gel pack straight from the fridge or the microwaveable, temperature‑limited insert made for plush products. No electronics anywhere in the toy.</p></div></li>
+        <li><span class="n">4</span><div><b>Pocket A · weighted pouch</b><p>The lower‑belly pocket holds a double‑sealed pouch of poly pellets, so the weight sits low and the animal settles into the lap. Prototype target 3 lb (Large) / 2 lb (Small), to be tuned in testing.</p></div></li>
+        <li><span class="n">5</span><div><b>Divider seam</b><p>A stitched wall between the two pockets. Thermal and weighted materials never share a pouch—easier to make, clean, replace and test.</p></div></li>
+      </ol>
+    </div>
+    <p class="rule"><b>Why two pockets and not one?</b> Keeping the thermal insert separate from the weighting material makes manufacturing, cleaning, replacement and safety review much simpler—each insert can be swapped or sold as a spare on its own.</p>
+  </div>
+</section>
+
+<!-- TEXTURE MAPS -->
+<section id="textures">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Touch</p>
+      <h2>Every animal feels different.</h2>
+      <p class="lede">Textures are built into the animal rather than added on top of it—a child can explore with their hands without the toy looking like equipment. Numbered dots mark where each texture lives.</p>
+    </div>
+    <div class="tex-grid">
+
+      <!-- SLOTH -->
+      <article class="tex">
+        <div class="tex-photo">
+          <svg viewBox="150 0 570 1160" role="img" aria-label="Sloth with numbered texture hotspots">
+            <image href="../assets/sloth-small.png" x="0" y="0" width="720" height="1160"/>
+            <g>
+              <circle cx="470" cy="470" r="27" class="dot"/><text x="470" y="480" text-anchor="middle" class="dot-t" font-size="28">1</text>
+              <circle cx="330" cy="230" r="27" class="dot"/><text x="330" y="240" text-anchor="middle" class="dot-t" font-size="28">2</text>
+              <circle cx="170" cy="600" r="27" class="dot"/><text x="170" y="610" text-anchor="middle" class="dot-t" font-size="28">3</text>
+              <circle cx="360" cy="720" r="27" class="dot"/><text x="360" y="730" text-anchor="middle" class="dot-t" font-size="28">4</text>
+              <circle cx="480" cy="530" r="27" class="dot" opacity="0"/>
+              <circle cx="570" cy="470" r="27" class="dot"/><text x="570" y="480" text-anchor="middle" class="dot-t" font-size="28">5</text>
+              <circle cx="150" cy="940" r="27" class="dot"/><text x="150" y="950" text-anchor="middle" class="dot-t" font-size="28">6</text>
+            </g>
+          </svg>
+        </div>
+        <div>
+          <div class="tex-head"><h3>Sloth</h3><span>The origin animal · slow, soft, huggable</span></div>
+          <ul class="tex-list">
+            <li><span class="n">1</span><img src="../assets/closeups/sloth-fur.jpg" alt=""><div><b>Long‑pile fur</b><span>Very soft, long strands over the whole body—for stroking and burying fingers.</span></div></li>
+            <li><span class="n">2</span><img src="../assets/closeups/sloth-face.jpg" alt=""><div><b>Smooth face mask</b><span>Short, smooth cream fabric on the face and inside the ears—a cool, calm contrast to the fur.</span></div></li>
+            <li><span class="n">3</span><img src="../assets/closeups/sloth-claws.jpg" alt=""><div><b>Textured claws</b><span>Firm felt claws at the end of each arm—something to run a thumb across.</span></div></li>
+            <li><span class="n">4</span><img src="../assets/closeups/sloth-belly-patch.jpg" alt=""><div><b>Raised‑dot belly patch</b><span>A hidden patch of raised dots on the lower belly, over the insert pockets.</span></div></li>
+            <li><span class="n">5</span><img src="../assets/closeups/sloth-fur.jpg" alt=""><div><b>Sherpa inside the arms</b><span>The inner side of the long arms is lined with sherpa—warm and nubbly against the child.</span></div></li>
+            <li><span class="n">6</span><img src="../assets/closeups/sloth-foot.jpg" alt=""><div><b>Paw‑pad feet</b><span>Smooth minky pads with embroidered toes.</span></div></li>
+          </ul>
+          <p class="tex-sig"><b>Signature feature:</b> extra‑long hugging arms that wrap around the child and fasten with child‑safe hook‑and‑loop.</p>
+        </div>
+      </article>
+
+      <!-- RED PANDA -->
+      <article class="tex">
+        <div class="tex-photo">
+          <svg viewBox="30 30 760 1110" role="img" aria-label="Red Panda with numbered texture hotspots">
+            <image href="../assets/redpanda-small.png" x="0" y="0" width="790" height="1140"/>
+            <g>
+              <circle cx="560" cy="220" r="27" class="dot"/><text x="560" y="230" text-anchor="middle" class="dot-t" font-size="28">1</text>
+              <circle cx="560" cy="98" r="27" class="dot"/><text x="560" y="108" text-anchor="middle" class="dot-t" font-size="28">2</text>
+              <circle cx="700" cy="990" r="27" class="dot"/><text x="700" y="1000" text-anchor="middle" class="dot-t" font-size="28">3</text>
+              <circle cx="440" cy="700" r="27" class="dot"/><text x="440" y="710" text-anchor="middle" class="dot-t" font-size="28">4</text>
+              <circle cx="735" cy="470" r="27" class="dot"/><text x="735" y="480" text-anchor="middle" class="dot-t" font-size="28">5</text>
+              <circle cx="120" cy="580" r="27" class="dot"/><text x="120" y="590" text-anchor="middle" class="dot-t" font-size="28">6</text>
+            </g>
+          </svg>
+        </div>
+        <div>
+          <div class="tex-head"><h3>Red Panda</h3><span>The second character · curly, crinkly, squeezable</span></div>
+          <ul class="tex-list">
+            <li><span class="n">1</span><img src="../assets/closeups/curly-mane.jpg" alt=""><div><b>Curly mane</b><span>A hood of tight curls around the face—springy under the fingers.</span></div></li>
+            <li><span class="n">2</span><img src="../assets/closeups/redpanda-face.jpg" alt=""><div><b>Silky‑smooth ears</b><span>Satin‑smooth ear insides tucked into the curls.</span></div></li>
+            <li><span class="n">3</span><img src="../assets/closeups/paw-pad.jpg" alt=""><div><b>Ribbed paw pads</b><span>Corduroy‑ribbed pads with embroidered toes on both feet—made for thumb‑rubbing.</span></div></li>
+            <li><span class="n">4</span><img src="../assets/closeups/waffle-belly.jpg" alt=""><div><b>Waffle‑knit belly</b><span>A cream waffle texture across the whole belly, over the insert pockets.</span></div></li>
+            <li><span class="n">5</span><img src="../assets/closeups/curly-mane.jpg" alt=""><div><b>Crinkle tail</b><span>A squeezable tail with a soft crinkle layer inside.</span></div></li>
+            <li><span class="n">6</span><img src="../assets/closeups/paw-pad-2.jpg" alt=""><div><b>Embroidered hand pads</b><span>Short, dense fur on the arms with stitched pads at the paws.</span></div></li>
+          </ul>
+          <p class="tex-sig"><b>Signature feature:</b> a squeezable crinkle tail plus ribbed paw pads for thumb‑rubbing.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">How it works</p>
+      <h2>Chill or warm. Slide in. Hug.</h2>
+      <p class="lede">Three steps, all done by an adult. The weighted pouch stays in for everyday play; the thermal insert goes in when it’s wanted.</p>
+    </div>
+    <div class="steps">
+      <article class="step">
+        <span class="num">Step 1</span>
+        <svg viewBox="0 0 280 170" role="img" aria-label="Insert going into a fridge or a microwave">
+          <rect x="24" y="30" width="96" height="120" rx="10" fill="var(--paper)" stroke="var(--cool)" stroke-width="3"/>
+          <line x1="24" y1="72" x2="120" y2="72" stroke="var(--cool)" stroke-width="3"/>
+          <rect x="34" y="88" width="76" height="30" rx="8" fill="var(--cool)" opacity=".85"/>
+          <text x="72" y="160" text-anchor="middle" font-size="12" class="svg-s">FRIDGE · gel pack</text>
+          <rect x="160" y="50" width="96" height="76" rx="10" fill="var(--paper)" stroke="var(--warm)" stroke-width="3"/>
+          <rect x="172" y="62" width="56" height="52" rx="6" fill="none" stroke="var(--warm)" stroke-width="2"/>
+          <rect x="182" y="78" width="36" height="22" rx="6" fill="var(--warm)" opacity=".85"/>
+          <circle cx="242" cy="72" r="4" fill="var(--warm)"/><circle cx="242" cy="88" r="4" fill="var(--warm)"/>
+          <text x="208" y="160" text-anchor="middle" font-size="12" class="svg-s">MICROWAVE · warm insert</text>
+          <text x="140" y="26" text-anchor="middle" font-size="14" class="svg-t">or</text>
+        </svg>
+        <h3>Chill or warm the insert</h3>
+        <p>Gel pack in the fridge for cool; the temperature‑limited insert in the microwave for warm. An adult checks it is comfortable on their own skin first.</p>
+      </article>
+      <article class="step">
+        <span class="num">Step 2</span>
+        <svg viewBox="0 0 280 170" role="img" aria-label="Insert sliding into the belly pocket">
+          <ellipse cx="150" cy="95" rx="96" ry="66" fill="var(--plush)"/>
+          <path d="M94 96h112a8 8 0 0 1 8 8v40a8 8 0 0 1-8 8H94a8 8 0 0 1-8-8v-40a8 8 0 0 1 8-8Z" fill="var(--paper)" stroke="var(--ink)" stroke-width="2" stroke-dasharray="5 4"/>
+          <rect x="100" y="104" width="100" height="18" rx="6" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.5"/>
+          <rect x="100" y="126" width="100" height="20" rx="6" fill="var(--weight-soft)" stroke="var(--weight)" stroke-width="1.5"/>
+          <rect x="16" y="102" width="62" height="22" rx="8" fill="url(#thermo)"/>
+          <path d="M84 113h10" stroke="var(--ink)" stroke-width="2"/><path d="M90 108l7 5-7 5" fill="none" stroke="var(--ink)" stroke-width="2"/>
+          <text x="150" y="160" text-anchor="middle" font-size="12" class="svg-s">flap opens · insert slides into pocket B</text>
+        </svg>
+        <h3>Slide it into the belly pocket</h3>
+        <p>Open the hidden flap, slide the insert into its own pocket above the weighted pouch, and press the flap closed.</p>
+      </article>
+      <article class="step">
+        <span class="num">Step 3</span>
+        <svg viewBox="0 0 280 170" role="img" aria-label="Child hugging the plush">
+          <circle cx="140" cy="62" r="34" fill="var(--plush)"/>
+          <ellipse cx="140" cy="120" rx="58" ry="40" fill="var(--plush)"/>
+          <path d="M56 96q-30 40 24 62" stroke="var(--plush-dark)" stroke-width="18" fill="none" stroke-linecap="round"/>
+          <path d="M224 96q30 40-24 62" stroke="var(--plush-dark)" stroke-width="18" fill="none" stroke-linecap="round"/>
+          <path d="M140 132c-10-8-22-15-22-25a6 6 0 0 1 11-3 6 6 0 0 1 11 3c0 10-12 17-22 25Z" transform="translate(11 -4)" fill="var(--rust)"/>
+          <path d="M124 60q16 12 32 0" stroke="var(--ink)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <circle cx="126" cy="52" r="3.5" fill="var(--ink)"/><circle cx="154" cy="52" r="3.5" fill="var(--ink)"/>
+          <text x="140" y="160" text-anchor="middle" font-size="12" class="svg-s">weight low in the lap · arms wrap around</text>
+        </svg>
+        <h3>Hug</h3>
+        <p>The weight settles low in the lap, the insert warms or cools the belly, and the long arms wrap around. Adult supervision with the warm insert.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SIZES -->
+<section id="sizes">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Sizes &amp; weights</p>
+      <h2>Two animals, two sizes, one system.</h2>
+      <p class="lede">Every size takes the same inserts. Weights are prototype targets for roughly 12–16 inch plush and will be tuned in wear testing rather than defaulting to heavier.</p>
+    </div>
+    <div class="sizes-grid">
+      <div class="sizes-art">
+        <figure><img src="../assets/sloth-pair.png" alt="Large and small sloth" width="980" height="1540" style="max-height:340px;width:auto"><figcaption>Sloth<small>Large · Small</small></figcaption></figure>
+        <figure><img src="../assets/redpanda-pair.png" alt="Large and small red panda" width="800" height="1720" style="max-height:340px;width:auto"><figcaption>Red Panda<small>Large · Small</small></figcaption></figure>
+      </div>
+      <div>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>Companion</th><th>Size</th><th>Height</th><th>Weighted pouch<br><span style="font-weight:400">(prototype target)</span></th><th>Inserts</th></tr></thead>
+            <tbody>
+              <tr><td><span class="lbl">Sloth</span></td><td>Large</td><td>≈ 16 in</td><td><span class="w">3 lb</span></td><td rowspan="2">Gel pack (cool) · microwave insert (warm)</td></tr>
+              <tr><td><span class="lbl">Sloth</span></td><td>Small</td><td>≈ 12 in</td><td><span class="w">2 lb</span></td></tr>
+              <tr><td><span class="lbl">Red Panda</span></td><td>Large</td><td>≈ 16 in</td><td><span class="w">3 lb</span></td><td rowspan="2">Gel pack (cool) · microwave insert (warm)</td></tr>
+              <tr><td><span class="lbl">Red Panda</span></td><td>Small</td><td>≈ 12 in</td><td><span class="w">2 lb</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">The small sloth also carries a second, sleeping face embroidered on its back—turn it over for a quieter friend. All inserts are sold separately as spares and replacements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE FEATURES -->
+<section id="signature">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Calm &amp; Fidget</p>
+      <h2>One signature feature per animal.</h2>
+      <p class="lede">A reason to choose an animal by the sensory input a child prefers, not only by its looks.</p>
+    </div>
+    <div class="sig-grid">
+      <article class="sig">
+        <img src="../assets/closeups/sloth-claws.jpg" alt="The sloth's felt claws at the end of its arm" width="350" height="250">
+        <div class="body">
+          <span class="tag">Sloth</span>
+          <h3>Extra‑long hugging arms</h3>
+          <p>The arms are longer than a normal plush and lined with sherpa on the inside. They wrap around the child’s body and meet at the claws with child‑safe hook‑and‑loop, so the animal holds on by itself. No magnets, no clips.</p>
+          <p class="why">For the child who wants to be held.</p>
+        </div>
+      </article>
+      <article class="sig">
+        <img src="../assets/closeups/paw-pad.jpg" alt="The red panda's embroidered paw pad" width="190" height="220">
+        <div class="body">
+          <span class="tag">Red Panda</span>
+          <h3>Crinkle tail &amp; ribbed paw pads</h3>
+          <p>A squeezable tail with a crinkle layer inside gives a quiet sound and a give under the hand. The ribbed paw pads on the feet are made for thumb‑rubbing—a small, repeatable thing to do with the hands.</p>
+          <p class="why">For the child whose hands want something to do.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SAFETY & POSITIONING -->
+<section id="safety">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Safety &amp; positioning</p>
+      <h2>Say who it’s for. Never promise what it will do.</h2>
+      <p class="lede">Sowala names its audience and tells its true origin story. It does not make health claims—a children’s product that involves weight and a heated component has to be described carefully and tested properly.</p>
+    </div>
+    <div class="saynot">
+      <div class="say ok">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>What we say</h3>
+        <ul>
+          <li>Weighted sensory companion</li>
+          <li>Warm &amp; cool comfort insert</li>
+          <li>Multiple tactile textures</li>
+          <li>Designed for sensory exploration and comfort</li>
+          <li>Calming deep‑pressure feel · cozy, soothing, grounding</li>
+          <li>Designed with children on the autism spectrum in mind</li>
+          <li>Inspired by a therapist who works with children on the autism spectrum</li>
+          <li>Sensory‑friendly · a sensory friend</li>
+        </ul>
+      </div>
+      <div class="say no">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 8 8 8M16 8l-8 8"/></svg>What we never say</h3>
+        <ul>
+          <li>That it treats, helps, relieves, reduces or improves autism, ADHD, anxiety, meltdowns, stress, pain, sleep, focus or sensory processing</li>
+          <li><s>Therapeutic</s>, <s>clinical</s>, <s>medical</s>, <s>doctor‑recommended</s>, <s>therapist‑approved</s></li>
+          <li><s>Proven</s>, <s>scientifically</s>, <s>clinically</s></li>
+          <li>Any sleep claim—it is not a sleep product</li>
+          <li>“Helps with anxiety”, “calms meltdowns”, “regulates”</li>
+        </ul>
+        <p class="small muted" style="margin-top:14px">Health‑outcome claims on a consumer product require competent and reliable scientific evidence under FTC rules. Saying who it is designed for is allowed; saying what it will do to them is not.</p>
+      </div>
+    </div>
+    <div class="ageline" aria-label="Age and safety line">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 7v5l3 2"/></svg>Ages 3+</span>
+      <span>Not for infants</span>
+      <span>Not a sleep product</span>
+      <span>Adult supervision with the warm insert</span>
+    </div>
+    <p class="disclaimer">Not a medical device. Concept prototype — final weights, materials and age grading are subject to third‑party safety testing (ASTM F963 / CPSIA) before sale.</p>
+
+    <div class="check">
+      <h3>Regulatory checklist (U.S.)</h3>
+      <ol>
+        <li><div><b>ASTM F963 toy safety standard</b><span>The mandatory U.S. toy standard under CPSIA. Covers mechanical, seam and stuffing requirements, plus the small‑parts and flammability tests a plush with inserts has to pass.</span></div></li>
+        <li><div><b>CPSIA third‑party testing</b><span>Testing at a CPSC‑accepted laboratory, with a Children’s Product Certificate issued before the product is sold. Includes lead and phthalate limits for the fabrics, pellets and inserts.</span></div></li>
+        <li><div><b>Small parts &amp; pellet containment</b><span>Ages 3+ grading; the pellet pouch is double‑sealed and not reachable in normal use, seams are tested for stuffing and pellet release, and no magnets are used anywhere.</span></div></li>
+        <li><div><b>Tracking label</b><span>Permanent CPSIA tracking information on the plush and on each insert: manufacturer, production location and date, and batch—so a single insert can be traced or recalled.</span></div></li>
+        <li><div><b>Thermal insert review</b><span>The microwave insert is a temperature‑limited product made for plush; the final design still needs its heating instructions, surface temperatures and misuse cases reviewed. Sources for each item will be added in a later step.</span></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- MANUFACTURING NOTES -->
+<section id="making">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Manufacturing notes</p>
+      <h2>Built to be washed, refilled and repaired.</h2>
+    </div>
+    <div class="mfg">
+      <div>
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20c4-8 4-12 8-16 4 4 4 8 8 16"/><path d="M8 14h8"/></svg>Materials</h3>
+        <ul>
+          <li>Outer: long‑pile plush (Sloth) or short plush with curly‑pile mane (Red Panda), embroidered eyes and nose—no hard eyes.</li>
+          <li>Texture patches: minky, corduroy, satin, sherpa, raised‑dot fabric, waffle knit—all sewn in, none glued.</li>
+          <li>Weighting: poly pellets in a double‑sealed inner bag, then a fabric outer pouch.</li>
+          <li>Thermal: reusable gel pack; microwaveable temperature‑limited insert designed for plush.</li>
+        </ul>
+      </div>
+      <div>
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="10" rx="3"/><path d="M7 12h10"/></svg>Closures</h3>
+        <ul>
+          <li>One hidden belly flap with wide, soft hook‑and‑loop under a fur‑covered seam.</li>
+          <li>No magnets, no zipper pulls, no buttons or beads.</li>
+          <li>Sloth arm fastening: child‑safe hook‑and‑loop at the claws, sized so a child can pull free.</li>
+        </ul>
+      </div>
+      <div>
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M7 13q2.5-3 5 0t5 0"/></svg>Washability</h3>
+        <ul>
+          <li>Both inserts out → outer plush is machine‑washable on a gentle cycle, air dry.</li>
+          <li>Weighted pouch: wipe clean. Gel pack: wipe clean. Microwave insert: follow the maker’s care instructions.</li>
+        </ul>
+      </div>
+      <div>
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16v10H4z"/><path d="M8 7v10M16 7v10"/></svg>Spare inserts</h3>
+        <ul>
+          <li>Weighted pouch, gel pack and microwave insert each sold separately as spares and replacements.</li>
+          <li>One insert size fits both Large and Small pockets; only the pellet weight differs.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT STEPS -->
+<section id="next">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Next steps</p>
+      <h2>From concept to a tested product.</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl"><span class="k">Now</span><h3>Prototype</h3><p>Sew the two pockets, the flap and the texture patches into the existing plush. Build 2 lb and 3 lb pouches and the two thermal inserts.</p></div>
+      <div class="tl"><span class="k">Then</span><h3>Wear test</h3><p>Families try both sizes at home. Tune the pouch weight instead of defaulting to heavier, check the flap stays closed, and see which textures get used most.</p></div>
+      <div class="tl"><span class="k">Before sale</span><h3>Accredited lab test</h3><p>ASTM F963 and CPSIA testing at a CPSC‑accepted lab, Children’s Product Certificate, tracking labels, and a review of the warm insert’s instructions.</p></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="wordmark" href="#top" aria-label="Sowala">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 27c-5-3.6-10-7.6-10-13a5.5 5.5 0 0 1 10-3 5.5 5.5 0 0 1 10 3c0 5.4-5 9.4-10 13Z" fill="var(--rust)"/><path d="M8.5 20.5c2 2.6 4.6 4.7 7.5 6.5M23.5 20.5c-2 2.6-4.6 4.7-7.5 6.5" stroke="var(--paper)" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>
+      sowala
+    </a>
+    <p><b>Weighted Sensory Companions</b> · Comfort, one hug at a time. · Inspired by a therapist. Created with love.</p>
+    <p>Ages 3+ · Not for infants · Not a sleep product · Adult supervision with the warm insert</p>
+    <p><em>Not a medical device. Concept prototype — final weights, materials and age grading are subject to third‑party safety testing (ASTM F963 / CPSIA) before sale.</em></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var params=new URLSearchParams(location.search);
+  var q=params.get('theme');
+  var saved=null; try{saved=localStorage.getItem('sowala-theme');}catch(e){}
+  var t=(q==='dark'||q==='light')?q:(saved==='dark'||saved==='light')?saved:null;
+  if(t){root.setAttribute('data-theme',t);}
+  function current(){
+    var a=root.getAttribute('data-theme');
+    if(a==='dark'||a==='light')return a;
+    return (window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';
+  }
+  var btn=document.getElementById('themeToggle');
+  if(btn){btn.addEventListener('click',function(){
+    var next=current()==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('sowala-theme',next);}catch(e){}
+  });}
+})();
+</script>
+</body>
+</html>
