@@ -91,6 +91,9 @@ section+section{border-top:1px solid var(--line)}
 @media (min-width:860px){.hero .wrap{grid-template-columns:1.05fr .95fr;gap:48px}}
 .hero-kicker{font-family:var(--display);font-weight:600;font-size:1rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:18px}
 .hero h1 .accent{color:var(--rust);white-space:nowrap}
+.hero h1 .nb{white-space:nowrap}
+.hero h1 .hb{display:none}
+@media (min-width:860px){.hero h1 .hb{display:inline}}
 .hero .lede{font-size:1.2rem;margin-top:22px}
 .pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
 .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 14px 8px 10px;font-weight:700;font-size:.92rem;background:var(--paper);border:1px solid var(--line)}
@@ -205,6 +208,14 @@ table{border-collapse:collapse;width:100%;min-width:560px;font-size:.98rem}
 .mkt-table tr.us td .w{color:var(--weight-text)}
 .mkt-table td .w{font-size:1.1rem}
 .mkt-table .sub{display:block;font-size:.84rem;color:var(--ink-soft);font-weight:400;margin-top:2px}
+.mkt-table .sub.mkt-note{display:none}
+@media (max-width:600px){
+  .mkt-table{min-width:560px;font-size:.92rem}
+  .mkt-table .mkt-notes{display:none}
+  .mkt-table th:first-child,.mkt-table td:first-child{min-width:230px}
+  .mkt-table th:nth-child(4),.mkt-table td:nth-child(4){min-width:140px}
+  .mkt-table .sub.mkt-note{display:block;margin-top:6px;line-height:1.4}
+}
 .ladder{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;align-items:center}
 .ladder span{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:var(--paper);border:1px solid var(--line);font-size:.88rem;font-weight:700}
 .ladder span.us{background:var(--weight-soft);color:var(--ink);border:2px solid var(--weight)}
@@ -326,7 +337,7 @@ footer p{max-width:70ch}
   <div class="wrap">
     <div>
       <p class="hero-kicker">Weighted Sensory Companions</p>
-      <h1>Comfort, <span class="accent">one hug</span> at a time.</h1>
+      <h1>Comfort,<br class="hb"> <span class="accent">one hug</span> <span class="nb">at a time.</span></h1>
       <p class="lede">Sowala is a soft, weighted sensory friend: comforting weight to hold close, a removable warm‑or‑cool insert, and a whole map of textures to touch and explore. Designed with children on the autism spectrum in mind.</p>
       <div class="pills" aria-label="Four kinds of comfort">
         <span class="pill"><i style="background:var(--weight)"></i>Weight</span>
@@ -534,8 +545,8 @@ footer p{max-width:70ch}
       <!-- SLOTH -->
       <article class="tex">
         <div class="tex-photo">
-          <svg viewBox="0 0 693 1012" role="img" aria-label="Sloth with numbered texture hotspots">
-            <image href="../assets/clean/sloth-small.png" x="0" y="0" width="693" height="1012"/>
+          <svg viewBox="0 0 692 1008" role="img" aria-label="Sloth with numbered texture hotspots">
+            <image href="../assets/clean/sloth-small.png" x="0" y="0" width="692" height="1008"/>
             <g>
               <circle cx="490" cy="453" r="27" class="dot"/><text x="490" y="463" text-anchor="middle" class="dot-t" font-size="28">1</text>
               <circle cx="285" cy="273" r="27" class="dot"/><text x="285" y="283" text-anchor="middle" class="dot-t" font-size="28">2</text>
@@ -553,7 +564,7 @@ footer p{max-width:70ch}
             <li><span class="n">2</span><img src="../assets/closeups/sloth-face.jpg" alt=""><div><b>Smooth face mask</b><span>Short, smooth cream fabric on the face and inside the ears—a cool, calm contrast to the fur.</span></div></li>
             <li><span class="n">3</span><img src="../assets/closeups/sloth-claws.jpg" alt=""><div><b>Textured claws</b><span>Firm felt claws at the end of each arm—something to run a thumb across.</span></div></li>
             <li><span class="n">4</span><svg class="swatch" viewBox="0 0 56 56" aria-hidden="true"><rect width="56" height="56" rx="10" fill="var(--touch-soft)"/><g fill="var(--touch)"><circle cx="8.0" cy="8.0" r="4.2"/><circle cx="21.4" cy="8.0" r="4.2"/><circle cx="34.8" cy="8.0" r="4.2"/><circle cx="48.2" cy="8.0" r="4.2"/><circle cx="14.7" cy="21.4" r="4.2"/><circle cx="28.1" cy="21.4" r="4.2"/><circle cx="41.5" cy="21.4" r="4.2"/><circle cx="8.0" cy="34.8" r="4.2"/><circle cx="21.4" cy="34.8" r="4.2"/><circle cx="34.8" cy="34.8" r="4.2"/><circle cx="48.2" cy="34.8" r="4.2"/><circle cx="14.7" cy="48.2" r="4.2"/><circle cx="28.1" cy="48.2" r="4.2"/><circle cx="41.5" cy="48.2" r="4.2"/></g><g fill="#fff" opacity=".55"><circle cx="6.7" cy="6.7" r="1.5"/><circle cx="20.1" cy="6.7" r="1.5"/><circle cx="33.5" cy="6.7" r="1.5"/><circle cx="46.9" cy="6.7" r="1.5"/><circle cx="13.4" cy="20.1" r="1.5"/><circle cx="26.8" cy="20.1" r="1.5"/><circle cx="40.2" cy="20.1" r="1.5"/><circle cx="6.7" cy="33.5" r="1.5"/><circle cx="20.1" cy="33.5" r="1.5"/><circle cx="33.5" cy="33.5" r="1.5"/><circle cx="46.9" cy="33.5" r="1.5"/><circle cx="13.4" cy="46.9" r="1.5"/><circle cx="26.8" cy="46.9" r="1.5"/><circle cx="40.2" cy="46.9" r="1.5"/></g></svg><div><b>Raised‑dot belly patch</b><span>A hidden patch of raised dots on the lower belly, over the insert pockets (design feature—not yet on the prototype).</span></div></li>
-            <li><span class="n">5</span><img src="../assets/closeups/sloth-sherpa.jpg" alt=""><div><b>Sherpa inside the arms</b><span>The inner side of the long arms is lined with sherpa—warm and nubbly against the child.</span></div></li>
+            <li><span class="n">5</span><svg class="swatch" viewBox="0 0 56 56" aria-hidden="true"><rect width="56" height="56" rx="10" fill="var(--touch-soft)"/><g fill="none" stroke="var(--touch)" stroke-width="2.4"><circle cx="9" cy="9" r="4.6"/><circle cx="23" cy="9" r="4.6"/><circle cx="37" cy="9" r="4.6"/><circle cx="51" cy="9" r="4.6"/><circle cx="16" cy="23" r="4.6"/><circle cx="30" cy="23" r="4.6"/><circle cx="44" cy="23" r="4.6"/><circle cx="9" cy="37" r="4.6"/><circle cx="23" cy="37" r="4.6"/><circle cx="37" cy="37" r="4.6"/><circle cx="51" cy="37" r="4.6"/><circle cx="16" cy="51" r="4.6"/><circle cx="30" cy="51" r="4.6"/><circle cx="44" cy="51" r="4.6"/></g><g fill="none" stroke="#fff" stroke-width="1.2" opacity=".6"><path d="M7 7 a3 3 0 0 1 4 0"/><path d="M21 7 a3 3 0 0 1 4 0"/><path d="M35 7 a3 3 0 0 1 4 0"/><path d="M49 7 a3 3 0 0 1 4 0"/><path d="M14 21 a3 3 0 0 1 4 0"/><path d="M28 21 a3 3 0 0 1 4 0"/><path d="M42 21 a3 3 0 0 1 4 0"/><path d="M7 35 a3 3 0 0 1 4 0"/><path d="M21 35 a3 3 0 0 1 4 0"/><path d="M35 35 a3 3 0 0 1 4 0"/><path d="M49 35 a3 3 0 0 1 4 0"/><path d="M14 49 a3 3 0 0 1 4 0"/><path d="M28 49 a3 3 0 0 1 4 0"/><path d="M42 49 a3 3 0 0 1 4 0"/></g></svg><div><b>Sherpa inside the arms</b><span>The inner side of the long arms is lined with sherpa—warm and nubbly against the child (design feature—not yet on the prototype).</span></div></li>
             <li><span class="n">6</span><img src="../assets/closeups/sloth-foot.jpg" alt=""><div><b>Paw‑pad feet</b><span>Smooth minky pads with embroidered toes.</span></div></li>
           </ul>
           <p class="tex-sig"><b>Signature feature:</b> extra‑long, wire‑free hugging arms that wrap around the child and fasten with child‑safe hook‑and‑loop.</p>
@@ -563,15 +574,15 @@ footer p{max-width:70ch}
       <!-- RED PANDA -->
       <article class="tex">
         <div class="tex-photo">
-          <svg viewBox="0 0 859 1069" role="img" aria-label="Red Panda with numbered texture hotspots">
-            <image href="../assets/clean/redpanda-small.png" x="0" y="0" width="859" height="1069"/>
+          <svg viewBox="0 0 803 1074" role="img" aria-label="Red Panda with numbered texture hotspots">
+            <image href="../assets/clean/redpanda-small.png" x="0" y="0" width="803" height="1074"/>
             <g>
-              <circle cx="540" cy="185" r="27" class="dot"/><text x="540" y="195" text-anchor="middle" class="dot-t" font-size="28">1</text>
-              <circle cx="552" cy="46" r="27" class="dot"/><text x="552" y="56" text-anchor="middle" class="dot-t" font-size="28">2</text>
-              <circle cx="680" cy="955" r="27" class="dot"/><text x="680" y="965" text-anchor="middle" class="dot-t" font-size="28">3</text>
-              <circle cx="420" cy="665" r="27" class="dot"/><text x="420" y="675" text-anchor="middle" class="dot-t" font-size="28">4</text>
-              <circle cx="786" cy="464" r="27" class="dot"/><text x="786" y="474" text-anchor="middle" class="dot-t" font-size="28">5</text>
-              <circle cx="100" cy="545" r="27" class="dot"/><text x="100" y="555" text-anchor="middle" class="dot-t" font-size="28">6</text>
+              <circle cx="513" cy="186" r="27" class="dot"/><text x="513" y="196" text-anchor="middle" class="dot-t" font-size="28">1</text>
+              <circle cx="525" cy="46" r="27" class="dot"/><text x="525" y="56" text-anchor="middle" class="dot-t" font-size="28">2</text>
+              <circle cx="654" cy="960" r="27" class="dot"/><text x="654" y="970" text-anchor="middle" class="dot-t" font-size="28">3</text>
+              <circle cx="392" cy="669" r="27" class="dot"/><text x="392" y="679" text-anchor="middle" class="dot-t" font-size="28">4</text>
+              <circle cx="662" cy="472" r="27" class="dot"/><text x="662" y="482" text-anchor="middle" class="dot-t" font-size="28">5</text>
+              <circle cx="70" cy="548" r="27" class="dot"/><text x="70" y="558" text-anchor="middle" class="dot-t" font-size="28">6</text>
             </g>
           </svg>
         </div>
@@ -678,7 +689,7 @@ footer p{max-width:70ch}
           <p class="sizes-inserts"><b>Inserts, every size:</b> gel pack (cool) · microwave insert (warm)</p>
         </div>
         <p class="note">The small sloth also carries a second, eyes‑closed face embroidered on its back—turn it over for a quieter friend. All inserts are sold separately as spares and replacements.</p>
-        <p class="note"><b>Sizing hint, not a dose:</b> lap‑pad makers work from roughly 5 % of body weight (3 lb for a 60 lb child; 2 lb for 40 lb) and don’t recommend weighted lap items under age 3 or for children who mouth objects. No prescription guideline for weighted items is established, so the final weights are set in wear testing.</p>
+        <p class="note"><b>Sizing hint, not a dose:</b> lap‑pad makers use a body‑weight rule of thumb and don’t recommend weighted lap items under age 3 or for children who mouth objects. No guideline for weighted plush exists, so the final weights are set in wear testing.</p>
       </div>
     </div>
   </div>
@@ -695,14 +706,14 @@ footer p{max-width:70ch}
     <p class="scroll-hint" aria-hidden="true">Swipe the table sideways →</p>
     <div class="tablewrap">
       <table class="mkt-table">
-        <thead><tr><th>Product</th><th>Weight</th><th>Price (USD)</th><th>Age label</th><th>Notes</th></tr></thead>
+        <thead><tr><th>Product</th><th>Weight</th><th>Price (USD)</th><th>Age label</th><th class="mkt-notes">Notes</th></tr></thead>
         <tbody>
-          <tr class="us"><td>Sowala Large / Small<span class="sub">concept prototype</span></td><td><span class="w">3 lb / 2 lb</span><span class="sub">prototype target</span></td><td>TBD</td><td>Ages 3+ · not for infants · not a sleep product</td><td>≈ 16 in / 12 in. Removable weighted pouch plus a separate warm‑or‑cool insert; machine‑washable outer plush; hidden textures; one signature feature per animal.</td></tr>
-          <tr><td>Hugimals (original line)<span class="sub">e.g. Charlie the Puppy; the line includes a sloth</span></td><td><span class="w">4.5 lb</span></td><td>≈ $68</td><td>Ages 2+ (kids, teens, adults)</td><td>≈ 20 in long / 11 in sitting. Glass beads in a removable inner insert; machine‑washable outer. Sold with outcome language Sowala avoids.</td></tr>
-          <tr><td>Hugimals Hugarounds<span class="sub">warmable weighted line</span></td><td><span class="w">≈ 2.5 lb</span></td><td>not confirmed</td><td>not stated</td><td>Microwave‑ and freezer‑safe plush weighted all over. The closest weight + warm/cool competitor; Sowala keeps the two inserts separate.</td></tr>
-          <tr><td>Moon Pals<span class="sub">Bo, Mylo, Opal</span></td><td><span class="w">5 lb</span></td><td>≈ $70 <span class="sub">$60–95 with sales / bundles</span></td><td>Ages 3+</td><td>22 in jumbo. Poly pellets spread through arms, legs and stomach; big fidget ears. Sold with outcome wording Sowala avoids.</td></tr>
-          <tr><td>Warmies 13 in microwavable plush<span class="sub">e.g. Sloth</span></td><td><span class="w">1.5–2 lb</span></td><td>$25–30</td><td>All ages under adult supervision; not under 3 unsupervised</td><td>Flaxseed + dried lavender fill; max 90 s at 800 W; freezer‑chillable; surface‑clean only. Proves the plush‑warm category and its supervision labeling.</td></tr>
-          <tr><td>Fun &amp; Function weighted animal lap pad<span class="sub">Momo the Monkey</span></td><td><span class="w">3 lb</span></td><td>≈ $42.50</td><td>Children 30 lb and up; not under 3; not for mouthing children</td><td>Catalog product built on a ≈ 5 % body‑weight rule of thumb. Same 3 lb as Sowala Large—a normal child lap weight.</td></tr>
+          <tr class="us"><td>Sowala Large / Small<span class="sub">concept prototype</span><span class="sub mkt-note">≈ 16 in / 12 in. Removable weighted pouch plus a separate warm‑or‑cool insert; machine‑washable outer plush; hidden textures; one signature feature per animal.</span></td><td><span class="w">3 lb / 2 lb</span><span class="sub">prototype target</span></td><td>TBD</td><td>Ages 3+ · not for infants · not a sleep product</td><td class="mkt-notes">≈ 16 in / 12 in. Removable weighted pouch plus a separate warm‑or‑cool insert; machine‑washable outer plush; hidden textures; one signature feature per animal.</td></tr>
+          <tr><td>Hugimals (original line)<span class="sub">e.g. Charlie the Puppy; the line includes a sloth</span><span class="sub mkt-note">≈ 20 in long / 11 in sitting. Glass beads in a removable inner insert; machine‑washable outer. Sold with outcome language Sowala avoids.</span></td><td><span class="w">4.5 lb</span></td><td>≈ $68</td><td>Ages 2+ (kids, teens, adults)</td><td class="mkt-notes">≈ 20 in long / 11 in sitting. Glass beads in a removable inner insert; machine‑washable outer. Sold with outcome language Sowala avoids.</td></tr>
+          <tr><td>Hugimals Hugarounds<span class="sub">warmable weighted line</span><span class="sub mkt-note">Microwave‑ and freezer‑safe plush weighted all over. The closest weight + warm/cool competitor; Sowala keeps the two inserts separate.</span></td><td><span class="w">≈ 2.5 lb</span></td><td>not confirmed</td><td>not stated</td><td class="mkt-notes">Microwave‑ and freezer‑safe plush weighted all over. The closest weight + warm/cool competitor; Sowala keeps the two inserts separate.</td></tr>
+          <tr><td>Moon Pals<span class="sub">Bo, Mylo, Opal</span><span class="sub mkt-note">22 in jumbo. Poly pellets spread through arms, legs and stomach; big fidget ears. Sold with outcome wording Sowala avoids.</span></td><td><span class="w">5 lb</span></td><td>≈ $70 <span class="sub">$60–95 with sales / bundles</span></td><td>Ages 3+</td><td class="mkt-notes">22 in jumbo. Poly pellets spread through arms, legs and stomach; big fidget ears. Sold with outcome wording Sowala avoids.</td></tr>
+          <tr><td>Warmies 13 in microwavable plush<span class="sub">e.g. Sloth</span><span class="sub mkt-note">Flaxseed + dried lavender fill; max 90 s at 800 W; freezer‑chillable; surface‑clean only. Proves the plush‑warm category and its supervision labeling.</span></td><td><span class="w">1.5–2 lb</span></td><td>$25–30</td><td>All ages under adult supervision; not under 3 unsupervised</td><td class="mkt-notes">Flaxseed + dried lavender fill; max 90 s at 800 W; freezer‑chillable; surface‑clean only. Proves the plush‑warm category and its supervision labeling.</td></tr>
+          <tr><td>Fun &amp; Function weighted animal lap pad<span class="sub">Momo the Monkey</span><span class="sub mkt-note">Catalog product built on a ≈ 5 % body‑weight rule of thumb. Same 3 lb as Sowala Large—a normal child lap weight.</span></td><td><span class="w">3 lb</span></td><td>≈ $42.50</td><td>Children 30 lb and up; not under 3; not for mouthing children</td><td class="mkt-notes">Catalog product built on a ≈ 5 % body‑weight rule of thumb. Same 3 lb as Sowala Large—a normal child lap weight.</td></tr>
         </tbody>
       </table>
     </div>
@@ -729,7 +740,7 @@ footer p{max-width:70ch}
     </div>
     <div class="sig-grid">
       <article class="sig">
-        <img src="../assets/closeups/sloth-arm-wide.jpg" alt="The small sloth's long arms, each ending in white felt claws" width="880" height="495">
+        <img src="../assets/closeups/sloth-arm-wide.jpg" alt="The small sloth: its whole face and both long arms, each ending in white felt claws" width="1232" height="693" style="object-position:62% 50%">
         <div class="body">
           <span class="tag">Sloth</span>
           <h3>Extra‑long hugging arms</h3>
@@ -818,7 +829,7 @@ footer p{max-width:70ch}
         <li><div><b>Magnets: none, and the right rule</b><span>For toys the magnet rule is ASTM F963 §4.38—no hazardous magnet (a small object with a flux index ≥ 50 kG²·mm²) in the toy or liberated from it after use‑and‑abuse—not 16 CFR 1262, which excludes toys. Hook‑and‑loop closures keep Sowala out of that section and out of the ingestion hazard altogether.</span></div></li>
         <li><div><b>Closures &amp; entrapment</b><span>Target’s 2022 Pillowfort weighted‑blanket recall (≈ 204,000 units, two children aged 4 and 6 died) was a zipper a child could open and climb inside. Sowala’s single flap is concealed and child‑resistant, sized so a child cannot open the pocket or reach the pellets or the gel pack; F963 seam and use‑and‑abuse tests check that it holds.</span></div></li>
         <li><div><b>Weighted items &amp; sleep</b><span>The 2024 AAP and CPSC warnings and retailer withdrawals concern weighted <em>infant sleep</em> products—blankets, sacks, swaddles. There is no CPSC rule on weighted products for children, and none was in progress at the time of writing (confirm on cpsc.gov before print). Sowala is an awake, supervised companion: not for infants, not a sleep product, never over the face, never left on a child alone (a 2008 Quebec coroner’s case involved an unattended child wrapped in a weighted blanket).</span></div></li>
-        <li><div><b>Heat: the hazard is over‑timing</b><span>Grain heat packs have caused burns needing surgery and house fires when heated far past the guide or with a blocked turntable; “no wires, no batteries” is not “no heat hazard”. No consumer plush insert is truly temperature‑limited—self‑limiting warmth is phase‑change‑material research, not a stock part—so the guide above is printed on the insert, and the weighted pouch is unmistakably different and tagged “Do not microwave”.</span></div></li>
+        <li><div><b>Heat: the hazard is over‑timing</b><span>Grain heat packs have caused burns needing surgery and house fires when heated far past the guide or with a blocked turntable; “no wires, no batteries” is not “no heat hazard”. No consumer plush insert truly limits its own temperature—self‑limiting warmth is phase‑change‑material research, not a stock part—so the guide above is printed on the insert, and the weighted pouch is unmistakably different and tagged “Do not microwave”.</span></div></li>
         <li><div><b>Flammability</b><span>F963 requires the plush fabrics to meet 16 CFR 1610 (Class 1 normal flammability) and the stuffed toy to pass 16 CFR 1500.44. Long‑pile fur, sherpa and the curly mane are exactly the fabrics that need this test.</span></div></li>
         <li><div><b>Tracking label</b><span>CPSIA §103: a permanent tracking label on the plush, its packaging and each insert—manufacturer or private labeler, production location and date, and batch—so a single insert can be traced or recalled.</span></div></li>
         <li class="wide"><div><b>Claims: FTC &amp; FDA</b><span>Express and implied health claims need competent and reliable scientific evidence (objective tests by qualified experts, generally RCTs); hedges like “may help” don’t cure them. Disease claims also change a product’s intended use toward an FDA medical device—Gravity Blanket dropped its treatment claims in 2017 for that reason. And the best trial in autistic children (Gringras 2014, about 70 children) found a weighted blanket did not improve sleep, even though children and parents preferred it. So Sowala says “calming deep‑pressure feel” and “comfort”—never an outcome.</span></div></li>

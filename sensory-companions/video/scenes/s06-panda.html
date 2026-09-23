@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><title>S06 red panda signature</title>
 <link rel="stylesheet" href="common.css">
 <style>
-/* 5.5 s (out-fades end at 5.35). Tail squeezes (loop from 1.0), crinkle marks pulse; paw pad ribs + thumb rubs (loop from 2.6) */
+/* 5.5 s (out-fades end at 5.35). Tail squeezes (loop from 1.0), crinkle marks pulse; paw pad ribs + thumb rubs (loop from 2.1) */
 .tag{background:var(--rust)}
 #tail{position:absolute;left:0;top:0;width:520px;height:600px}
 #tailShape{transform-origin:260px 330px;animation:squeeze 1.6s 1s ease-in-out infinite}
@@ -14,7 +14,7 @@
 .crk{fill:none;stroke:var(--ink);stroke-width:6;stroke-linecap:round;stroke-linejoin:round;opacity:0;animation:crk 1.6s 1s ease-out infinite}
 @keyframes crk{0%{opacity:0}30%{opacity:0}45%{opacity:1}85%{opacity:0}100%{opacity:0}}
 #pad{position:absolute;left:600px;top:30px;width:380px;height:380px}
-#thumb{animation:rub 1.4s 2.6s ease-in-out infinite}
+#thumb{animation:rub 1.4s 2.1s ease-in-out infinite}
 @keyframes rub{0%{transform:translate(-70px,0)}50%{transform:translate(70px,0)}100%{transform:translate(-70px,0)}}
 .rib{animation:ribGlow 1.4s var(--d) ease-in-out infinite}
 @keyframes ribGlow{0%{stroke:#4a3325}50%{stroke:#7a5a45}100%{stroke:#4a3325}}
@@ -39,15 +39,15 @@
     <g class="crk"><path d="M300 110 l14 -26 l12 26 l14 -26"/><path d="M380 100 l8 -30 l16 22 l8 -30"/></g>
     <g class="crk" style="animation-delay:1.25s"><path d="M470 210 l22 -10 l-4 26 l22 -10"/><path d="M200 520 l16 -22 l12 26 l14 -26"/></g>
   </svg>
-  <svg id="pad" viewBox="0 0 420 420" class="f" style="--i:2.2s;--o:4.95s">
+  <svg id="pad" viewBox="0 0 420 420" class="f" style="--i:1.7s;--o:4.95s">
     <rect x="40" y="60" width="340" height="300" rx="120" fill="#5b3f2e"/>
     <g fill="none" stroke-width="10" stroke-linecap="round">
-      <path class="rib" style="--d:2.6s" d="M110 150 H310"/><path class="rib" style="--d:2.8s" d="M96 200 H324"/><path class="rib" style="--d:3.0s" d="M96 250 H324"/><path class="rib" style="--d:3.2s" d="M110 300 H310"/>
+      <path class="rib" style="--d:2.1s" d="M110 150 H310"/><path class="rib" style="--d:2.3s" d="M96 200 H324"/><path class="rib" style="--d:2.5s" d="M96 250 H324"/><path class="rib" style="--d:2.7s" d="M110 300 H310"/>
     </g>
     <g id="thumb"><ellipse cx="210" cy="225" rx="54" ry="78" fill="rgba(217,204,185,.85)" stroke="var(--taupe)" stroke-width="4"/></g>
   </svg>
   <div class="lbl a" style="left:40px;top:540px;--i:1.2s;--o:4.95s"><span class="dot" style="background:var(--rust)"></span>Squeezable crinkle tail</div>
-  <div class="lbl a" style="left:600px;top:430px;--i:2.4s;--o:4.95s"><span class="dot" style="background:var(--rust)"></span>Ribbed paw pads for thumb-rubbing</div>
+  <div class="lbl a" style="left:600px;top:430px;--i:1.9s;--o:4.95s"><span class="dot" style="background:var(--rust)"></span>Ribbed paw pads for thumb-rubbing</div>
 </div>
 <div class="cap a" style="--i:.8s;--o:4.95s">Squeezable crinkle tail + ribbed paw pads for thumb-rubbing — a fidget built into the&nbsp;animal.</div>
 </body></html>
