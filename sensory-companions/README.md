@@ -8,9 +8,9 @@ Marketing and explainer materials for **Sowala**, a weighted sensory companion c
 
 | Folder | Contents |
 |--------|----------|
-| `poster/` | `poster-18x24.png` (2700×3600, print), `poster-18x24.pdf`, `poster-social-1080x1350.png` (Instagram 4:5), HTML sources |
-| `video/` | `demo-en.mp4`, `demo-he.mp4` (1920×1080, 30 fps), `storyboard.md`, `scenes/` (HTML/CSS sources of every scene) |
-| `explainer/` | `index.html` — bilingual (EN/עברית) interactive visual explainer, light/dark |
+| `poster/A`, `poster/B`, `poster/C`, `poster/C2` | Four finished poster variants for the client to choose from. Each folder has `poster-X-18x24.png` (2700×3600, print), `poster-X-18x24.pdf`, `poster-X-social-1080x1350.png` (Instagram / WhatsApp 4:5) and the HTML sources |
+| `video/` | `demo-en.mp4` (1920×1080, 30 fps, 59.5 s, English captions, synthesized music bed), `contact-sheet-en.png`, `storyboard.md`, `scenes/` (HTML/CSS sources of every scene), `music.py` |
+| `explainer/` | `index.html` — the visual explainer (English, light/dark): story, the four comforts, belly cutaway, texture maps, how it works, sizes, market context, safety & positioning with sources, manufacturing notes, next steps |
 | `assets/` | original shop photo, background-removed cutouts, texture close-ups, the shop clip (mp4 + webm), fonts |
 | `BRIEF.md` | the creative + technical brief every deliverable follows (copy, claims rules, palette, specs) |
 
@@ -23,5 +23,5 @@ Marketing and explainer materials for **Sowala**, a weighted sensory companion c
 ## Editing / עריכה
 
 - Poster copy and layout: edit `poster/poster.html`, then re-render (see the commands in `BRIEF.md` section 6).
-- Video captions: edit the scene HTML files in `video/scenes/`, re-capture the frames and re-encode.
-- Explainer: edit `explainer/index.html`; the Hebrew and English strings live side by side in the file.
+- Video captions: edit the scene HTML files in `video/scenes/`, re-capture the frames with the frame tool described in `BRIEF.md` section 6 and re-encode with ffmpeg (`storyboard.md` lists every scene and timing).
+- Explainer: edit `explainer/index.html` (single file, inline CSS/SVG; images under `assets/`).
